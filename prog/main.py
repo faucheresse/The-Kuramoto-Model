@@ -32,16 +32,20 @@ Test d'intégration pour la fonction exponentielle
 # plt.show()
 
 #----------------------------------------------------------------------------------#
-w = np.array([0.5, 0.5, 1.5, 0.5, 1.5, 0.5, 0.5, 0.5, 1.5, 1.5])
+omega = np.array([0.5, 0.5, 1.5, 0.5, 1., 0.5, 1., 0.5, 1.5, 1.5])
 theta0 = np.array([0.91, 4.65, 0.94, 4.54, 1.14, 3.04, 0.57, 4.53, 6.15, 4.03])
 
 
-kuramoto = KuramotoModel(w)
+kuramoto = KuramotoModel(omega)
 f  = kuramoto
-t, theta = kuramoto.integrate(f, theta0, 1000000)
+t, theta = kuramoto.integrate(f, theta0)
+# t1, theta1 = kuramoto.integrate(f, theta0, 100, "RK2")
+# t2, theta2 = kuramoto.integrate(f, theta0, 100, "Euler")
 
 
-plt.plot(t, theta%(2 * np.pi), label="Kuramoto")
+plt.plot(t, theta%(2 * np.pi), label="Kuramoto (RK4)")
+# plt.plot(t, theta1%(2 * np.pi), label="Kuramoto (RK2)")
+# plt.plot(t, theta2%(2 * np.pi), label="Kuramoto (Euler)")
 plt.legend()
 plt.grid()
 plt.show()

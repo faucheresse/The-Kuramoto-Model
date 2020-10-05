@@ -2,18 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 class Integration:
-    """docstring for Integration"""
-    def euler(self, f, x0, t):
-        '''Approximate the solution of x' = f(x,t) by Euler's method.
+    """Integration by Euler's, RK2's, RK4's methods"""
+    def euler(self, f, x, t):
+        '''Approximate the solution of x' = f(x) by Euler's method.
 
         ---------- Args ----------
         
         f : function
-            Right-hand side of the differential equation x' = f(t, x), x(t0) = x0
-        x0 : number
+            Right-hand side of the differential equation x' = f(x, t)
+        x : ndarray
             Initial value x(t0) = x0 where t0 is the entry at index 0 in the array t
-        t : array
-            1D NumPy array of t values where we approximate y values. Time step
+        t : ndarray
+            1D NumPy array of t values where we approximate x values. Time step
             at each iteration is given by t[n+1] - t[n].
 
         ---------- Return ----------
@@ -22,26 +22,23 @@ class Integration:
             Approximation x[n] of the solution x(t_n) computed by Euler's method.
         '''
 
-        x = np.zeros(len(t))
-        x[0] = x0
-
         for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
-            x[n + 1] = x[n] + f(x, t)[n] * deltaT
+            x[n + 1] = x[n] + f(x)[n] * deltaT
 
         return x
 
-    def RK2(self, f, x0, t):
-        '''Approximate the solution of x' = F(x,t) by RK2's method.
+    def RK2(self, f, x, t):
+        '''Approximate the solution of x' = f(x) by RK2's method.
 
         ---------- Args ----------
         
         f : function
-            Right-hand side of the differential equation x' = f(t, x), x(t0) = x0
-        x0 : number
+            Right-hand side of the differential equation x' = f(x, t)
+        x : ndarray
             Initial value x(t0) = x0 where t0 is the entry at index 0 in the array t
-        t : array
-            1D NumPy array of t values where we approximate y values. Time step
+        t : ndarray
+            1D NumPy array of t values where we approximate x values. Time step
             at each iteration is given by t[n+1] - t[n].
 
         ---------- Return ----------
@@ -50,38 +47,32 @@ class Integration:
             Approximation x[n] of the solution x(t_n) computed by RK2's method.
         '''
 
-        x = np.zeros(len(t))
-        x[0] = x0
-
-        for n in range(len(t)-1):
+        for n in range(len(x)-1):
             deltaT = t[n + 1] - t[n]
-            step = x + f(x, t)[n] * deltaT / 2
-            x[n + 1] = x[n] + f(step, t)[n] * deltaT
+            step = x + f(x)[n] * deltaT / 2
+            x[n + 1] = x[n] + f(step)[n] * deltaT
 
 
         return x
 
     def RK4(self, f, x, t):
-        '''Approximate the solution of x' = F(x,t) by RK4's method.
+        '''Approximate the solution of x' = f(x) by RK4's method.
 
         ---------- Args ----------
         
         f : function
-            Right-hand side of the differential equation x' = f(x, t), x(t0) = x0
-        x0 : number
+            Right-hand side of the differential equation x' = f(x, t)
+        x : ndarray
             Initial value x(t0) = x0 where t0 is the entry at index 0 in the array t
-        t : array
-            1D NumPy array of t values where we approximate y values. Time step
+        t : ndarray
+            1D NumPy array of t values where we approximate x values. Time step
             at each iteration is given by t[n+1] - t[n].
 
         ---------- Return ----------
 
         x : 1D NumPy array
-            Approximation x[n] of the solution x(t_n) computed by RK2's method.
+            Approximation x[n] of the solution x(t_n) computed by RK4's method.
         '''
-
-        # x = np.zeros(len(t))
-        # x[0] = x0
 
         K = np.zeros((4, len(x) + 1))
 
@@ -113,10 +104,15 @@ class KuramotoModel:
 
         return self.d_theta
 
-    def integrate(self, f, theta0, tf=100):
+    def integrate(self, f, theta0, tf=100, integrator="RK4"):
         step = self.N+1
         t = np.linspace(0, tf + step / 2 , step-1)
-        theta = self.integr.RK4(f, theta0, t)
+        if integrator == "RK4":
+            theta = self.integr.RK4(f, theta0, t)
+        elif integrator == "RK2":
+            theta = self.integr.RK2(f, theta0, t)
+        elif integrator == "Euler":
+            theta = self.integr.euler(f, theta0, t)
 
         return t, theta
 
