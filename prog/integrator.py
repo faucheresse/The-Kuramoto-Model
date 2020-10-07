@@ -21,7 +21,7 @@ class Integration:
             Approximation x[n] of the solution x(t_n) computed by Euler's method.
         '''
 
-        for n in range(len(x)-1):
+        for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
             x[n + 1] = x[n] + f(x)[n] * deltaT
 
@@ -46,7 +46,7 @@ class Integration:
             Approximation x[n] of the solution x(t_n) computed by RK2's method.
         '''
 
-        for n in range(len(x)-1):
+        for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
             step = x + f(x)[n] * deltaT / 2
             x[n + 1] = x[n] + f(step)[n] * deltaT
@@ -54,7 +54,7 @@ class Integration:
 
         return x
 
-    def RK4(self, f, x, t):
+    def RK4(self, f, x0, t):
         '''Approximate the solution of x' = f(x) by RK4's method.
 
         ---------- Args ----------
@@ -73,9 +73,12 @@ class Integration:
             Approximation x[n] of the solution x(t_n) computed by RK4's method.
         '''
 
-        K = np.zeros((4, len(x)-1))
+        x = np.array(len(t))
+        np.append(x, x0)
 
-        for n in range(len(x)-1):
+        K = np.zeros((4, len(t)-1))
+
+        for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
             K[0, n] = f(x)[n]
             K[1, n] = f(x + K[0, n] * deltaT / 2)[n]
@@ -86,3 +89,4 @@ class Integration:
                         + 2 * K[2, n] + K[3, n]) * deltaT / 6
 
         return x
+        

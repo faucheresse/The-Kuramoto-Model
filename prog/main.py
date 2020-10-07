@@ -35,20 +35,12 @@ Test d'intégration pour la fonction exponentielle
 #------------------------------------------------------------#
 kuramoto = KuramotoModel(omega, 1)
 f = kuramoto
-t, theta = kuramoto.integrate(f, theta0, 30)
+t, theta = kuramoto.integrate(f, theta0)
 # t1, theta1 = kuramoto.integrate(f, theta0, 100, "RK2")
 # t2, theta2 = kuramoto.integrate(f, theta0, 100, "Euler")
+    
 
-R, phi = kuramoto.R_exp_i_phi(f, theta)
+kuramoto.graph_kuramoto(t, theta)
+# kuramoto.graph_r_i_phi(theta, t)
+# kuramoto.graph_shanon_entropy(f, t, theta)
 
-plt.plot(t, theta, label="Kuramoto (RK4)", marker="+")
-# plt.plot(t, theta1%(2 * np.pi), label="Kuramoto (RK2)", marker="+")
-# plt.plot(t, theta2%(2 * np.pi), label="Kuramoto (Euler)", marker="+")
-plt.plot(t, R, label=r"$t \longmapsto R(t)$", marker="+")
-plt.plot(t, phi, label=r"$t \longmapsto \Phi(t)$", marker="+")
-
-plt.xlabel(r"$t$")
-plt.ylabel(r"$\theta$")
-plt.legend()
-plt.grid()
-plt.show()
