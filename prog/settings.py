@@ -1,7 +1,7 @@
 import numpy as np
 from random import uniform
 
-N = 10
+N = 100
 omegaFile = "./parameters/omega.dat"
 theta0File = "./parameters/theta0.dat"
 

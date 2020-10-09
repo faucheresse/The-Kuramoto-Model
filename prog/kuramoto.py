@@ -12,7 +12,7 @@ class KuramotoModel:
         self.omega = omega
         self.integr = Integration()
         self.kappa = kappa
-        self.n = 2
+        self.n = 1
 
     def __call__(self, theta, t):
         self.d_theta = np.zeros((self.N, len(t)))

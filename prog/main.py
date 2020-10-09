@@ -44,7 +44,7 @@ t, theta = kuramoto.integrate(f, theta0, tf, integrator)
 
 # kuramoto.graph_kuramoto(t, theta[0], integrator)
 # kuramoto.all_graph_kuramoto(t, theta)
-kuramoto.graph_orders(theta, t)
-# kuramoto.graph_shanon_entropy(theta[:, 10], t)
+# kuramoto.graph_orders(theta, t)
+kuramoto.graph_shanon_entropy(theta[:, 10], t)
 # kuramoto.graph_density_shanon_entropy(theta, t)
 
