@@ -35,11 +35,16 @@ Test d'intégration pour la fonction exponentielle
 #------------------------------------------------------------#
 kuramoto = KuramotoModel(omega, 1)
 f = kuramoto
+# integrator = "Euler"
+# integrator = "RK2"
 integrator = "RK4"
-t, theta = kuramoto.integrate(f, theta0, 100, integrator)
+tf = 100
+t, theta = kuramoto.integrate(f, theta0, tf, integrator)
     
 
-# kuramoto.graph_kuramoto(t, theta, integrator)
-# kuramoto.graph_r_i_phi(theta, t)
-# kuramoto.graph_shanon_entropy(t, theta)
+# kuramoto.graph_kuramoto(t, theta[0], integrator)
+# kuramoto.all_graph_kuramoto(t, theta)
+kuramoto.graph_orders(theta, t)
+# kuramoto.graph_shanon_entropy(theta[:, 10], t)
+# kuramoto.graph_density_shanon_entropy(theta, t)
 
