@@ -2,7 +2,7 @@ import numpy as np
 from random import uniform
 from settings import *
 
-class Data():
+class Data:
     """docstring for Data"""
 
     def init_data(self, N):

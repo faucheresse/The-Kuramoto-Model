@@ -2,7 +2,7 @@ import numpy as np
 from kuramoto import *
 from settings import *
 
-class Graphs():
+class Graphs:
     """docstring for Graphs"""
 
     def graphs(self, x, y, title, xlabel, ylabel, pol):
