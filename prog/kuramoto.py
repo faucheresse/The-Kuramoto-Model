@@ -1,16 +1,18 @@
 import numpy as np 
 import matplotlib.pyplot as plt
-from settings import * 
 from integrator import *
-from math import ceil
+from data import *
+from settings import *
 
 class KuramotoModel:
 
     def __init__(self, omega, kappa):
 
-        self.N = N
+        self.N = omega.size
         self.omega = omega
         self.integr = Integration()
+        self.data = Data()
+
         self.kappa = kappa
         self.n = 1
 
@@ -41,26 +43,11 @@ class KuramotoModel:
         elif integrator == "Euler":
             theta = self.integr.euler(self, theta0, t)
 
-        return t, theta%(2 * np.pi)
+        self.data.write_on_file(FILE['t'], t)
+        self.data.write_on_file(FILE['theta'], theta%(2 * np.pi))
 
-    def graph_kuramoto(self, t, theta, integrator="RK4"):     
-        plt.plot(t, theta, label="Kuramoto ({0})".format(integrator))
-        plt.xlabel(r"$t$")
-        plt.ylabel(r"$\theta$")
-        plt.title("Kuramoto integrate by %s"%integrator)
-        plt.grid()
-        plt.show()
-
-    def all_graph_kuramoto(self, t, theta):
-        for i in range(len(theta)):
-            plt.plot(t, theta[i], label="Kuramoto ({0})".format(i))
-        plt.xlabel(r"$t$")
-        plt.ylabel(r"$\theta$")
-        plt.title("Kuramoto")
-        plt.grid()
-        plt.show()
-
-    def orders(self, theta, t):
+    def orders(self, theta):
+        t = np.loadtxt(FILE['t'])
         z = np.zeros(self.N)
         R, phi = np.zeros(len(t)), np.zeros(len(t))
         for _t in range(len(t)):
@@ -70,22 +57,13 @@ class KuramotoModel:
             R[_t] = np.absolute(z)
             phi[_t] = np.angle(z)
 
-        return R, phi
+        self.data.write_on_file(FILE['R'], R)
+        self.data.write_on_file(FILE['phi'], phi)
 
-    def graph_orders(self, theta, t):
-        R, phi = self.orders(theta, t)
-        plt.plot(t, R, label=r"$t \longmapsto R(t)$")
-        plt.plot(t, phi, label=r"$t \longmapsto \Phi(t)$")
-
-        plt.xlabel(r"$t$")
-        plt.ylabel(r"$R, \Phi$")
-        plt.legend()
-        plt.grid()
-        plt.show()
-
-    def shanon_entropy(self, theta, t):
+    def shannon_entropy(self, theta):
+        t = np.loadtxt(FILE['t'])
         n = self.n
-        q = len(t) // 2 # en attendant
+        q = len(t) # en attendant
         p = np.zeros(len(t))
         S = np.zeros(len(t))
         count = 0
@@ -106,27 +84,13 @@ class KuramotoModel:
 
         return S
 
-    def graph_shanon_entropy(self, theta, t):
-        S = self.shanon_entropy(theta, t)
-        i = np.arange(len(t))
-        plt.plot(i, S, label=r"$i \longmapsto S_i^{q, n}(t)$")
+    def shannon_entropies(self, theta):
+        t = np.loadtxt(FILE['t'])
+        S = np.zeros((self.N, len(t)))
+        for i in range(self.N):
+            S[:, i] = self.shannon_entropy(theta[:, i], t)
 
-        plt.xlabel(r"$i$")
-        plt.ylabel(r"$S$")
-        plt.legend()
-        plt.grid()
-        plt.show()
+        self.data.write_on_file(FILE['S'], S)
 
-    def graph_density_shanon_entropy(self, theta, t):
-        S = np.zeros((len(t), len(t)))
-        ind = np.arange(len(t))
-        for i in range(len(t)):
-            S[:, i] = self.shanon_entropy(theta[:, i], t)
-            plt.plot(ind, S[:, i])
 
-        plt.xlabel(r"$i$")
-        plt.ylabel(r"$S$")
-        plt.legend()
-        plt.grid()
-        plt.show()
 

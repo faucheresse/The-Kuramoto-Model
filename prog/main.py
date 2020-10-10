@@ -1,6 +1,8 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
 from kuramoto import *
+from graphs import *
+from data import *
 from settings import *
 
 '''
@@ -33,18 +35,40 @@ Test d'intégration pour la fonction exponentielle
 # plt.show()
 
 #------------------------------------------------------------#
+
+data = Data()
+newData = False
+N = 100
+
+if newData:
+    data.init_data(N)
+
+omega = np.loadtxt(FILE['omega'])
+theta0 = np.loadtxt(FILE['theta0'])
+
 kuramoto = KuramotoModel(omega, 1)
+graphs = Graphs()
 f = kuramoto
 # integrator = "Euler"
 # integrator = "RK2"
 integrator = "RK4"
 tf = 100
-t, theta = kuramoto.integrate(f, theta0, tf, integrator)
-    
+# kuramoto.integrate(f, theta0, tf, integrator)
 
-# kuramoto.graph_kuramoto(t, theta[0], integrator)
-# kuramoto.all_graph_kuramoto(t, theta)
-# kuramoto.graph_orders(theta, t)
-kuramoto.graph_shanon_entropy(theta[:, 10], t)
-# kuramoto.graph_density_shanon_entropy(theta, t)
+theta = np.loadtxt(FILE['theta'])
+t = np.loadtxt(FILE['t'])
+
+# kuramoto.orders(theta, t)
+# kuramoto.shannon_entropies(theta, t)
+
+#-----graphs-----#
+
+# graphs.graph_kuramoto(theta[0], False, integrator)
+# graphs.graph_kuramoto(theta[0], True, integrator)
+# graphs.all_graph_kuramoto(theta)
+# graphs.all_pol_graph_kuramoto(theta, 50)
+graphs.graph_density_kuramoto(omega.size, p = 20)
+# graphs.graph_orders()
+# graphs.graph_shannon_entropy(False)
+# graphs.graph_density_shannon_entropy(omega.size, 50)
 
