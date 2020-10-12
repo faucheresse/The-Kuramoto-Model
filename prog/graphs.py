@@ -2,6 +2,7 @@ import numpy as np
 from kuramoto import *
 from settings import *
 
+
 class Graphs:
     """docstring for Graphs"""
 
@@ -57,7 +58,7 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
         ind = np.arange(N)
-        
+
         plt.contourf(t, ind, theta)
 
         plt.xlabel("t")
@@ -82,7 +83,7 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         i = np.arange(len(t))
-        title=r"$i \longmapsto S_i^{q, n}(t)$"
+        title = r"$i \longmapsto S_i^{q, n}(t)$"
         xlabel = r"$i$"
         ylabel = r"$S$"
         self.graphs(i, S[:, 0], title, xlabel, ylabel, pol)
@@ -91,11 +92,10 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         ind = np.arange(len(t))
-        
+
         plt.contourf(t, ind, S)
-        
+
         plt.xlabel("t")
         plt.ylabel("i")
         plt.colorbar()
         plt.show()
-        

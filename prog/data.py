@@ -2,6 +2,7 @@ import numpy as np
 from random import uniform
 from settings import *
 
+
 class Data:
     """docstring for Data"""
 
@@ -16,12 +17,9 @@ class Data:
         np.savetxt(FILE['omega'], omega)
         np.savetxt(FILE['theta0'], theta0)
 
-
         with open(theta0File, "w+", encoding='utf-8') as f:
             for i in range(N):
                 f.write(str(uniform(0, 2 * np.pi)) + "\n")
 
-
     def write_on_file(self, file, wywtw):
         np.savetxt(file, wywtw)
-
