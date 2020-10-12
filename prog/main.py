@@ -45,8 +45,9 @@ if newData:
 
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
+K = np.loadtxt(FILE['K'])
 
-kuramoto = KuramotoModel(omega, 1)
+kuramoto = KuramotoModel(omega, K)
 graphs = Graphs()
 f = kuramoto
 # integrator = "Euler"

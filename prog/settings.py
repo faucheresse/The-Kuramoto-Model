@@ -5,4 +5,5 @@ FILE = {'omega' : "./parameters/omega.dat",
         't' : "./parameters/t.dat",
         'R' : "./parameters/R.dat",
         'phi' : "./parameters/phi.dat",
-        'S' : "./parameters/S.dat"}
+        'S' : "./parameters/S.dat",
+        'K' : "./parameters/K.dat"}
