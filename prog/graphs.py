@@ -54,7 +54,7 @@ class Graphs:
         ax.grid(True)
         plt.show()
 
-    def graph_density_kuramoto(self, N, p):
+    def graph_density_kuramoto(self, N):
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
         ind = np.arange(N)
@@ -88,7 +88,7 @@ class Graphs:
         ylabel = r"$S$"
         self.graphs(i, S[:, 0], title, xlabel, ylabel, pol)
 
-    def graph_density_shannon_entropy(self, N, p):
+    def graph_density_shannon_entropy(self, N):
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         ind = np.arange(len(t))
