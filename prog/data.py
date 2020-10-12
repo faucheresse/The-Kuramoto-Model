@@ -2,6 +2,7 @@ import numpy as np
 from random import uniform, randint
 from settings import *
 
+
 class Data:
     """docstring for Data"""
 
@@ -29,7 +30,5 @@ class Data:
         np.savetxt(FILE['alpha'], alpha)
         np.savetxt(FILE['tau'], tau)
 
-
     def write_on_file(self, file, wywtw):
         np.savetxt(file, wywtw)
-

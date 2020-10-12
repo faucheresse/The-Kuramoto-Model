@@ -1,5 +1,5 @@
-import numpy as np 
-import matplotlib.pyplot as plt 
+import numpy as np
+import matplotlib.pyplot as plt
 from kuramoto import *
 from graphs import *
 from data import *
@@ -34,7 +34,7 @@ Test d'intégration pour la fonction exponentielle
 # plt.grid()
 # plt.show()
 
-#------------------------------------------------------------#
+# ------------------------------------------------------------
 
 data = Data()
 newData = False
@@ -65,7 +65,7 @@ t = np.loadtxt(FILE['t'])
 # kuramoto.orders(theta)
 # kuramoto.shannon_entropies(theta)
 
-#-----graphs-----#
+# -----graphs-----
 
 # graphs.graph_kuramoto(theta[0], False, integrator)
 # graphs.graph_kuramoto(theta[0], True, integrator)
@@ -75,4 +75,3 @@ t = np.loadtxt(FILE['t'])
 # graphs.graph_orders()
 # graphs.graph_shannon_entropy(False)
 graphs.graph_density_shannon_entropy(omega.size)
-

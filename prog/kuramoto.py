@@ -1,8 +1,9 @@
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
 from integrator import *
 from data import *
 from settings import *
+
 
 class KuramotoModel:
 
@@ -23,11 +24,10 @@ class KuramotoModel:
 
         for i in range(self.N):
             self.d_theta[i, :] = self.omega[i] + (1 / self.N)\
-                        * sum(self.K[i, j] * np.sin(theta[j -\
-                              int(self.tau[i, j]), :] - theta[i, :]\
-                              + self.alpha[i, j]) + self.eta[i, j] for j in\
+                        * sum(self.K[i, j] * np.sin(theta[j -
+                              int(self.tau[i, j]), :] - theta[i, :]
+                              + self.alpha[i, j]) + self.eta[i, j] for j in
                               range(i - self.n, i + self.n))
-        
 
         return self.d_theta
 
@@ -42,14 +42,14 @@ class KuramotoModel:
             theta = self.integr.euler(self, theta0, t)
 
         self.data.write_on_file(FILE['t'], t)
-        self.data.write_on_file(FILE['theta'], theta%(2 * np.pi))
+        self.data.write_on_file(FILE['theta'], theta % (2 * np.pi))
 
     def orders(self, theta):
         t = np.loadtxt(FILE['t'])
         z = np.zeros(self.N)
         R, phi = np.zeros(len(t)), np.zeros(len(t))
         for _t in range(len(t)):
-            z = sum(np.exp(1j * theta[i][_t])\
+            z = sum(np.exp(1j * theta[i][_t])
                     for i in range(self.N)) / self.N
 
             R[_t] = np.absolute(z)
@@ -61,11 +61,10 @@ class KuramotoModel:
     def shannon_entropy(self, theta):
         t = np.loadtxt(FILE['t'])
         n = self.n
-        q = len(t) # en attendant
+        q = len(t)  # en attendant
         p = np.zeros(len(t))
         S = np.zeros(len(t))
         count = 0
-
 
         for i in range(len(t)):
             count += 1
@@ -74,8 +73,8 @@ class KuramotoModel:
             for a in range(q):
                 inf = (2 * np.pi * a) / q
                 sup = (2 * np.pi * (a + 1)) / q
-                p[a] = sum(theta[k - 1] for k in range(ib, ia)\
-                        if inf <= theta[k - 1] <  sup) / (2 * n + 1)
+                p[a] = sum(theta[k - 1] for k in range(ib, ia)
+                           if inf <= theta[k - 1] < sup) / (2 * n + 1)
 
             S[i] = -sum(p[a] * np.log(p[a]) for a in range(q) if p[a] != 0)
             print(count)
@@ -89,6 +88,3 @@ class KuramotoModel:
             S[:, i] = self.shannon_entropy(theta[:, i])
 
         self.data.write_on_file(FILE['S'], S)
-
-
-
