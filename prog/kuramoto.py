@@ -6,7 +6,7 @@ from settings import *
 
 class KuramotoModel:
 
-    def __init__(self, omega, K, eta, alpha):
+    def __init__(self, omega, K, eta, alpha, tau):
 
         self.N = omega.size
         self.omega = omega
@@ -15,6 +15,7 @@ class KuramotoModel:
         self.eta = eta
         self.K = K
         self.alpha = alpha
+        self.tau = tau
         self.n = 1
 
     def __call__(self, theta, t):
@@ -22,9 +23,10 @@ class KuramotoModel:
 
         for i in range(self.N):
             self.d_theta[i, :] = self.omega[i] + (1 / self.N)\
-                        * sum(self.K[i, j] * np.sin(theta[j, :] - 
-                            theta[i, :]) for j in range(i - self.n,
-                                                         i + self.n))
+                        * sum(self.K[i, j] * np.sin(theta[j -\
+                              int(self.tau[i, j]), :] - theta[i, :]\
+                              + self.alpha[i, j]) + self.eta[i, j] for j in\
+                              range(i - self.n, i + self.n))
         
 
         return self.d_theta

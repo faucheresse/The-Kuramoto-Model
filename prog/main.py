@@ -37,7 +37,7 @@ Test d'intégration pour la fonction exponentielle
 #------------------------------------------------------------#
 
 data = Data()
-newData = True
+newData = False
 N = 100
 
 if newData:
@@ -48,21 +48,22 @@ theta0 = np.loadtxt(FILE['theta0'])
 K = np.loadtxt(FILE['K'])
 eta = np.loadtxt(FILE['eta'])
 alpha = np.loadtxt(FILE['alpha'])
+tau = np.loadtxt(FILE['tau'])
 
-kuramoto = KuramotoModel(omega, K, eta, alpha)
+kuramoto = KuramotoModel(omega, K, eta, alpha, tau)
 graphs = Graphs()
 f = kuramoto
 # integrator = "Euler"
 # integrator = "RK2"
 integrator = "RK4"
 tf = 100
-kuramoto.integrate(f, theta0, tf, integrator)
+# kuramoto.integrate(f, theta0, tf, integrator)
 
 theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
 
-# kuramoto.orders(theta, t)
-# kuramoto.shannon_entropies(theta, t)
+# kuramoto.orders(theta)
+# kuramoto.shannon_entropies(theta)
 
 #-----graphs-----#
 

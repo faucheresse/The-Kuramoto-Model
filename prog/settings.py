@@ -8,4 +8,5 @@ FILE = {'omega' : "./parameters/omega.dat",
         'S' : "./parameters/S.dat",
         'K' : "./parameters/K.dat",
         'eta' : "./parameters/eta.dat",
-        'alpha' : "./parameters/alpha.dat"}
+        'alpha' : "./parameters/alpha.dat",
+        'tau' : "./parameters/tau.dat"}
