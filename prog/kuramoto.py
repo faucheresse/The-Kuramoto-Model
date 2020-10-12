@@ -6,28 +6,22 @@ from settings import *
 
 class KuramotoModel:
 
-    def __init__(self, omega, kappa):
+    def __init__(self, omega, K):
 
         self.N = omega.size
         self.omega = omega
         self.integr = Integration()
         self.data = Data()
 
-        self.kappa = kappa
+        self.K = K
         self.n = 1
 
     def __call__(self, theta, t):
         self.d_theta = np.zeros((self.N, len(t)))
-        K = np.zeros((self.N, self.N))
-        for i in range(len(K)):
-            i = i % self.N
-            for j in range(len(K)):
-                if abs(i-j) <= self.n:
-                    K[i, j] = self.kappa
 
         for i in range(self.N):
             self.d_theta[i, :] = self.omega[i] + (1 / self.N)\
-                        * sum(K[i, j] * np.sin(theta[j, :] - theta[i, :])\
+                        * sum(self.K[i, j] * np.sin(theta[j, :] - theta[i, :])\
                                 for j in range(i - self.n, 1 + self.n))
         
 
