@@ -28,7 +28,7 @@ class KuramotoModel:
         for i in range(self.N):
             self.d_theta[i, :] = self.omega[i] + (1 / self.N)\
                         * sum(K[i, j] * np.sin(theta[j, :] - theta[i, :])\
-                                for j in range(i - self.n, 1 + self.n))
+                                for j in range(i - self.n, i + self.n))
         
 
         return self.d_theta
