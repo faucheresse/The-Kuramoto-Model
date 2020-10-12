@@ -11,7 +11,7 @@ class Integration:
 
         for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
-            x[:][n + 1] = x[:][n] + f(x, t + deltaT / 2)[:][n] * deltaT
+            x[:, n + 1] = x[:, n] + f(x, t + deltaT / 2)[:, n] * deltaT
 
         return x
 
@@ -23,7 +23,7 @@ class Integration:
         for n in range(len(t)-1):
             deltaT = t[n + 1] - t[n]
             step = x[:] + f(x, t + deltaT / 2)[:] * deltaT / 2
-            x[:][n + 1] = x[:][n] + f(step, t + deltaT / 2)[:][n] * deltaT
+            x[:, n + 1] = x[:, n] + f(step, t + deltaT / 2)[:, n] * deltaT
 
 
         return x

@@ -56,14 +56,13 @@ class Graphs:
     def graph_density_kuramoto(self, N, p):
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
-        ind = np.arange(len(t))
-        for i in range(0, N, p):
-            plt.plot(ind, theta[i, :], label="Kuramoto ({0})".format(i))
+        ind = np.arange(N)
+        
+        plt.contourf(t, ind, theta)
 
-        plt.xlabel(r"$i$")
-        plt.ylabel(r"$S$")
-        plt.legend()
-        plt.grid()
+        plt.xlabel("t")
+        plt.ylabel("i")
+        plt.colorbar()
         plt.show()
 
     def graph_orders(self):
@@ -92,12 +91,11 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         ind = np.arange(len(t))
-        for i in range(0, N, p):
-            plt.plot(ind, S[:, i])
-
-        plt.xlabel(r"$i$")
-        plt.ylabel(r"$S$")
-        plt.legend()
-        plt.grid()
+        
+        plt.contourf(t, ind, S)
+        
+        plt.xlabel("t")
+        plt.ylabel("i")
+        plt.colorbar()
         plt.show()
         
