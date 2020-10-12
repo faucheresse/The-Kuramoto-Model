@@ -59,7 +59,7 @@ theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
 
 # kuramoto.orders(theta)
-# kuramoto.shannon_entropies(theta, t)
+kuramoto.shannon_entropies(theta)
 
 #-----graphs-----#
 
