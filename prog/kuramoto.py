@@ -88,7 +88,7 @@ class KuramotoModel:
         t = np.loadtxt(FILE['t'])
         S = np.zeros((self.N, len(t)))
         for i in range(self.N):
-            S[:, i] = self.shannon_entropy(theta[:, i], t)
+            S[:, i] = self.shannon_entropy(theta[:, i])
 
         self.data.write_on_file(FILE['S'], S)
 
