@@ -69,6 +69,6 @@ t = np.loadtxt(FILE['t'])
 # graphs.all_pol_graph_kuramoto(theta, 50)
 # graphs.graph_density_kuramoto(omega.size)
 # graphs.graph_orders()
-graphs.graph_shannon_entropy(False)
-# graphs.graph_density_shannon_entropy(omega.size)
+# graphs.graph_shannon_entropy(False)
+graphs.graph_density_shannon_entropy(omega.size)
 
