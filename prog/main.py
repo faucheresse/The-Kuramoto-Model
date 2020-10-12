@@ -63,7 +63,7 @@ theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
 
 # kuramoto.orders(theta)
-kuramoto.shannon_entropies(theta)
+# kuramoto.shannon_entropies(theta)
 
 #-----graphs-----#
 
@@ -71,8 +71,8 @@ kuramoto.shannon_entropies(theta)
 # graphs.graph_kuramoto(theta[0], True, integrator)
 # graphs.all_graph_kuramoto(theta)
 # graphs.all_pol_graph_kuramoto(theta, 50)
-# graphs.graph_density_kuramoto(omega.size, p = 20)
+# graphs.graph_density_kuramoto(omega.size)
 # graphs.graph_orders()
 # graphs.graph_shannon_entropy(False)
-# graphs.graph_density_shannon_entropy(omega.size, 50)
+graphs.graph_density_shannon_entropy(omega.size)
 

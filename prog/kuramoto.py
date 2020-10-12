@@ -74,8 +74,8 @@ class KuramotoModel:
             for a in range(q):
                 inf = (2 * np.pi * a) / q
                 sup = (2 * np.pi * (a + 1)) / q
-                p[a] = sum(theta[k-1] for k in range(ib, ia)\
-                        if inf <= theta[k-1] <  sup) / (2 * n + 1)
+                p[a] = sum(theta[k - 1] for k in range(ib, ia)\
+                        if inf <= theta[k - 1] <  sup) / (2 * n + 1)
 
             S[i] = -sum(p[a] * np.log(p[a]) for a in range(q) if p[a] != 0)
             print(count)
