@@ -38,10 +38,11 @@ Test d'intégration pour la fonction exponentielle
 
 data = Data()
 newData = False
-N = 100
+N = 12
+M = 3
 
 if newData:
-    data.init_data(N)
+    data.init_data(N, M)
 
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
@@ -67,11 +68,11 @@ t = np.loadtxt(FILE['t'])
 
 # -----graphs-----
 
-# graphs.graph_kuramoto(theta[0], False, integrator)
-# graphs.graph_kuramoto(theta[0], True, integrator)
-# graphs.all_graph_kuramoto(theta)
-# graphs.all_pol_graph_kuramoto(theta, 50)
-# graphs.graph_density_kuramoto(omega.size)
-# graphs.graph_orders()
-# graphs.graph_shannon_entropy(False)
+graphs.graph_kuramoto(theta[0], False, integrator)
+graphs.graph_kuramoto(theta[0], True, integrator)
+graphs.all_graph_kuramoto(theta)
+graphs.all_pol_graph_kuramoto(theta, 1)
+graphs.graph_density_kuramoto(omega.size)
+graphs.graph_orders()
+graphs.graph_shannon_entropy(False)
 graphs.graph_density_shannon_entropy(omega.size)
