@@ -7,7 +7,7 @@ from settings import *
 
 class KuramotoModel:
 
-    def __init__(self, omega, K, eta, alpha, tau):
+    def __init__(self, omega, M, K, eta, alpha, tau):
 
         self.N = omega.size
         self.omega = omega
@@ -17,7 +17,7 @@ class KuramotoModel:
         self.K = K
         self.alpha = alpha
         self.tau = tau
-        self.n = 1
+        self.n = M
 
     def __call__(self, theta, t):
         self.d_theta = np.zeros((self.N, len(t)))
@@ -27,9 +27,17 @@ class KuramotoModel:
                         * sum(self.K[i, j] * np.sin(theta[j -
                               int(self.tau[i, j]), :] - theta[i, :]
                               + self.alpha[i, j]) + self.eta[i, j] for j in
-                              range(i - self.n, i + self.n))
+                              range(i - self.n, (i + self.n) % self.N))
 
         return self.d_theta
+
+    def coordinates_to_label(self, r, c):
+        return r + c * Nr
+
+    def label_to_coordinates(self, i):
+        r = i % Nr
+        c = (i - r) // Nr
+        return r, c
 
     def integrate(self, f, theta0, tf=100, integrator="RK4"):
         t = np.linspace(0, tf, 1000)

@@ -1,3 +1,8 @@
+Nr = 3
+Nc = 4
+N = Nr * Nc
+M = 3
+
 FILE = {'omega': "./parameters/omega.dat",
         'theta0': "./parameters/theta0.dat",
         'theta': "./parameters/theta.dat",

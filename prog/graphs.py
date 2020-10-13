@@ -95,7 +95,7 @@ class Graphs:
 
         plt.contourf(ind, t, S)
 
-        plt.xlabel("t")
-        plt.ylabel("i")
+        plt.xlabel("i")
+        plt.ylabel("t")
         plt.colorbar()
         plt.show()

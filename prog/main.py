@@ -38,11 +38,9 @@ Test d'intégration pour la fonction exponentielle
 
 data = Data()
 newData = False
-N = 12
-M = 3
 
 if newData:
-    data.init_data(N, M)
+    data.init_data()
 
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
@@ -51,7 +49,7 @@ eta = np.loadtxt(FILE['eta'])
 alpha = np.loadtxt(FILE['alpha'])
 tau = np.loadtxt(FILE['tau'])
 
-kuramoto = KuramotoModel(omega, K, eta, alpha, tau)
+kuramoto = KuramotoModel(omega, M, K, eta, alpha, tau)
 graphs = Graphs()
 f = kuramoto
 # integrator = "Euler"
@@ -63,16 +61,19 @@ tf = 100
 theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
 
+print(kuramoto.coordinates_to_label(2, 3))
+print(kuramoto.label_to_coordinates(11))
+
 # kuramoto.orders(theta)
 # kuramoto.shannon_entropies(theta)
 
 # -----graphs-----
 
-graphs.graph_kuramoto(theta[0], False, integrator)
-graphs.graph_kuramoto(theta[0], True, integrator)
-graphs.all_graph_kuramoto(theta)
-graphs.all_pol_graph_kuramoto(theta, 1)
-graphs.graph_density_kuramoto(omega.size)
-graphs.graph_orders()
-graphs.graph_shannon_entropy(False)
-graphs.graph_density_shannon_entropy(omega.size)
+# graphs.graph_kuramoto(theta[0], False, integrator)
+# graphs.graph_kuramoto(theta[0], True, integrator)
+# graphs.all_graph_kuramoto(theta)
+# graphs.all_pol_graph_kuramoto(theta, 1)
+# graphs.graph_density_kuramoto(omega.size)
+# graphs.graph_orders()
+# graphs.graph_shannon_entropy(False)
+# graphs.graph_density_shannon_entropy(omega.size)
