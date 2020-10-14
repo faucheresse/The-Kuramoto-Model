@@ -96,3 +96,12 @@ class KuramotoModel:
             S[:, i] = self.shannon_entropy(theta[:, i])
 
         self.data.write_on_file(FILE['S'], S)
+
+    def connectivity(self, K, kmin=0):
+        edges = []
+        for i in range(K.shape[0]):
+            for j in range(K.shape[1]):
+                if K[i, j] > kmin:
+                    edges.append((i, j))
+
+        return edges

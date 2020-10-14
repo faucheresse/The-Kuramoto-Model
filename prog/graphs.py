@@ -1,4 +1,5 @@
 import numpy as np
+import networkx as nx
 from kuramoto import *
 from settings import *
 
@@ -27,6 +28,7 @@ class Graphs:
             plt.show()
 
     def graph_kuramoto(self, theta, pol, integrator="RK4"):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         title = "Kuramoto integrate by {0}'s method".format(integrator)
         xlabel = r"$t$"
@@ -34,6 +36,7 @@ class Graphs:
         self.graphs(t, theta, title, xlabel, ylabel, pol)
 
     def all_graph_kuramoto(self, theta):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         for i in range(len(theta)):
             plt.plot(t, theta[i], label="Kuramoto ({0})".format(i))
@@ -44,6 +47,7 @@ class Graphs:
         plt.show()
 
     def all_pol_graph_kuramoto(self, theta, p):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         ax = plt.subplot(111, projection='polar')
         for i in range(0, len(theta), p):
@@ -55,6 +59,7 @@ class Graphs:
         plt.show()
 
     def graph_density_kuramoto(self, N):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
         ind = np.arange(N)
@@ -67,6 +72,7 @@ class Graphs:
         plt.show()
 
     def graph_orders(self):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         R = np.loadtxt(FILE['R'])
         phi = np.loadtxt(FILE['phi'])
@@ -80,6 +86,7 @@ class Graphs:
         plt.show()
 
     def graph_shannon_entropy(self, pol):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         i = np.arange(len(t))
@@ -89,6 +96,7 @@ class Graphs:
         self.graphs(i, S[:, 0], title, xlabel, ylabel, pol)
 
     def graph_density_shannon_entropy(self, N):
+        plt.figure()
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
         ind = np.arange(N)
@@ -98,4 +106,11 @@ class Graphs:
         plt.xlabel("i")
         plt.ylabel("t")
         plt.colorbar()
+        plt.show()
+
+    def graph_connectivity(self, edges):
+        plt.figure()
+        G = nx.Graph()
+        G.add_edges_from(edges)
+        nx.draw_networkx(G, with_labels=True)
         plt.show()

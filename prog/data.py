@@ -23,6 +23,8 @@ class Data:
             self.chimera_states()
         elif states == "inverse":
             self.inverse_states()
+        elif states == "josephson":
+            self.josephson_matrice()
 
         np.savetxt(FILE['omega'], self.omega)
         np.savetxt(FILE['theta0'], self.theta0)
@@ -67,3 +69,24 @@ class Data:
                 self.eta[i, j] = uniform(0, 0.5)
                 self.alpha[i, j] = 1.46
                 self.tau[i, j] = abs(i - j)
+
+    def josephson_matrice(self):
+        for i in range(self.N):
+            self.omega[i] = uniform(0, 3)
+            self.theta0[i] = uniform(0, 2 * np.pi)
+            for j in range(N):
+                if abs(i - j) <= self.M:
+                    self.K[i, j] = N * r * self.omega[i] *\
+                                   (2 * np.exp(1) / hbar * r * Ib -
+                                    self.omega[i] /
+                                    np.sqrt((L * self.omega[i]**2
+                                             - 1 / C)**2 + self.omega[i]**2 *
+                                    (R + N * r)**2))
+                self.eta[i, j] = uniform(0, 0.5)
+                self.alpha[i, j] = np.arccos((L * self.omega[i]**2
+                                             - 1 / C) /
+                                             np.sqrt((L * self.omega[i]**2
+                                                     - 1 / C)**2
+                                                     + self.omega[i]**2 *
+                                             (R + N * r)**2))
+                self.tau[i, j] = randint(0, self.N // 2)
