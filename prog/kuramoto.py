@@ -12,7 +12,7 @@ class KuramotoModel:
         self.N = omega.size
         self.omega = omega
         self.integr = Integration()
-        self.data = Data()
+        self.data = Data(N, M)
         self.eta = eta
         self.K = K
         self.alpha = alpha

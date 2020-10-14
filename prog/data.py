@@ -5,42 +5,65 @@ from settings import *
 
 class Data:
     """docstring for Data"""
+    def __init__(self, N, M):
+        self.omega = np.zeros(N)
+        self.theta0 = np.zeros(N)
+        self.K = np.zeros((N, N))
+        self.eta = np.zeros((N, N))
+        self.alpha = np.zeros((N, N))
+        self.tau = np.zeros((N, N))
+        self.M = M
+        self.N = N
 
-    def init_data(self, N, M):
-        omega = np.zeros(N)
-        theta0 = np.zeros(N)
-        K = np.zeros((N, N))
-        eta = np.zeros((N, N))
-        alpha = np.zeros((N, N))
-        tau = np.zeros((N, N))
+    def init_data(self, states="random"):
 
-        # for i in range(N):
-        #     omega[i] = uniform(0, 3)
-        #     theta0[i] = uniform(0, 2 * np.pi)
-        #     for j in range(N):
-        #         K[i, j] = uniform(0, 2)
-        #         eta[i, j] = uniform(0, 0.5)
-        #         alpha[i, j] = uniform(0, 2 * np.pi)
-        #         tau[i, j] = randint(0, N // 2)
+        if states == "random":
+            self.random_states()
+        elif states == "chimera":
+            self.chimera_states()
+        elif states == "inverse":
+            self.inverse_states()
 
-# -----------chimère----------
-
-        for i in range(N):
-            omega[i] = 0.2 + i * 0.4 * np.sin(i**2 * np.pi / (2 * N**2))
-            theta0[i] = uniform(0, 2 * np.pi)
-            for j in range(N):
-                if abs(i-j) <= M:
-                    K[i, j] = 1
-                eta[i, j] = uniform(0, 0.5)
-                alpha[i, j] = 1.46
-                tau[i, j] = randint(0, N // 2)
-
-        np.savetxt(FILE['omega'], omega)
-        np.savetxt(FILE['theta0'], theta0)
-        np.savetxt(FILE['K'], K)
-        np.savetxt(FILE['eta'], eta)
-        np.savetxt(FILE['alpha'], alpha)
-        np.savetxt(FILE['tau'], tau)
+        np.savetxt(FILE['omega'], self.omega)
+        np.savetxt(FILE['theta0'], self.theta0)
+        np.savetxt(FILE['K'], self.K)
+        np.savetxt(FILE['eta'], self.eta)
+        np.savetxt(FILE['alpha'], self.alpha)
+        np.savetxt(FILE['tau'], self.tau)
 
     def write_on_file(self, file, wywtw):
         np.savetxt(file, wywtw)
+
+    def random_states(self):
+        for i in range(self.N):
+            self.omega[i] = uniform(0, 3)
+            self.theta0[i] = uniform(0, 2 * np.pi)
+            for j in range(N):
+                self.K[i, j] = uniform(0, 2)
+                self.eta[i, j] = uniform(0, 0.5)
+                self.alpha[i, j] = uniform(0, 2 * np.pi)
+                self.tau[i, j] = randint(0, self.N // 2)
+
+    def chimera_states(self):
+        for i in range(self.N):
+            self.omega[i] = 0.2 + i * 0.4 * np.sin(i**2 * np.pi / (2 * N**2))
+            self.theta0[i] = uniform(0, 2 * np.pi)
+            for j in range(N):
+                if abs(i - j) <= self.M:
+                    self.K[i, j] = 1
+                self.eta[i, j] = uniform(0, 0.5)
+                self.alpha[i, j] = 1.46
+                self.tau[i, j] = randint(0, self.N // 2)
+
+    def inverse_states(self):
+        for i in range(self.N):
+            self.omega[i] = 0
+            self.theta0[i] = uniform(0, 2 * np.pi)
+            for j in range(N):
+                if abs(i - j) <= self.M and abs(i - j) != 0:
+                    self.K[i, j] = 1 / abs(i - j)
+                else:
+                    self.K[i, j] = 1e20
+                self.eta[i, j] = uniform(0, 0.5)
+                self.alpha[i, j] = 1.46
+                self.tau[i, j] = abs(i - j)
