@@ -7,6 +7,9 @@ from settings import *
 class Graphs:
     """docstring for Graphs"""
 
+    def __init__(self, kuramoto):
+        self.kuramoto = kuramoto
+
     def graphs(self, x, y, title, xlabel, ylabel, pol):
         if not pol:
             ax = plt.subplot(111)
@@ -34,29 +37,6 @@ class Graphs:
         xlabel = r"$t$"
         ylabel = r"$\theta$"
         self.graphs(t, theta, title, xlabel, ylabel, pol)
-
-    def all_graph_kuramoto(self, theta):
-        plt.figure()
-        t = np.loadtxt(FILE['t'])
-        for i in range(len(theta)):
-            plt.plot(t, theta[i], label="Kuramoto ({0})".format(i))
-        plt.xlabel(r"$t$")
-        plt.ylabel(r"$\theta$")
-        plt.title("Kuramoto")
-        plt.grid()
-        plt.show()
-
-    def all_pol_graph_kuramoto(self, theta, p):
-        plt.figure()
-        t = np.loadtxt(FILE['t'])
-        ax = plt.subplot(111, projection='polar')
-        for i in range(0, len(theta), p):
-            ax.plot(theta[i], t, label="Kuramoto ({0})".format(i))
-        ax.set_xlabel(r"$t$")
-        ax.set_ylabel(r"$\theta$")
-        ax.set_title("Kuramoto")
-        ax.grid(True)
-        plt.show()
 
     def graph_density_kuramoto(self, N):
         plt.figure()
@@ -108,7 +88,9 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_connectivity(self, edges):
+    def graph_connectivity(self, kmin=0):
+        K = np.loadtxt(FILE['K'])
+        edges = self.kuramoto.connectivity(K, kmin)
         plt.figure()
         G = nx.Graph()
         G.add_edges_from(edges)

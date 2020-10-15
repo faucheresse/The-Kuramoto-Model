@@ -27,7 +27,8 @@ class KuramotoModel:
                         * sum(self.K[i, j] * np.sin(theta[j -
                               int(self.tau[i, j]), :] - theta[i, :]
                               + self.alpha[i, j]) + self.eta[i, j] for j in
-                              range(i - self.n, (i + self.n) % self.N))
+                              range((i - self.n) % self.N,
+                                    (i + self.n) % self.N))
 
         return self.d_theta
 
@@ -40,7 +41,7 @@ class KuramotoModel:
         return r, c
 
     def integrate(self, f, theta0, tf=100, integrator="RK4"):
-        t = np.linspace(0, tf, 1000)
+        t = np.linspace(0, tf, 10 * tf)
 
         if integrator == "RK4":
             theta = self.integr.RK4(self, theta0, t)
@@ -97,7 +98,7 @@ class KuramotoModel:
 
         self.data.write_on_file(FILE['S'], S)
 
-    def connectivity(self, K, kmin=0):
+    def connectivity(self, K, kmin):
         edges = []
         for i in range(K.shape[0]):
             for j in range(K.shape[1]):

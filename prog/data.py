@@ -41,7 +41,7 @@ class Data:
             self.omega[i] = uniform(0, 3)
             self.theta0[i] = uniform(0, 2 * np.pi)
             for j in range(N):
-                self.K[i, j] = uniform(0, 2)
+                self.K[i, j] = uniform(0, 1e10)
                 self.eta[i, j] = uniform(0, 0.5)
                 self.alpha[i, j] = uniform(0, 2 * np.pi)
                 self.tau[i, j] = randint(0, self.N // 2)
@@ -52,7 +52,7 @@ class Data:
             self.theta0[i] = uniform(0, 2 * np.pi)
             for j in range(N):
                 if abs(i - j) <= self.M:
-                    self.K[i, j] = 1
+                    self.K[i, j] = uniform(0, 1e10)
                 self.eta[i, j] = uniform(0, 0.5)
                 self.alpha[i, j] = 1.46
                 self.tau[i, j] = randint(0, self.N // 2)

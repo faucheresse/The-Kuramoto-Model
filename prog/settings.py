@@ -1,7 +1,7 @@
-Nr = 10
-Nc = 10
+Nr = 3
+Nc = 4
 N = Nr * Nc
-M = 3
+M = 60
 
 hbar = 6.626e-34
 

@@ -20,18 +20,16 @@ alpha = np.loadtxt(FILE['alpha'])
 tau = np.loadtxt(FILE['tau'])
 
 kuramoto = KuramotoModel(omega, M, K, eta, alpha, tau)
-graphs = Graphs()
+graphs = Graphs(kuramoto)
 f = kuramoto
 # integrator = "Euler"
 # integrator = "RK2"
 integrator = "RK4"
-tf = 100
+tf = 200
 # kuramoto.integrate(f, theta0, tf, integrator)
 
 theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
-
-edges = kuramoto.connectivity(K)
 
 # kuramoto.orders(theta)
 # kuramoto.shannon_entropies(theta)
@@ -40,10 +38,8 @@ edges = kuramoto.connectivity(K)
 
 # graphs.graph_kuramoto(theta[0], False, integrator)
 # graphs.graph_kuramoto(theta[0], True, integrator)
-# graphs.all_graph_kuramoto(theta)
-# graphs.all_pol_graph_kuramoto(theta, 1)
 # graphs.graph_density_kuramoto(omega.size)
 # graphs.graph_orders()
 # graphs.graph_shannon_entropy(False)
 # graphs.graph_density_shannon_entropy(omega.size)
-graphs.graph_connectivity(edges)
+# graphs.graph_connectivity()
