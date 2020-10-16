@@ -7,10 +7,10 @@ from settings import *
 
 
 data = Data(N, M)
-newData = False
+newData = True
 
 if newData:
-    data.init_data("josephson")
+    data.init_data("chimera")
 
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
@@ -31,15 +31,15 @@ kuramoto.integrate(f, theta0, tf, integrator)
 theta = np.loadtxt(FILE['theta'])
 t = np.loadtxt(FILE['t'])
 
-# kuramoto.orders(theta)
-# kuramoto.shannon_entropies(theta)
+kuramoto.orders(theta)
+kuramoto.shannon_entropies(theta)
 
 # -----graphs-----
 
-graphs.graph_kuramoto(theta[0], False, integrator)
+# graphs.graph_kuramoto(theta[0], False, integrator)
 # graphs.graph_kuramoto(theta[0], True, integrator)
 # graphs.graph_density_kuramoto(omega.size)
 # graphs.graph_orders()
 # graphs.graph_shannon_entropy(False)
-# graphs.graph_density_shannon_entropy(omega.size)
+graphs.graph_density_shannon_entropy(omega.size)
 # graphs.graph_connectivity()

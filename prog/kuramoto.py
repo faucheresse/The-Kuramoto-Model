@@ -41,7 +41,7 @@ class KuramotoModel:
         return r, c
 
     def integrate(self, f, theta0, tf=100, integrator="RK4"):
-        t = np.linspace(0, tf, 10 * tf)
+        t = np.linspace(0, tf, 1000)
 
         if integrator == "RK4":
             theta = self.integr.RK4(self, theta0, t)
@@ -70,7 +70,7 @@ class KuramotoModel:
     def shannon_entropy(self, theta, i):
         t = np.loadtxt(FILE['t'])
         n = self.n
-        q = len(t)
+        q = 3
         p = np.zeros(q)
         S = np.zeros(len(t))
         count = 0
@@ -80,15 +80,15 @@ class KuramotoModel:
             r, c = self.label_to_coordinates(i)
             rb, ra = (r - n), (r + n) % Nr
             cb, ca = (c - n), (c + n) % Nc
-            for _c in range(cb, ca):
-                for _r in range(rb, ra):
-                    norm = np.sqrt((_r - r)**2 + (_c - c)**2) <= n
-                    j = self.coordinates_to_label(_r, _c) % self.N
-                    for a in range(q):
-                        inf = (2 * np.pi * a) / q
-                        sup = (2 * np.pi * (a + 1)) / q
+            for a in range(q):
+                inf = (2 * np.pi * a) / q
+                sup = (2 * np.pi * (a + 1)) / q
+                for _c in range(cb, ca):
+                    for _r in range(rb, ra):
+                        norm = np.sqrt((_r - r)**2 + (_c - c)**2) <= n
+                        j = self.coordinates_to_label(_r, _c) % self.N
                         if norm and (inf <= theta[j - 1] < sup):
-                            p[a] = sum(theta[j - 1] / ((2 * n + 1)**2 - 4))
+                            p[a] += theta[j - 1] / ((2 * n + 1)**2 - 4)
 
             S[_t] = -sum(p[a] * np.log(p[a]) for a in range(q) if p[a] != 0)
             print(count)
