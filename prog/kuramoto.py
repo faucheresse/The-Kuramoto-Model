@@ -67,25 +67,30 @@ class KuramotoModel:
         self.data.write_on_file(FILE['R'], R)
         self.data.write_on_file(FILE['phi'], phi)
 
-    def shannon_entropy(self, theta):
+    def shannon_entropy(self, theta, i):
         t = np.loadtxt(FILE['t'])
         n = self.n
-        q = len(t)  # en attendant
-        p = np.zeros(len(t))
+        q = len(t)
+        p = np.zeros(q)
         S = np.zeros(len(t))
         count = 0
 
-        for i in range(len(t)):
+        for _t in range(len(t)):
             count += 1
-            ib = (i - n) % self.N
-            ia = (i + n) % self.N
-            for a in range(q):
-                inf = (2 * np.pi * a) / q
-                sup = (2 * np.pi * (a + 1)) / q
-                p[a] = sum(theta[k - 1] for k in range(ib, ia)
-                           if inf <= theta[k - 1] < sup) / (2 * n + 1)
+            r, c = self.label_to_coordinates(i)
+            rb, ra = (r - n), (r + n) % Nr
+            cb, ca = (c - n), (c + n) % Nc
+            for _c in range(cb, ca):
+                for _r in range(rb, ra):
+                    norm = np.sqrt((_r - r)**2 + (_c - c)**2) <= n
+                    j = self.coordinates_to_label(_r, _c) % self.N
+                    for a in range(q):
+                        inf = (2 * np.pi * a) / q
+                        sup = (2 * np.pi * (a + 1)) / q
+                        if norm and (inf <= theta[j - 1] < sup):
+                            p[a] = sum(theta[j - 1] / ((2 * n + 1)**2 - 4))
 
-            S[i] = -sum(p[a] * np.log(p[a]) for a in range(q) if p[a] != 0)
+            S[_t] = -sum(p[a] * np.log(p[a]) for a in range(q) if p[a] != 0)
             print(count)
 
         return S
@@ -94,7 +99,7 @@ class KuramotoModel:
         t = np.loadtxt(FILE['t'])
         S = np.zeros((len(t), self.N))
         for i in range(self.N):
-            S[:, i] = self.shannon_entropy(theta[:, i])
+            S[:, i] = self.shannon_entropy(theta[i, :], i)
 
         self.data.write_on_file(FILE['S'], S)
 
