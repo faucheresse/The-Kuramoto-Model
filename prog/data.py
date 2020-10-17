@@ -48,7 +48,7 @@ class Data:
 
     def chimera_states(self):
         for i in range(self.N):
-            self.omega[i] = 0.2 + i * 0.4 * np.sin(i**2 * np.pi / (2 * N**2))
+            self.omega[i] = 0
             self.theta0[i] = uniform(0, 2 * np.pi)
             for j in range(N):
                 if abs(i - j) <= self.M:

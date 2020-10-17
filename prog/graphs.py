@@ -65,15 +65,14 @@ class Graphs:
         plt.grid()
         plt.show()
 
-    def graph_shannon_entropy(self, pol):
+    def graph_shannon_entropy(self, pol, t):
         plt.figure()
-        t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
-        i = np.arange(len(t))
+        i = np.arange(len(S[t, :]))
         title = r"$i \longmapsto S_i^{q, n}(t)$"
         xlabel = r"$i$"
         ylabel = r"$S$"
-        self.graphs(i, S[:, 0], title, xlabel, ylabel, pol)
+        self.graphs(i, S[t, :], title, xlabel, ylabel, pol)
 
     def graph_density_shannon_entropy(self, N):
         plt.figure()
@@ -85,6 +84,20 @@ class Graphs:
 
         plt.xlabel("i")
         plt.ylabel("t")
+        plt.colorbar()
+        plt.show()
+
+    def graph_density_shannon_label(self, t, kuramoto):
+        plt.figure()
+        S = np.loadtxt(FILE['S'])
+        r, c = np.zeros(N), np.zeros(N)
+        for i in range(N):
+            r[i], c[i] = kuramoto.label_to_coordinates(i)
+
+        plt.contourf(r, c, S[:, t])
+
+        plt.xlabel("r")
+        plt.ylabel("c")
         plt.colorbar()
         plt.show()
 
