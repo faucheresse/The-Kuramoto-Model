@@ -51,6 +51,19 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
+    def graph_density_kuramoto_coordinates(self, t, kuramoto):
+        plt.figure()
+        theta = np.loadtxt(FILE['theta'])
+        theta = np.reshape(theta[:, t], (Nr, Nc))
+        r, c = np.arange(Nr), np.arange(Nc)
+
+        plt.contourf(r, c, theta)
+
+        plt.xlabel("r")
+        plt.ylabel("c")
+        plt.colorbar()
+        plt.show()
+
     def graph_orders(self):
         plt.figure()
         t = np.loadtxt(FILE['t'])
@@ -90,11 +103,10 @@ class Graphs:
     def graph_density_shannon_label(self, t, kuramoto):
         plt.figure()
         S = np.loadtxt(FILE['S'])
-        r, c = np.zeros(N), np.zeros(N)
-        for i in range(N):
-            r[i], c[i] = kuramoto.label_to_coordinates(i)
+        S = np.reshape(S[t, :], (Nr, Nc))
+        r, c = np.arange(Nr), np.arange(Nc)
 
-        plt.contourf(r, c, S[:, t])
+        plt.contourf(r, c, S)
 
         plt.xlabel("r")
         plt.ylabel("c")
