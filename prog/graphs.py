@@ -100,7 +100,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_shannon_label(self, t, kuramoto):
+    def graph_density_shannon_coordinates(self, t, kuramoto):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         S = np.reshape(S[t, :], (Nr, Nc))
