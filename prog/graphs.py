@@ -1,5 +1,7 @@
 import numpy as np
 import networkx as nx
+from matplotlib.animation import ArtistAnimation
+from PIL import Image
 from kuramoto import *
 from settings import *
 
@@ -51,7 +53,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_kuramoto_coordinates(self, t, kuramoto):
+    def graph_density_kuramoto_coordinates(self, t):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
         theta = np.reshape(theta[:, t], (Nr, Nc))
@@ -63,6 +65,24 @@ class Graphs:
         plt.ylabel("c")
         plt.colorbar()
         plt.show()
+        # plt.savefig("./animation/density_kuramoto{0}.png".format(t))
+        # plt.close()
+
+    def animated_density_kuramoto_coordinates(self, t):
+        fig = plt.figure()
+        theta = np.loadtxt(FILE['theta'])
+        r, c = np.arange(Nr), np.arange(Nc)
+        # for i in range(len(t)):
+        #     self.graph_density_kuramoto_coordinates(i)
+        im = [Image.open("./animation/density_kuramoto{0}.png".format(i))\
+              for i in range(len(t))]
+
+        im[0].save('./animation/density_kuramoto.gif',
+               format='GIF',
+               save_all=True,
+               append_images=im[1:],
+               duration=40,
+               loop=0)
 
     def graph_orders(self):
         plt.figure()
@@ -100,7 +120,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_shannon_coordinates(self, t, kuramoto):
+    def graph_density_shannon_coordinates(self, t):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         S = np.reshape(S[t, :], (Nr, Nc))
@@ -112,6 +132,25 @@ class Graphs:
         plt.ylabel("c")
         plt.colorbar()
         plt.show()
+        # plt.savefig("./animation/density_shannon{0}.png".format(t))
+        # plt.close()
+
+    def animated_density_shannon_coordinates(self, t):
+        fig = plt.figure()
+        S = np.loadtxt(FILE['S'])
+        r, c = np.arange(Nr), np.arange(Nc)
+        # for i in range(len(t)):
+        #     self.graph_density_shannon_coordinates(i)
+        im = [Image.open("./animation/density_shannon{0}.png".format(i))\
+              for i in range(len(t))]
+
+        im[0].save('./animation/density_shannon.gif',
+               format='GIF',
+               save_all=True,
+               append_images=im[1:],
+               duration=40,
+               loop=0)
+
 
     def graph_connectivity(self, kmin=0):
         K = np.loadtxt(FILE['K'])
