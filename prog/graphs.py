@@ -57,15 +57,14 @@ class Graphs:
             plt.close(fig)
 
         im = [Image.open("./animation/kuramoto{0}.png".format(i))
-                         for i in range(N)]
+              for i in range(N)]
 
         im[0].save('./animation/kuramoto.gif',
                    format='GIF',
                    save_all=True,
                    append_images=im[1:],
-                   duration=N//50,
+                   duration=N*20,
                    loop=0)
-
 
     def graph_density_kuramoto(self, N):
         plt.figure()
@@ -80,7 +79,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_kuramoto_coordinates(self, t):
+    def graph_density_kuramoto_coordinates(self, t, show=True):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
         theta = np.reshape(theta[:, t], (Nc, Nr))
@@ -91,9 +90,11 @@ class Graphs:
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
-        # plt.show()
-        plt.savefig("./animation/density_kuramoto{0}.png".format(t))
-        plt.close()
+        if show:
+            plt.show()
+        else:
+            plt.savefig("./animation/density_kuramoto{0}.png".format(t))
+            plt.close()
 
     def animated_density_kuramoto_coordinates(self, t):
         plt.figure()
@@ -101,7 +102,7 @@ class Graphs:
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
             print(i)
-            self.graph_density_kuramoto_coordinates(i)
+            self.graph_density_kuramoto_coordinates(i, False)
         im = [Image.open("./animation/density_kuramoto{0}.png".format(i))
               for i in range(len(t))]
 
@@ -109,7 +110,7 @@ class Graphs:
                    format='GIF',
                    save_all=True,
                    append_images=im[1:],
-                   duration=len(t)//50,
+                   duration=len(t)//4,
                    loop=0)
 
     def graph_orders(self):
@@ -147,7 +148,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_shannon_coordinates(self, t):
+    def graph_density_shannon_coordinates(self, t, show=True):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         S = np.reshape(S[t, :], (Nc, Nr))
@@ -158,16 +159,19 @@ class Graphs:
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
-        # plt.show()
-        plt.savefig("./animation/density_shannon{0}.png".format(t))
-        plt.close()
+        if show:
+            plt.show()
+        else:
+            plt.savefig("./animation/density_shannon{0}.png".format(t))
+            plt.close()
 
     def animated_density_shannon_coordinates(self, t):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
-            self.graph_density_shannon_coordinates(i)
+            self.graph_density_shannon_coordinates(i, False)
+            print(i)
         im = [Image.open("./animation/density_shannon{0}.png".format(i))
               for i in range(len(t))]
 
