@@ -10,7 +10,7 @@ data = Data(N, M)
 newData = False
 
 if newData:
-    data.init_data("josephson")
+    data.init_data("chimera")
 
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
@@ -45,5 +45,6 @@ t = np.loadtxt(FILE['t'])
 # graphs.graph_connectivity()
 # graphs.graph_density_shannon_coordinates(0)
 # graphs.graph_density_kuramoto_coordinates(50)
-graphs.animated_density_shannon_coordinates(t)
+# graphs.animated_density_shannon_coordinates(t)
 graphs.animated_density_kuramoto_coordinates(t)
+graphs.animated_kuramoto(theta)

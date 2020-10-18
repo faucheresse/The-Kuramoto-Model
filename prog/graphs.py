@@ -32,13 +32,40 @@ class Graphs:
             ax.grid(True)
             plt.show()
 
-    def graph_kuramoto(self, theta, pol, integrator="RK4"):
-        plt.figure()
+    def graph_kuramoto(self, theta, pol=False, integrator="RK4"):
         t = np.loadtxt(FILE['t'])
         title = "Kuramoto integrate by {0}'s method".format(integrator)
         xlabel = r"$t$"
         ylabel = r"$\theta$"
         self.graphs(t, theta, title, xlabel, ylabel, pol)
+
+    def animated_kuramoto(self, theta):
+        t = np.loadtxt(FILE['t'])
+        for i in range(N):
+            print(i)
+            fig = plt.figure()
+            ax = plt.subplot(111, projection='polar')
+            ax.plot(t, theta[i])
+            title = r"$\theta(t={0})$".format(i)
+            xlabel = r"$t$"
+            ylabel = r"$\theta$"
+            ax.set_xlabel(xlabel)
+            ax.set_ylabel(ylabel)
+            ax.set_title(title)
+            ax.grid(True)
+            fig.savefig("./animation/kuramoto{0}.png".format(i))
+            plt.close(fig)
+
+        im = [Image.open("./animation/kuramoto{0}.png".format(i))
+                         for i in range(N)]
+
+        im[0].save('./animation/kuramoto.gif',
+                   format='GIF',
+                   save_all=True,
+                   append_images=im[1:],
+                   duration=N//50,
+                   loop=0)
+
 
     def graph_density_kuramoto(self, N):
         plt.figure()
@@ -56,7 +83,7 @@ class Graphs:
     def graph_density_kuramoto_coordinates(self, t):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
-        theta = np.reshape(theta[:, t], (Nr, Nc))
+        theta = np.reshape(theta[:, t], (Nc, Nr))
         r, c = np.arange(Nr), np.arange(Nc)
 
         plt.contourf(r, c, theta)
@@ -64,25 +91,26 @@ class Graphs:
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
-        plt.show()
-        # plt.savefig("./animation/density_kuramoto{0}.png".format(t))
-        # plt.close()
+        # plt.show()
+        plt.savefig("./animation/density_kuramoto{0}.png".format(t))
+        plt.close()
 
     def animated_density_kuramoto_coordinates(self, t):
-        fig = plt.figure()
+        plt.figure()
         theta = np.loadtxt(FILE['theta'])
         r, c = np.arange(Nr), np.arange(Nc)
-        # for i in range(len(t)):
-        #     self.graph_density_kuramoto_coordinates(i)
-        im = [Image.open("./animation/density_kuramoto{0}.png".format(i))\
+        for i in range(len(t)):
+            print(i)
+            self.graph_density_kuramoto_coordinates(i)
+        im = [Image.open("./animation/density_kuramoto{0}.png".format(i))
               for i in range(len(t))]
 
         im[0].save('./animation/density_kuramoto.gif',
-               format='GIF',
-               save_all=True,
-               append_images=im[1:],
-               duration=40,
-               loop=0)
+                   format='GIF',
+                   save_all=True,
+                   append_images=im[1:],
+                   duration=len(t)//50,
+                   loop=0)
 
     def graph_orders(self):
         plt.figure()
@@ -99,7 +127,6 @@ class Graphs:
         plt.show()
 
     def graph_shannon_entropy(self, pol, t):
-        plt.figure()
         S = np.loadtxt(FILE['S'])
         i = np.arange(len(S[t, :]))
         title = r"$i \longmapsto S_i^{q, n}(t)$"
@@ -123,7 +150,7 @@ class Graphs:
     def graph_density_shannon_coordinates(self, t):
         plt.figure()
         S = np.loadtxt(FILE['S'])
-        S = np.reshape(S[t, :], (Nr, Nc))
+        S = np.reshape(S[t, :], (Nc, Nr))
         r, c = np.arange(Nr), np.arange(Nc)
 
         plt.contourf(r, c, S)
@@ -131,26 +158,25 @@ class Graphs:
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
-        plt.show()
-        # plt.savefig("./animation/density_shannon{0}.png".format(t))
-        # plt.close()
+        # plt.show()
+        plt.savefig("./animation/density_shannon{0}.png".format(t))
+        plt.close()
 
     def animated_density_shannon_coordinates(self, t):
-        fig = plt.figure()
+        plt.figure()
         S = np.loadtxt(FILE['S'])
         r, c = np.arange(Nr), np.arange(Nc)
-        # for i in range(len(t)):
-        #     self.graph_density_shannon_coordinates(i)
-        im = [Image.open("./animation/density_shannon{0}.png".format(i))\
+        for i in range(len(t)):
+            self.graph_density_shannon_coordinates(i)
+        im = [Image.open("./animation/density_shannon{0}.png".format(i))
               for i in range(len(t))]
 
         im[0].save('./animation/density_shannon.gif',
-               format='GIF',
-               save_all=True,
-               append_images=im[1:],
-               duration=40,
-               loop=0)
-
+                   format='GIF',
+                   save_all=True,
+                   append_images=im[1:],
+                   duration=40,
+                   loop=0)
 
     def graph_connectivity(self, kmin=0):
         K = np.loadtxt(FILE['K'])
