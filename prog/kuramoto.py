@@ -63,7 +63,7 @@ class KuramotoModel:
     def shannon_entropy(self, theta):
         t = np.loadtxt(FILE['t'])
         n = self.n
-        q = len(t)  # en attendant
+        q = n
         p = np.zeros(len(t))
         S = np.zeros(len(t))
         count = 0
