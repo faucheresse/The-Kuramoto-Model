@@ -1,1 +1,2 @@
-\selectlanguage *{french}
+\selectlanguage *{english}
+\contentsline {section}{\numberline {I}Functional requirement of the program}{2}{section.1}%

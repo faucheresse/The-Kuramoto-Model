@@ -15,15 +15,15 @@ class Data:
         self.M = M
         self.N = N
 
-    def init_data(self, states="random"):
+    def init_data(self, state="random"):
 
-        if states == "random":
+        if state == "random":
             self.random_states()
-        elif states == "chimera":
+        elif state == "chimera":
             self.chimera_states()
-        elif states == "inverse":
+        elif state == "inverse":
             self.inverse_states()
-        elif states == "josephson":
+        elif state == "josephson":
             self.josephson_matrice()
 
         np.savetxt(FILE['omega'], self.omega)

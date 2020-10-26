@@ -8,6 +8,22 @@
 \tableofcontents
 \newpage
 \noindent
-
+\section{Functional requirement of the program}
+\noindent
+All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stocked in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stocke in data files in the same directory. And finally there are the functions that display the graphs by using the module \mintinline{python}{matplotlib.pyplot}. In this section we will describe the functions that create the datas files and their datas. Firstly the initial datas are created throught the \mintinline{python}{class Data} wich is in the data file. And the computing of the other values is in the \mintinline{python}{class KuramotoModel} wich is in the kuramoto file.
+The initial datas are created by the function : \mintinline{python}{data.init_data(state)}$^{\ref{init_data}}$ :  
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{ccc} \toprule
+            \multicolumn{3}{c}{\mintinline{python}{data.init_data(state)}}\\
+            \midrule
+            Description & Input & Output\\
+            \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
+            
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{function data.init\_data()}\label{init_data}
+\end{table}\\
 
 \end{document}
