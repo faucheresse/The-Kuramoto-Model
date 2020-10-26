@@ -10,16 +10,33 @@
 \noindent
 \section{Functional requirement of the program}
 \noindent
-All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stocked in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stocke in data files in the same directory. And finally there are the functions that display the graphs by using the module \mintinline{python}{matplotlib.pyplot}. In this section we will describe the functions that create the datas files and their datas. Firstly the initial datas are created throught the \mintinline{python}{class Data} wich is in the data file. And the computing of the other values is in the \mintinline{python}{class KuramotoModel} wich is in the kuramoto file.
+All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stocked in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stocked in data files in the same directory. And finally there are the functions that display the graphs by using the module \mintinline{python}{matplotlib.pyplot}. In this section we will describe the functions that create the datas files and their datas. Firstly the initial datas are created throught the \mintinline{python}{class Data} wich is in the data file. Finally the computing of the other values is in the \mintinline{python}{class KuramotoModel} wich is in the kuramoto file.
 The initial datas are created by the function : \mintinline{python}{data.init_data(state)}$^{\ref{init_data}}$ :  
 \begin{table}[htbp]
     \begin{center}
-        \begin{tabular}{ccc} \toprule
-            \multicolumn{3}{c}{\mintinline{python}{data.init_data(state)}}\\
+        \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}} \toprule
+            \multicolumn{3}{c}{\mintinline{python}{data.init_data(state="random")}}\\
             \midrule
-            Description & Input & Output\\
+            \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
-            
+           
+            This function is using to create initial values, stocked in data files in the directory parameters, according to the value of the argument \mintinline{python}{state} set by default to \mintinline{python}{state="random"}. You can create data for random, chimera, inverse, or josephson states. &
+            The argument \mintinline{python}{state} is a \mintinline{python}{string}. By default it takes the value \mintinline{python}{"random"} but you can give it this values :\begin{itemize}
+            \setlength{\itemsep}{0pt}
+            \item \mintinline{python}{"chimera"}
+            \item \mintinline{python}{"inverse"}
+            \item \mintinline{python}{"josephson"}
+            \end{itemize}
+            & This function will retrieve you six data file in the parameters directory, computing in according to the \mintinline{python}{state} argument.
+            The data files are : \begin{itemize}
+            \setlength{\itemsep}{0pt}
+            \item \mintinline{python}{"omega.dat"}
+            \item \mintinline{python}{"theta0.dat"}
+            \item \mintinline{python}{"K.dat"}
+            \item \mintinline{python}{"eta.dat"}
+            \item \mintinline{python}{"alpha.dat"}
+            \item \mintinline{python}{"tau.dat"}
+            \end{itemize}\\
             \bottomrule
         \end{tabular}
     \end{center}
