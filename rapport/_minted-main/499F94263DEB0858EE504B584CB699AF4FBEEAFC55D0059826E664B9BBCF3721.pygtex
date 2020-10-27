@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{data}\PYG{o}{.}\PYG{n}{init\PYGZus{}data}\PYG{p}{(}\PYG{n}{state}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}random\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}
