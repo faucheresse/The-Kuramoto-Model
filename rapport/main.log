@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  27 OCT 2020 10:50
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  27 OCT 2020 12:58
  system commands enabled.
 **main.tex
 (./main.tex
@@ -509,12 +509,12 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
-(polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            synonyms	patois,francais
-(polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            righthyphenmin	2
+(polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	 on input line 12
+(polyglossia)            synonyms	patois,francais
+(polyglossia)            hyphenation	
+(polyglossia)            patterns	hyph-fr.pat.txt on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -1689,11 +1689,20 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 
 (./_minted-main/1388A84F4C1E0B407828E1EC304A20E94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 4765) in paragraph at lines 24--25
+Underfull \hbox (badness 4765) in paragraph at lines 25--26
 \TU/LibertinusSerif(0)/m/n/10 By de-fault it takes the value
  []
 
 
+Underfull \hbox (badness 1688) in paragraph at lines 25--26
+[] \TU/LibertinusSerif(0)/m/n/10 but you can give it
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/1388A84F4C1E0B407828E1EC304A20E94FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
 \openout5 = main.pyg
 
 (./_minted-main/BC3E57DE13A86E40865C2ABB5D7F90E04FBEEAFC55D0059826E664B9BBCF372
@@ -1734,10 +1743,52 @@ Underfull \hbox (badness 4765) in paragraph at lines 24--25
 
 (./_minted-main/70F767D806FADB2BE131AA04309CC5784FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 12--45
+\openout5 = main.pyg
 
- []
+(./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
 
+(./_minted-main/C8584AECE797A45831FC498D0242BA7C4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/CA8853173EECA012FDDE4C18D9D860544FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/C8584AECE797A45831FC498D0242BA7C4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/CA8853173EECA012FDDE4C18D9D860544FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/00C5A213CE5E8F9BCC60B2E58F7E49984FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/EC617921ADE8A525D02A65430AEE16354FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+<figure/os_table.pdf, id=31, 284.52756pt x 199.1693pt>
+File: figure/os_table.pdf Graphic file (type pdf)
+<use figure/os_table.pdf>
+Package luatex.def Info: figure/os_table.pdf  used on input line 52.
+(luatex.def)             Requested size: 227.62234pt x 159.33563pt.
+
+\openout5 = main.pyg
+
+(./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
+1.pygtex) [2<./figure/os_table.pdf>]
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1788,32 +1839,32 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
+ [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 46.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 46.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FB0617ADFDFE0FA435F4E932F5892599;240.
+(rerunfilecheck)             Checksum: 9AC23112B16E41B04ECAD61C39A8DC2E;444.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 37438 strings out of 481365
+ 37652 strings out of 481365
  125171,1373583 words of node,token memory allocated
  585 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 8 attribute, 67
  glue_spec, 8 attribute_list, 2 write nodes
-   avail lists: 1:1,2:631,3:90,4:91,5:125,6:26,7:2279,8:5,9:235,10:14,11:105
- 52859 multiletter control sequences out of 65536+600000
- 82 fonts using 22734171 bytes
- 69i,14n,111p,1215b,776s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 1:2,2:843,3:120,4:103,5:145,6:31,7:2697,8:5,9:294,10:7,11:135
+ 52877 multiletter control sequences out of 65536+600000
+ 82 fonts using 22734299 bytes
+ 69i,14n,111p,1167b,776s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texmf
 /fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texlive/texmf-dist/fo
 nts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf></usr/share/texl
@@ -1821,10 +1872,10 @@ ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
 ></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinu
 sSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertin
 us-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (3 pages, 26718 bytes).
+Output written on main.pdf (4 pages, 34566 bytes).
 
-PDF statistics: 76 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 131072)
- 24 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 91 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 131072)
+ 32 words of extra memory for PDF output out of 10000 (max. 100000000)
 

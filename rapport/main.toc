@@ -1,2 +1,3 @@
 \selectlanguage *{english}
-\contentsline {section}{\numberline {I}Functional requirement of the program}{2}{section.1}%
+\contentsline {section}{\numberline {I}Description of the main functions}{2}{section.1}%
+\contentsline {subsection}{\numberline {I.1}The initialisation of the datas}{2}{subsection.1.1}%
