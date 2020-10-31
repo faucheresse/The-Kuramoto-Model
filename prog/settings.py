@@ -1,7 +1,15 @@
+newData = False
+newComputing = False
+
 Nr = 3
 Nc = 4
 N = Nr * Nc
 M = N * 3 // 10
+
+# integrator = "Euler"
+# integrator = "RK2"
+integrator = "RK4"
+tf = 100
 
 hbar = 6.626e-34
 

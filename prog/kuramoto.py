@@ -53,7 +53,8 @@ class KuramotoModel:
         self.data.write_on_file(FILE['t'], t)
         self.data.write_on_file(FILE['theta'], theta % (2 * np.pi))
 
-    def orders(self, theta):
+    def orders(self):
+        theta = np.loadtxt(FILE['theta'])
         t = np.loadtxt(FILE['t'])
         z = np.zeros(self.N)
         R, phi = np.zeros(len(t)), np.zeros(len(t))
@@ -95,7 +96,8 @@ class KuramotoModel:
 
         return S
 
-    def shannon_entropies(self, theta):
+    def shannon_entropies(self):
+        theta = np.loadtxt(FILE['theta'])
         t = np.loadtxt(FILE['t'])
         S = np.zeros((len(t), self.N))
         for i in range(self.N):
