@@ -8,9 +8,12 @@ from settings import *
 
 data = Data(N, M)
 
-if newData:
-    data.init_data("chimera")
+# ------ initialisation -----
 
+if newData:
+    data.init_data(state)
+
+# ------ kuramoto -----
 omega = np.loadtxt(FILE['omega'])
 theta0 = np.loadtxt(FILE['theta0'])
 K = np.loadtxt(FILE['K'])
@@ -21,6 +24,8 @@ tau = np.loadtxt(FILE['tau'])
 kuramoto = KuramotoModel(omega, M, K, eta, alpha, tau)
 graphs = Graphs(kuramoto)
 f = kuramoto
+
+# ----- Computing -----
 
 if newComputing:
     kuramoto.integrate(f, theta0, tf, integrator)
@@ -33,9 +38,9 @@ theta = np.loadtxt(FILE['theta'])
 
 # graphs.graph_kuramoto(theta[0], False, integrator)
 # graphs.graph_kuramoto(theta[0], True, integrator)
-graphs.graph_density_kuramoto(omega.size)
+# graphs.graph_density_kuramoto(omega.size)
 # graphs.graph_orders()
-# graphs.graph_shannon_entropy(False, 0)
+graphs.graph_shannon_entropy(False, 0)
 # graphs.graph_density_shannon_entropy(omega.size)
 # graphs.graph_connectivity()
 # graphs.graph_density_shannon_coordinates(0)

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  1 NOV 2020 12:56
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  1 NOV 2020 18:11
  system commands enabled.
 **main.tex
 (./main.tex
@@ -511,9 +511,9 @@ braces):
 Module polyglossia Info: Language data for french
 (polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
 (polyglossia)            synonyms	patois,francais
 (polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            hyphenation	
 (polyglossia)            righthyphenmin	2 on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
@@ -1648,15 +1648,59 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 \openout5 = main.pyg
  (./_minted-main/default-pyg-prefix.pygstyle)
 (./_minted-main/default.pygstyle)
+(./_minted-main/60CFBEF33691C704386BF4B25CCBEB04A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/0B816804D4241E6C50E1DBEDD37F24D4A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/2D35B0EDA837F43CB769820D474D6D6FA00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/84681A982A55ACBDF0A5012421C14214A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/D81BFE868D3161C6064EE3995A6823754FBEEAFC55D0059826E664B9BBCF372
+1.pygtex
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2.
+)
+\openout5 = main.pyg
+
+(./_minted-main/0579E7D623B2E4D01B91C75BB78BBF97A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/A05CEECB8B337DAE6520AB0BD7FFA7374FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/185965B2E25DE5F72FD553E21FC5805CA00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/0087858C643CA07D7D9C40791B0766034FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/1935C6FE0055919DE9FD961703AB5B9AA00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/D24C5A9B400A345B948B0472A42FA95F4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
 (./_minted-main/D7CB0044FE3B2A357B1F0976C2AC8F114FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout5 = main.pyg
 
 (./_minted-main/A05CEECB8B337DAE6520AB0BD7FFA7374FBEEAFC55D0059826E664B9BBCF372
-1.pygtex
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2.
-)
+1.pygtex)
 \openout5 = main.pyg
 
 (./_minted-main/D81BFE868D3161C6064EE3995A6823754FBEEAFC55D0059826E664B9BBCF372
@@ -1693,12 +1737,12 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 
 (./_minted-main/1388A84F4C1E0B407828E1EC304A20E94FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 4765) in paragraph at lines 25--25
+Underfull \hbox (badness 4765) in paragraph at lines 28--28
 \TU/LibertinusSerif(0)/m/n/10 By de-fault it takes the value
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 25--25
+Underfull \hbox (badness 1688) in paragraph at lines 28--28
 [] \TU/LibertinusSerif(0)/m/n/10 but you can give it
  []
 
@@ -1723,7 +1767,7 @@ Underfull \hbox (badness 1688) in paragraph at lines 25--25
 
 (./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 1845) in paragraph at lines 32--33
+Underfull \hbox (badness 1845) in paragraph at lines 35--36
 \TU/LibertinusSerif(0)/m/n/10 com-put-ing in ac-cord-ing to the
  []
 
@@ -1755,7 +1799,7 @@ Underfull \hbox (badness 1845) in paragraph at lines 32--33
 \openout5 = main.pyg
 
 (./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
+1.pygtex) [2]
 \openout5 = main.pyg
 
 (./_minted-main/498E724CE6B8BCF6733AF24D5513E4294FBEEAFC55D0059826E664B9BBCF372
@@ -1815,7 +1859,7 @@ Underfull \hbox (badness 1845) in paragraph at lines 32--33
 \openout5 = main.pyg
 
 (./_minted-main/149B8992594B5D299F6938DF3474E5F04FBEEAFC55D0059826E664B9BBCF372
-1.pygtex) [2] [3]
+1.pygtex) [3]
 \openout5 = main.pyg
 
 (./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
@@ -1848,10 +1892,10 @@ Underfull \hbox (badness 1845) in paragraph at lines 32--33
 
 (./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figure/os_table.pdf, id=58, 284.52756pt x 199.1693pt>
+<figure/os_table.pdf, id=60, 284.52756pt x 199.1693pt>
 File: figure/os_table.pdf Graphic file (type pdf)
 <use figure/os_table.pdf>
-Package luatex.def Info: figure/os_table.pdf  used on input line 125.
+Package luatex.def Info: figure/os_table.pdf  used on input line 128.
 (luatex.def)             Requested size: 227.62234pt x 159.33563pt.
 
 \openout5 = main.pyg
@@ -1898,22 +1942,22 @@ Package luatex.def Info: figure/os_table.pdf  used on input line 125.
 
 (./_minted-main/9DB413A462FD1D9F5D5A03927FECA6EC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 5847) in paragraph at lines 142--142
+Underfull \hbox (badness 5847) in paragraph at lines 146--146
 \TU/LibertinusSerif(0)/m/n/10 vec-tor [] dur-ing a time
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 142--142
+Underfull \hbox (badness 3635) in paragraph at lines 146--146
 []\TU/LibertinusSerif(0)/m/n/10 , set by de-fault to []
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 142--142
+Underfull \hbox (badness 2150) in paragraph at lines 146--146
 \TU/LibertinusSerif(0)/m/n/10 with 1000 val-ues(T), us-ing the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
 \TU/LibertinusSerif(0)/m/n/10 in-te-gra-tor, set by de-fault to
  []
 
@@ -1923,7 +1967,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--142
 (./_minted-main/9A8AD92C50CAE39AA2C5604FD0AB6D8C4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 LaTeX Font Info:    Trying to load font information for U+bbold on input line 14
-4.
+8.
  (/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd)
 \openout5 = main.pyg
 
@@ -1949,7 +1993,7 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 14
 
 (./_minted-main/8DE576DF96E11FDD486B6E049AF00EF34FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 1264) in paragraph at lines 149--150
+Underfull \hbox (badness 1264) in paragraph at lines 153--154
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -1958,23 +2002,23 @@ Underfull \hbox (badness 1264) in paragraph at lines 149--150
 
 (./_minted-main/872EAC4BF2A7464164430E9A5C924B924FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 2221) in paragraph at lines 1--152
+Underfull \hbox (badness 2221) in paragraph at lines 1--156
 [][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 1--152
+Underfull \hbox (badness 1540) in paragraph at lines 1--156
 \TU/LibertinusSerif(0)/m/n/10 ma-trix of real of size N$\TU/LibertinusMath(1)/m
 /n/10 ×$\TU/LibertinusSerif(0)/m/n/10 T.
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 1--152
+Underfull \hbox (badness 1460) in paragraph at lines 1--156
 \TU/LibertinusSerif(0)/m/n/10 tors. Each vec-tor con-tains
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 1--152
+Underfull \hbox (badness 1442) in paragraph at lines 1--156
 \TU/LibertinusSerif(0)/m/n/10 at one time, la-beled in the
  []
 
@@ -1995,27 +2039,27 @@ Underfull \hbox (badness 1442) in paragraph at lines 1--152
 
 (./_minted-main/93D7964EC38E9A2894A602B6C93F8CB74FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 3343) in paragraph at lines 1--153
+Underfull \hbox (badness 3343) in paragraph at lines 1--157
 [][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a list
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 1--153
+Underfull \hbox (badness 5985) in paragraph at lines 1--157
 \TU/LibertinusSerif(0)/m/n/10 of real of size T, de-fined
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--153
+Underfull \hbox (badness 10000) in paragraph at lines 1--157
 \TU/LibertinusSerif(0)/m/n/10 by [].
  []
 
 
-Underfull \hbox (badness 7685) in paragraph at lines 1--153
+Underfull \hbox (badness 7685) in paragraph at lines 1--157
 [] \TU/LibertinusSerif(0)/m/n/10 is a func-tion
  []
 
 
-Overfull \hbox (1.34602pt too wide) in paragraph at lines 132--160
+Overfull \hbox (1.34602pt too wide) in paragraph at lines 136--164
 \TU/LibertinusSerif(0)/m/n/10 There are three com-put-ing func-tions that are i
 m-ported from the [], by the ob-ject [].
  []
@@ -2026,18 +2070,18 @@ m-ported from the [], by the ob-ject [].
 (./_minted-main/B25C93E424F3A2E80AD2E79937F79CD44FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 
-LaTeX Warning: Command \i invalid in math mode on input line 169.
+LaTeX Warning: Command \i invalid in math mode on input line 173.
 
 
-LaTeX Warning: Command \i invalid in math mode on input line 169.
+LaTeX Warning: Command \i invalid in math mode on input line 173.
 
 
-Underfull \hbox (badness 2529) in paragraph at lines 170--171
+Underfull \hbox (badness 2529) in paragraph at lines 174--175
 \TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 172--173
+Underfull \hbox (badness 1264) in paragraph at lines 176--177
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -2066,12 +2110,12 @@ Underfull \hbox (badness 1264) in paragraph at lines 172--173
 
 (./_minted-main/9485EDF7B8EC0FDF0BC3BDB9D5FC6C284FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 2529) in paragraph at lines 192--193
+Underfull \hbox (badness 2529) in paragraph at lines 196--197
 \TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 194--195
+Underfull \hbox (badness 1264) in paragraph at lines 198--199
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -2087,6 +2131,30 @@ Underfull \hbox (badness 1264) in paragraph at lines 194--195
 \openout5 = main.pyg
 
 (./_minted-main/9485EDF7B8EC0FDF0BC3BDB9D5FC6C284FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/3B1BF70BDCBF877556854076F9F17A3D4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/E382B5EE5D038A645DB17278A33A44324FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/C8584AECE797A45831FC498D0242BA7C4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/CA8853173EECA012FDDE4C18D9D860544FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/6F3D3F829B0FC329E3A602FB9CC51CA44FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [5] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
@@ -2139,32 +2207,31 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
  [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 215.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 215.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F63197B205E6C282967A87EE17012D15;642.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 38584 strings out of 481365
+ 38904 strings out of 481365
  125171,1373583 words of node,token memory allocated
  589 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 9 attribute, 67
  glue_spec, 9 attribute_list, 2 write nodes
-   avail lists: 1:3,2:1595,3:344,4:170,5:407,6:81,7:5422,8:49,9:743,10:11,11:230
-
- 52960 multiletter control sequences out of 65536+600000
- 87 fonts using 23762283 bytes
- 69i,21n,111p,1167b,776s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 1:1,2:941,3:235,4:107,5:296,6:54,7:4471,8:46,9:513,10:23,11:228
+ 52991 multiletter control sequences out of 65536+600000
+ 87 fonts using 23762219 bytes
+ 69i,21n,111p,1702b,868s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
 Math-Regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf>
 </usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texl
@@ -2174,10 +2241,10 @@ sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
 s-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentyp
 e/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texlive/texmf-dis
 t/fonts/type1/public/bbold-type1/bbold10.pfb>
-Output written on main.pdf (7 pages, 61716 bytes).
+Output written on main.pdf (7 pages, 66340 bytes).
 
-PDF statistics: 139 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+PDF statistics: 147 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  21 named destinations out of 1000 (max. 131072)
  40 words of extra memory for PDF output out of 10000 (max. 100000000)
 
