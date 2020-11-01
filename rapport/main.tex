@@ -29,7 +29,7 @@ The initial datas are created by the function: \py{data.init_data(state)}. You c
             \item \py{"inverse"}
             \item \py{"josephson"}
             \end{itemize}
-            & This function will retrieve you six data file in the parameters directory, computing in according to the \py{state} argument.
+            & This function will retrieve six data file in the parameters directory, computing in according to the \py{state} argument.
             The data files are: \begin{itemize}[leftmargin=15pt, itemsep=0pt]
             \item \py{"omega.dat"}
             \item \py{"theta0.dat"}
@@ -48,10 +48,10 @@ Each \py{state} create six variables, wich are defined as follows:
 \begin{itemize}
         \item $\omega$ is a list of real of size N. It contains the natural oscillations of each oscillators.
         \item $\theta_0$ is a list of real of size N. It contains the intial phase of each oscillators. So at the $\theta^i(t=t_0)$.
-        \item $K$ is a matrix of real of size NxN. It contains the coupling coefficients between each oscillators depending on the nearest neighbour. The nearest neighbour of an oscillator are defined by M in the settings file. It is set as $30\%$ of the totality of the oscillators, you can change it. 
-        \item $\alpha$ is a matrix of real of size NxN. It is the dephasing matrix of the coupling.
-        \item $\tau$ is a matrix of real of size NxN. It is the delay matrix.
-        \item $\eta$ is a matrix of real of size NxT. It is the representations of external noises for each oscillators at each time $t\in ]0, T[$.
+        \item $K$ is a matrix of real of size N$\times$N. It contains the coupling coefficients between each oscillators depending on the nearest neighbour. The nearest neighbour of an oscillator are defined by M in the settings file. It is set as $30\%$ of the totality of the oscillators, you can change it. 
+        \item $\alpha$ is a matrix of real of size N$\times$N. It is the dephasing matrix of the coupling.
+        \item $\tau$ is a matrix of real of size N$\times$N. It is the delay matrix.
+        \item $\eta$ is a matrix of real of size N$\times$T. It is the representations of external noises for each oscillators at each time $t\in ]0, T[$.
 \end{itemize}
 They are different for each state, you can see their definitions in the tables \ref{tab:states1} and \ref{tab:states2}. The function \py{uniform()} is from the module \py{random}, and provide random real numbers with uniform distribution, in the range given. The function \py{randint()} do the same things but for integers.
 \begin{table}[htbp]
@@ -139,20 +139,68 @@ There are three computing functions that are imported from the \py{class Kuramot
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function compute integrates the function \py{f}, with the initial vector \py{theta0} during a time \py{tf}, set by default to \py{tf=100} with 1000 values, using the integrator, set by default to \py{integrator="RK4"}&
-            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt ]
+            This function compute integrates the function \py{f}, with the initial vector \py{theta0} during a time \py{tf}, set by default to \py{tf=100} with 1000 values(T), using the integrator, set by default to \py{integrator="RK4"}&\vspace*{-8pt}
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
             \item \py{f} is the function to be integrated, such that $f:\real^n  \rightarrow  \real^n$
-            \item \py{theta0} is the initial vector, such that $\theta_0 \in \real^n$. So it has to be a list of real of size N
-            \item \py{tf} is the duration of the integration. Set to 100 by default. It is an integer
-            \item \py{integrator} is the integrator that you want to choose. It can take only this string values: \py{"Euler"}, \py{"RK2"}, \py{"RK4"}. Among the three integrators, RK4 is the one losing the least energy the longer the integration lasts, therefore it is the default value.
+                \item \py{theta0} is the initial vector, such that $\theta_0 \in    \real^n$. So it has to be a list of real of size N
+                \item \py{tf} is the duration of the integration. Set to 100 by default. It is an integer
+                \item \py{integrator} is the integrator that you want to choose. It can take only this string values: \py{"Euler"}, \py{"RK2"}, \py{"RK4"}. Among the three integrators, RK4 is the one losing the least energy the longer the integration lasts, therefore it is the default value.
             \end{itemize}
-            & \\
+            & This function will retrieve two data files in the parameters directory.
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{"theta.dat"} : contains a matrix of real of size N$\times$T. It is used like a list of vectors. Each vector contains the phase of each oscillators at one time, labeled in the same way as the \autoref{fig:os_table}. So the matrix represent the evolution over time of this vector.
+                \item \py{"t.dat"} : contains a list of real of size T, defined by \py{linspace(0, tf, T)}. \py{linspace()} is a function added by \py{numpy}.
+            \end{itemize}\\
             \bottomrule
         \end{tabular}
     \end{center}
     \caption{function kuramoto.integrate()}
     \label{tab:integrate}
-\end{table}\\
+\end{table}
+\newpage
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}} \toprule
+            \multicolumn{3}{c}{\py{kuramoto.orders()}}\\
+            \midrule
+            \hfil Description & \hfil Input & \hfil Output\\
+            \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
+           
+            This function computes the orders parameters $R$ and $\Phi$, of the $\theta^i$ over the time, by the relation : $R\e^{\i\Phi} = \frac{1}{N}\sum^N_{i=1}\e^{\i\theta^i}$, for one time.&
+            There are no arguments to this function because it takes only data files. It takes the theta file and the t file, see \autoref{tab:integrate}.
+            &
+            This function will retrieve two data files in the parameters directory.
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{"R.dat"} : It contains a list of real of size T. \py{R} represents the complex mean of magnitudes of the $\theta^i$ over the time.
+                \item \py{"phi.dat"} : It contains a list of real of size T. \py{phi} represents the complex mean of angles of the $\theta^i$ over the time.
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{function kuramoto.orders()}
+    \label{tab:orders}
+\end{table}
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}} \toprule
+            \multicolumn{3}{c}{\py{kuramoto.shannon_entropies()}}\\
+            \midrule
+            \hfil Description & \hfil Input & \hfil Output\\
+            \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
+           
+            This function computes the Shannon entropy over the time of $\theta$. So for each vector of the list of vectors \py{theta}&
+            There are no arguments to this function because it takes only data files. It takes the theta file and the t file, see \autoref{tab:integrate}.
+            &
+            This function will retrieve two data files in the parameters directory.
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{"S.dat"} : It contains a list of real of size T. \py{S} represents the Shannon entropy over the time of each vector of \py{theta}
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{function kuramoto.shannon\_entropies()}
+    \label{tab:shannon}
+\end{table}
 
 \newpage
 \bibliographystyle{plain}

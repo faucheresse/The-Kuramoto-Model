@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  31 OCT 2020 19:23
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  1 NOV 2020 12:56
  system commands enabled.
 **main.tex
 (./main.tex
@@ -509,12 +509,12 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
-(polyglossia)            righthyphenmin	2
 (polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            synonyms	patois,francais
-(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            patterns	hyph-fr.pat.txt on input line 12
+(polyglossia)            synonyms	patois,francais
+(polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            hyphenation	
+(polyglossia)            righthyphenmin	2 on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -1723,6 +1723,11 @@ Underfull \hbox (badness 1688) in paragraph at lines 25--25
 
 (./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
+Underfull \hbox (badness 1845) in paragraph at lines 32--33
+\TU/LibertinusSerif(0)/m/n/10 com-put-ing in ac-cord-ing to the
+ []
+
+
 \openout5 = main.pyg
 
 (./_minted-main/3D0EBCA64BF468433543D5DB0D5B7D1E4FBEEAFC55D0059826E664B9BBCF372
@@ -1903,8 +1908,8 @@ Underfull \hbox (badness 3635) in paragraph at lines 142--142
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
-\TU/LibertinusSerif(0)/m/n/10 with 1000 val-ues, us-ing the
+Underfull \hbox (badness 2150) in paragraph at lines 142--142
+\TU/LibertinusSerif(0)/m/n/10 with 1000 val-ues(T), us-ing the
  []
 
 
@@ -1944,17 +1949,145 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 14
 
 (./_minted-main/8DE576DF96E11FDD486B6E049AF00EF34FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Overfull \hbox (1.34602pt too wide) in paragraph at lines 132--156
+Underfull \hbox (badness 1264) in paragraph at lines 149--150
+[]|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/872EAC4BF2A7464164430E9A5C924B924FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+Underfull \hbox (badness 2221) in paragraph at lines 1--152
+[][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 1--152
+\TU/LibertinusSerif(0)/m/n/10 ma-trix of real of size N$\TU/LibertinusMath(1)/m
+/n/10 ×$\TU/LibertinusSerif(0)/m/n/10 T.
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 1--152
+\TU/LibertinusSerif(0)/m/n/10 tors. Each vec-tor con-tains
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 1--152
+\TU/LibertinusSerif(0)/m/n/10 at one time, la-beled in the
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/4A36A2BEB1E80CAA32EF66996D895E994FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/4F557F219A64C3AA41023626B6AD01BA4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/9C5E99F4C8827FFA03142778107191C04FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/93D7964EC38E9A2894A602B6C93F8CB74FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+Underfull \hbox (badness 3343) in paragraph at lines 1--153
+[][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a list
+ []
+
+
+Underfull \hbox (badness 5985) in paragraph at lines 1--153
+\TU/LibertinusSerif(0)/m/n/10 of real of size T, de-fined
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--153
+\TU/LibertinusSerif(0)/m/n/10 by [].
+ []
+
+
+Underfull \hbox (badness 7685) in paragraph at lines 1--153
+[] \TU/LibertinusSerif(0)/m/n/10 is a func-tion
+ []
+
+
+Overfull \hbox (1.34602pt too wide) in paragraph at lines 132--160
 \TU/LibertinusSerif(0)/m/n/10 There are three com-put-ing func-tions that are i
 m-ported from the [], by the ob-ject [].
  []
 
+[4<./figure/os_table.pdf>]
+\openout5 = main.pyg
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--156
+(./_minted-main/B25C93E424F3A2E80AD2E79937F79CD44FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
 
+LaTeX Warning: Command \i invalid in math mode on input line 169.
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 169.
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 170--171
+\TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
  []
 
-[4<./figure/os_table.pdf>] (./main.bbl)
+
+Underfull \hbox (badness 1264) in paragraph at lines 172--173
+[]|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/CB1534FCBAA57A80A012E2451EDA983D4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/485BDBACEFE22344F6E78CA58A6692424FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/81DA2C10A63571CA45297F79EB22E83E4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/A319B52BD520B5146AAB3B848F37F65D4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/786E2A196AB76CFA8FE387CEE3F5ED724FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/9485EDF7B8EC0FDF0BC3BDB9D5FC6C284FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+Underfull \hbox (badness 2529) in paragraph at lines 192--193
+\TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 194--195
+[]|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/C2B2F5C0325CE2826946DD1B1A2FDEF44FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/65DB27307AA0CDF0B3C0323431E08A154FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/9485EDF7B8EC0FDF0BC3BDB9D5FC6C284FBEEAFC55D0059826E664B9BBCF372
+1.pygtex) [5] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2005,32 +2138,32 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
+ [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F63197B205E6C282967A87EE17012D15;642.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 38296 strings out of 481365
+ 38584 strings out of 481365
  125171,1373583 words of node,token memory allocated
  589 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 9 attribute, 67
  glue_spec, 9 attribute_list, 2 write nodes
-   avail lists: 1:3,2:1587,3:345,4:170,5:405,6:81,7:5419,8:49,9:743,10:11,11:230
+   avail lists: 1:3,2:1595,3:344,4:170,5:407,6:81,7:5422,8:49,9:743,10:11,11:230
 
- 52930 multiletter control sequences out of 65536+600000
- 87 fonts using 23762219 bytes
+ 52960 multiletter control sequences out of 65536+600000
+ 87 fonts using 23762283 bytes
  69i,21n,111p,1167b,776s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
 Math-Regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf>
@@ -2041,10 +2174,10 @@ sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
 s-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentyp
 e/public/libertinus-fonts/LibertinusSerif-Bold.otf></usr/share/texlive/texmf-dis
 t/fonts/type1/public/bbold-type1/bbold10.pfb>
-Output written on main.pdf (6 pages, 56907 bytes).
+Output written on main.pdf (7 pages, 61716 bytes).
 
-PDF statistics: 127 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 131072)
+PDF statistics: 139 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 131072)
  40 words of extra memory for PDF output out of 10000 (max. 100000000)
 
