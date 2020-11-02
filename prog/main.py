@@ -32,7 +32,7 @@ if newComputing:
     kuramoto.orders()
     kuramoto.shannon_entropies()
 
-# -----graphs-----
+# ----- graphs -----
 
 theta = np.loadtxt(FILE['theta'])
 
