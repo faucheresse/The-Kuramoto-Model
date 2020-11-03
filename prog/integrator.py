@@ -4,7 +4,7 @@ import numpy as np
 class Integration:
     """Integration by Euler's, RK2's, RK4's methods"""
     def euler(self, f, x0, t):
-        print("----- integrate -----")
+        print("----- integrate Euler -----")
 
         x = np.zeros((len(x0), len(t)))
         x[:, 0] = x0[:]
@@ -16,7 +16,7 @@ class Integration:
         return x
 
     def RK2(self, f, x0, t):
-        print("----- integrate -----")
+        print("----- integrate RK2 -----")
 
         x = np.zeros((len(x0), len(t)))
         x[:, 0] = x0[:]
@@ -29,7 +29,7 @@ class Integration:
         return x
 
     def RK4(self, f, x0, t):
-        print("----- integrate -----")
+        print("----- integrate RK4 -----")
 
         K = np.zeros((4, len(x0), len(t)))
 

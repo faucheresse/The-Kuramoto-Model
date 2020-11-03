@@ -3,3 +3,6 @@
 \contentsline {subsection}{\numberline {I.1}The initialisation of data}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {I.2}The computing functions}{4}{subsection.1.2}%
 \contentsline {section}{\numberline {II}Internal structure of the program}{6}{section.2}%
+\contentsline {subsection}{\numberline {II.1}Description of the physical model}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {II.2}Desciption of the used scientific computation algorithms}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {II.2.1}Euler method}{6}{subsubsection.2.2.1}%

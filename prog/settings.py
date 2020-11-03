@@ -1,14 +1,14 @@
-newData = False
-newComputing = False
+newData = True
+newComputing = True
 
-state = "chimera"
+# state = "chimera"
 # state = "random"
-# state = "inverse"
+state = "inverse"
 # state = "josephson"
 
-# integrator = "Euler"
+integrator = "Euler"
 # integrator = "RK2"
-integrator = "RK4"
+# integrator = "RK4"
 tf = 100
 
 Nr = 3
