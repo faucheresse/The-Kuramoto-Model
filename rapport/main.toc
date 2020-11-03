@@ -2,3 +2,4 @@
 \contentsline {section}{\numberline {I}Functional requirement of the program}{2}{section.1}%
 \contentsline {subsection}{\numberline {I.1}The initialisation of data}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {I.2}The computing functions}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {II}Internal structure of the program}{6}{section.2}%

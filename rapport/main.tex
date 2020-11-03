@@ -207,6 +207,10 @@ There are three computing functions that are imported from the \py{class Kuramot
 \end{table}
 \noindent
 To summarize in the main file there are 4 functions that are called for the computing. The first one is for initializing data according to the state choosed by the user. The following three are here to compute the main datas by using the Kuramoto model. You can choose if you want to initialized new datas (\ref{tab:init_data}) or do a new computing (\ref{tab:integrate}, \ref{tab:orders} \& \ref{tab:shannon}) by modifying the logical variables (\py{newData}, \py{newComputing}) in the settings file. In this file you can modify the \py{state} variable (\ref{tab:states1} \& \ref{tab:states2}). You can also modify the geometry of the system by changing \py{Nr} and \py{Nc}, don't forget to redo the initial datas and the computing after that. Be careful not to set the number of rows or columns to a negative or zero number, it wouldn't make any sense. If you want to save or use other files than the predifined one you can modify it in the dictionnary \py{FILE}. You don't have to modify anything else that is not in the settings file. If you do it be careful, because you can break the program. For the rest of the main file there are 12 functions that are here to display the results. The last three are here to create gifs, they are the begining of the gold version. These displaying functions will be explained later.
+\newpage
+\noindent
+\section{Internal structure of the program}
+\label{sec:2}
 
 \newpage
 \bibliographystyle{plain}
