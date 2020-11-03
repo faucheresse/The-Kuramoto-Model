@@ -1,17 +1,13 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import networkx as nx
 from matplotlib.animation import ArtistAnimation
 from PIL import Image
-from kuramoto import *
 from settings import *
 
 
 class Graphs:
     """docstring for Graphs"""
-
-    def __init__(self, kuramoto):
-        self.kuramoto = kuramoto
-
     def graphs(self, x, y, title, xlabel, ylabel, pol):
         if not pol:
             ax = plt.subplot(111)
@@ -182,9 +178,18 @@ class Graphs:
                    duration=40,
                    loop=0)
 
+    def connectivity(self, K, kmin):
+        edges = []
+        for i in range(K.shape[0]):
+            for j in range(K.shape[1]):
+                if K[i, j] > kmin:
+                    edges.append((i, j))
+
+        return edges
+
     def graph_connectivity(self, kmin=0):
         K = np.loadtxt(FILE['K'])
-        edges = self.kuramoto.connectivity(K, kmin)
+        edges = self.connectivity(K, kmin)
         plt.figure()
         G = nx.Graph()
         G.add_edges_from(edges)

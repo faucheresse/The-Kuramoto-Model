@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 from integrator import *
 from data import *
 from settings import *
@@ -41,6 +42,7 @@ class KuramotoModel:
         return r, c
 
     def integrate(self, f, theta0, tf=100, integrator="RK4"):
+        t1 = time.time()
         t = np.linspace(0, tf, 1000)
 
         if integrator == "RK4":
@@ -52,8 +54,11 @@ class KuramotoModel:
 
         self.data.write_on_file(FILE['t'], t)
         self.data.write_on_file(FILE['theta'], theta % (2 * np.pi))
+        t2 = time.time()
+        print("running time : ", t2 - t1, "s")
 
     def orders(self):
+        t1 = time.time()
         print("----- orders -----")
         theta = np.loadtxt(FILE['theta'])
         t = np.loadtxt(FILE['t'])
@@ -62,13 +67,14 @@ class KuramotoModel:
         for _t in range(len(t)):
             z = sum(np.exp(1j * theta[i][_t])
                     for i in range(self.N)) / self.N
-            print(_t)
 
             R[_t] = np.absolute(z)
             phi[_t] = np.angle(z)
 
         self.data.write_on_file(FILE['R'], R)
         self.data.write_on_file(FILE['phi'], phi)
+        t2 = time.time()
+        print("running time : ", t2 - t1, "s")
 
     def shannon_entropy(self, theta, i):
         t = np.loadtxt(FILE['t'])
@@ -96,21 +102,14 @@ class KuramotoModel:
         return S
 
     def shannon_entropies(self):
+        t1 = time.time()
         print("----- Shannon entropy -----")
         theta = np.loadtxt(FILE['theta'])
         t = np.loadtxt(FILE['t'])
         S = np.zeros((len(t), self.N))
         for i in range(self.N):
             S[:, i] = self.shannon_entropy(theta[i, :], i)
-            print(i)
 
         self.data.write_on_file(FILE['S'], S)
-
-    def connectivity(self, K, kmin):
-        edges = []
-        for i in range(K.shape[0]):
-            for j in range(K.shape[1]):
-                if K[i, j] > kmin:
-                    edges.append((i, j))
-
-        return edges
+        t2 = time.time()
+        print("running time : ", t2 - t1, "s")

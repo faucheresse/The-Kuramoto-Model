@@ -13,8 +13,6 @@ class Integration:
             deltaT = t[n + 1] - t[n]
             x[:, n + 1] = x[:, n] + f(x, t + deltaT / 2)[:, n] * deltaT
 
-            print(n)
-
         return x
 
     def RK2(self, f, x0, t):
@@ -27,8 +25,6 @@ class Integration:
             deltaT = t[n + 1] - t[n]
             step = x[:] + f(x, t + deltaT / 2)[:] * deltaT / 2
             x[:, n + 1] = x[:, n] + f(step, t + deltaT / 2)[:, n] * deltaT
-
-            print(n)
 
         return x
 
@@ -50,6 +46,5 @@ class Integration:
             x[:, n + 1] = x[:, n] + (K[0, :, n] + 2 * K[1, :, n]
                                      + 2 * K[2, :, n]
                                      + K[3, :, n]) * deltaT / 6
-            print(n)
 
         return x

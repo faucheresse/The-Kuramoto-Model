@@ -1,5 +1,6 @@
 import numpy as np
 from random import uniform, randint
+import time
 from settings import *
 
 
@@ -16,6 +17,8 @@ class Data:
         self.N = N
 
     def init_data(self, state="random"):
+        t1 = time.time()
+        print("----- init data -----")
 
         if state == "random":
             self.random_states()
@@ -32,6 +35,8 @@ class Data:
         np.savetxt(FILE['eta'], self.eta)
         np.savetxt(FILE['alpha'], self.alpha)
         np.savetxt(FILE['tau'], self.tau)
+        t2 = time.time()
+        print("running time : ", t2 - t1, "s")
 
     def write_on_file(self, file, wywtw):
         np.savetxt(file, wywtw)

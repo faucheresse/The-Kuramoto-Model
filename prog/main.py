@@ -22,7 +22,7 @@ alpha = np.loadtxt(FILE['alpha'])
 tau = np.loadtxt(FILE['tau'])
 
 kuramoto = KuramotoModel(omega, M, K, eta, alpha, tau)
-graphs = Graphs(kuramoto)
+graphs = Graphs()
 f = kuramoto
 
 # ----- Computing -----
@@ -36,15 +36,15 @@ if newComputing:
 
 theta = np.loadtxt(FILE['theta'])
 
-# graphs.graph_kuramoto(theta[0], False, integrator)
-# graphs.graph_kuramoto(theta[0], True, integrator)
-# graphs.graph_density_kuramoto(omega.size)
-# graphs.graph_orders()
+graphs.graph_kuramoto(theta[0], False, integrator)
+graphs.graph_kuramoto(theta[0], True, integrator)
+graphs.graph_density_kuramoto(omega.size)
+graphs.graph_orders()
 graphs.graph_shannon_entropy(False, 0)
-# graphs.graph_density_shannon_entropy(omega.size)
-# graphs.graph_connectivity()
-# graphs.graph_density_shannon_coordinates(0)
-# graphs.graph_density_kuramoto_coordinates(0)
+graphs.graph_density_shannon_entropy(omega.size)
+graphs.graph_connectivity()
+graphs.graph_density_shannon_coordinates(0)
+graphs.graph_density_kuramoto_coordinates(0)
 # graphs.animated_density_shannon_coordinates(t)
 # graphs.animated_density_kuramoto_coordinates(t)
 # graphs.animated_kuramoto(theta)
