@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{graphs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{title}\PYG{p}{,} \PYG{n}{xlabel}\PYG{p}{,} \PYG{n}{ylabel}\PYG{p}{,} \PYG{n}{pol}\PYG{p}{)}
+\end{Verbatim}

@@ -28,14 +28,14 @@ class Graphs:
             ax.grid(True)
             plt.show()
 
-    def graph_kuramoto(self, theta, pol=False, integrator="RK4"):
+    def kuramoto(self, theta, pol=False, integrator="RK4"):
         t = np.loadtxt(FILE['t'])
         title = "Kuramoto integrate by {0}'s method".format(integrator)
         xlabel = r"$t$"
         ylabel = r"$\theta$"
         self.graphs(t, theta, title, xlabel, ylabel, pol)
 
-    def animated_kuramoto(self, theta):
+    def anim_kuramoto(self, theta):
         t = np.loadtxt(FILE['t'])
         for i in range(N):
             print(i)
@@ -62,7 +62,7 @@ class Graphs:
                    duration=N*20,
                    loop=0)
 
-    def graph_density_kuramoto(self, N):
+    def dens_kuramoto(self, N):
         plt.figure()
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
@@ -75,7 +75,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_kuramoto_coordinates(self, t, show=True):
+    def dens_kuramoto_coord(self, t, show=True):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
         theta = np.reshape(theta[:, t], (Nc, Nr))
@@ -92,7 +92,7 @@ class Graphs:
             plt.savefig("./animation/density_kuramoto{0}.png".format(t))
             plt.close()
 
-    def animated_density_kuramoto_coordinates(self, t):
+    def anim_dens_kuramoto_coord(self, t):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
         r, c = np.arange(Nr), np.arange(Nc)
@@ -109,7 +109,7 @@ class Graphs:
                    duration=len(t)//4,
                    loop=0)
 
-    def graph_orders(self):
+    def orders(self):
         plt.figure()
         t = np.loadtxt(FILE['t'])
         R = np.loadtxt(FILE['R'])
@@ -123,7 +123,7 @@ class Graphs:
         plt.grid()
         plt.show()
 
-    def graph_shannon_entropy(self, pol, t):
+    def shannon(self, pol, t):
         S = np.loadtxt(FILE['S'])
         i = np.arange(len(S[t, :]))
         title = r"$i \longmapsto S_i^{q, n}(t)$"
@@ -131,7 +131,7 @@ class Graphs:
         ylabel = r"$S$"
         self.graphs(i, S[t, :], title, xlabel, ylabel, pol)
 
-    def graph_density_shannon_entropy(self, N):
+    def dens_shannon(self, N):
         plt.figure()
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
@@ -144,7 +144,7 @@ class Graphs:
         plt.colorbar()
         plt.show()
 
-    def graph_density_shannon_coordinates(self, t, show=True):
+    def dens_shannon_coord(self, t, show=True):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         S = np.reshape(S[t, :], (Nc, Nr))
@@ -161,7 +161,7 @@ class Graphs:
             plt.savefig("./animation/density_shannon{0}.png".format(t))
             plt.close()
 
-    def animated_density_shannon_coordinates(self, t):
+    def anim_dens_shannon_coord(self, t):
         plt.figure()
         S = np.loadtxt(FILE['S'])
         r, c = np.arange(Nr), np.arange(Nc)

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  6 NOV 2020 14:36
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  6 NOV 2020 18:45
  system commands enabled.
 **main.tex
 (./main.tex
@@ -509,12 +509,12 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
+(polyglossia)            righthyphenmin	2
+(polyglossia)            lefthyphenmin	2
 (polyglossia)            hyphenation	
 (polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            synonyms	patois,francais
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2 on input line 12
+(polyglossia)            synonyms	patois,francais on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -1650,6 +1650,10 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 \openout5 = main.pyg
 
 (./_minted-main/A05CEECB8B337DAE6520AB0BD7FFA7374FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/0087858C643CA07D7D9C40791B0766034FBEEAFC55D0059826E664B9BBCF372
 1.pygtex))
 \tf@toc=\write7
 
@@ -1900,7 +1904,7 @@ Underfull \hbox (badness 1845) in paragraph at lines 35--36
 
 (./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/os_table.pdf, id=110, 284.52756pt x 199.1693pt>
+<figures/os_table.pdf, id=115, 284.52756pt x 199.1693pt>
 File: figures/os_table.pdf Graphic file (type pdf)
 <use figures/os_table.pdf>
 Package luatex.def Info: figures/os_table.pdf  used on input line 128.
@@ -2282,21 +2286,101 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout4 = main.pyg
 
 (./_minted-main/F3C1275FE12BA1DCD5C0EB5BB62F148D4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex) [8]
+\openout5 = main.pyg
+
+(./_minted-main/0087858C643CA07D7D9C40791B0766034FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/packages_kuramotoModel.png, id=172, 274.02374pt x 348.30125pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mintinline' on input line 354.
+
+
+\openout5 = main.pyg
+
+(./_minted-main/0087858C643CA07D7D9C40791B0766034FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/9241DF7A5BCE70A8A80784A4369B02DB4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+Overfull \hbox (6.48479pt too wide) in paragraph at lines 1--369
+[][] 
+ []
+
+
+\openout5 = main.pyg
+
+(./_minted-main/ED74BAC3E987DF631148EF86B7FF12954FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/70EE885D7220AE625558FA31DA7537874FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/13055805EBC706977ABD32C89B6100534FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/D4A4B2D1C039FC06F7495B472DA6FF404FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/9B82EEBBBDDC06DCD2D9025665215EC84FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/81EFB2957AB7E822DF1C9929550B4D3E4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/B96D3337B51297BEEB4C7072D9951E6C4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/98B9BA07D2FE092CB9221CB33845F8854FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/53839E3511EAA04E082C41EF499D4A6E4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/C98191FF17CFF5BCED65B3D9B47165B64FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/C003320C480DDEC7CBCF9BD18A3C95094FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/8E8C22E0D33FA3E8E110A8D5F2CC2DDD4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+Overfull \hbox (5.78632pt too wide) in paragraph at lines 359--384
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--389
+
+ []
+
+[9]
+<figures/packages_kuramotoModel.png, id=189, 274.02374pt x 348.30125pt>
 File: figures/packages_kuramotoModel.png Graphic file (type png)
 <use figures/packages_kuramotoModel.png>
 Package luatex.def Info: figures/packages_kuramotoModel.png  used on input line 
-359.
+395.
 (luatex.def)             Requested size: 164.41551pt x 208.98236pt.
-<figures/classes_kuramotoModel.png, id=173, 781.92125pt x 769.87625pt>
+<figures/classes_kuramotoModel.png, id=190, 781.92125pt x 769.87625pt>
 File: figures/classes_kuramotoModel.png Graphic file (type png)
 <use figures/classes_kuramotoModel.png>
-Package luatex.def Info: figures/classes_kuramotoModel.png  used on input line 3
-66.
+Package luatex.def Info: figures/classes_kuramotoModel.png  used on input line 4
+02.
 (luatex.def)             Requested size: 390.95967pt x 384.93718pt.
- [8] [9<./figures/packages_kuramotoModel.png><./figures/classes_kuramotoModel.pn
-g>] (./main.bbl)
+ [10<./figures/packages_kuramotoModel.png>] [11<./figures/classes_kuramotoModel.
+png>] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2347,32 +2431,32 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
+ [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 79F5CD954F3A9971162EA259D6C85063;2740.
+(rerunfilecheck)             Checksum: 8344EC8294E4EED13AD3E3888ED533A8;2924.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 39507 strings out of 481365
+ 39812 strings out of 481365
  125171,1373583 words of node,token memory allocated
- 658 words of node memory still in use:
+ 653 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 22 attribute, 6
-8 glue_spec, 22 attribute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:1159,3:235,4:138,5:299,6:52,7:4530,8:54,9:513,10:20,11:235
+7 glue_spec, 22 attribute_list, 2 write, 2 pdf_action nodes
+   avail lists: 1:2,2:1029,3:235,4:128,5:301,6:52,7:4530,8:54,9:513,10:20,11:235
 
- 53058 multiletter control sequences out of 65536+600000
- 85 fonts using 23958731 bytes
+ 53087 multiletter control sequences out of 65536+600000
+ 85 fonts using 23958859 bytes
  69i,21n,111p,1723b,870s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
 Serif-Italic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus
@@ -2383,10 +2467,10 @@ sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
 s-fonts/LibertinusMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype
 /public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (11 pages, 165252 bytes).
+Output written on main.pdf (13 pages, 167141 bytes).
 
-PDF statistics: 251 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 131072)
- 120 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 265 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 131072)
+ 128 words of extra memory for PDF output out of 10000 (max. 100000000)
 

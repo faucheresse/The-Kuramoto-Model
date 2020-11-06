@@ -350,7 +350,43 @@ You can add a new method in this class to add new configurations. But don't forg
         elif state == "new method":
             self.new_method()
 \end{minted}
+\newpage
+\subsubsection{The \py{class Graphs}}
+\label{subsubs:graph}
+This class has no attributes. It is used to store all the displaying functions and the function to create gifs. Here is a table of the class:
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.48\linewidth} p{0.48\linewidth}} \toprule
+            \multicolumn{2}{c}{\py{class Graphs}}\\
+            \midrule
+            \hfil Attributes & \hfil Methods\\
+            \cmidrule(r){1-1} \cmidrule{2-2}
+            
+            \varnothing&
+            This class contains 13 methods:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{graphs(x, y, title, xlabel, ylabel, pol)}
+                \item \py{kuramoto(theta, pol, integrator)}
+                \item \py{anim_kuramoto(theta)}
+                \item \py{dens_kuramoto(N)}
+                \item \py{dens_kuramoto_coord(t, show)}
+                \item \py{anim_dens_kuramoto_coord(t)}
+                \item \py{orders()}
+                \item \py{shannon(pol, t)}
+                \item \py{dens_shannon(N)}
+                \item \py{dens_shannon_coord(t, show)}
+                \item \py{anim_dens_shannon_coord(t)}
+                \item \py{connectivity(K, kmin)}
+                \item \py{graph_connectivity(kmin)}
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{class Graphs}
+    \label{tab:graphs}
+\end{table}\\
 % ici mgl
+\newpage
 \subsection{Functional diagram of the program}
 \label{subs:2.4}
 The program is cut out in 6 modules: main, graphs, kuramoto, data, integrator, and settings. You can see how they interact with each other in the following figure:
