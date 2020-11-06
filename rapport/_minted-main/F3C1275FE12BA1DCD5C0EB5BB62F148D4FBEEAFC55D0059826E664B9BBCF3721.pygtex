@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{k}{if} \PYG{n}{state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}random\PYGZdq{}}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{random\PYGZus{}states}\PYG{p}{()}
+        \PYG{k}{elif} \PYG{n}{state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}chimera\PYGZdq{}}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{chimera\PYGZus{}states}\PYG{p}{()}
+        \PYG{k}{elif} \PYG{n}{state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}inverse\PYGZdq{}}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{inverse\PYGZus{}states}\PYG{p}{()}
+        \PYG{k}{elif} \PYG{n}{state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}josephson\PYGZdq{}}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{josephson\PYGZus{}matrice}\PYG{p}{()}
+        \PYG{k}{elif} \PYG{n}{state} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}new method\PYGZdq{}}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{new\PYGZus{}method}\PYG{p}{()}
+\end{Verbatim}

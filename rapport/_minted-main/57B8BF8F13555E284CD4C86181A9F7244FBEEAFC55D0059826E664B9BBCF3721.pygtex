@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{eta}\PYG{p}{,}\PYG{n+nb}{type}\PYG{p}{:}\PYG{n}{ndarray}\PYG{p}{,}\PYG{n}{shape}\PYG{p}{:(}\PYG{n}{N}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\end{Verbatim}

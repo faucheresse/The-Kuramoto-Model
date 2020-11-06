@@ -9,4 +9,6 @@
 \contentsline {subsubsection}{\numberline {II.2.2}RK2 method}{7}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {II.2.3}RK4 method}{7}{subsubsection.2.2.3}%
 \contentsline {subsection}{\numberline {II.3}List of the constitutive elements of the program}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {II.4}Functional diagram of the program}{7}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {II.3.1}The \mintinline {python}{class Integration}}{7}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {II.3.2}The \mintinline {python}{class Data}}{8}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {II.4}Functional diagram of the program}{8}{subsection.2.4}%

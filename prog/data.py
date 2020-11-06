@@ -10,7 +10,7 @@ class Data:
         self.omega = np.zeros(N)
         self.theta0 = np.zeros(N)
         self.K = np.zeros((N, N))
-        self.eta = np.zeros((N, tf))
+        self.eta = np.zeros((N, 1000))
         self.alpha = np.zeros((N, N))
         self.tau = np.zeros((N, N))
         self.M = M

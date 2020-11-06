@@ -275,21 +275,95 @@ Even if this is the slowest method of three orders of the Runge-Kutta algorithm,
 You can find all this algorithm in the integrator file in the \py{class Integration}.
 \subsection{List of the constitutive elements of the program}
 \label{subs:2.3}
+The Program includes 4 classes. There are 3 that are used in the main file and 1 in the \py{class KuramotoModel}, see \autoref{fig:diagram_classes}. 
+\subsubsection{The \py{class Integration}}
+\label{subsubs:integr}
+This class doesn't have any attributes. It is just used to store the integrators. It can be used in an other program just by writting \py{import integrator} at the begining of you code, and create an object with the class. This class is using the module \py{numpy}. Here is a table of the class:
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
+            \multicolumn{2}{c}{\py{class Integration}}\\
+            \midrule
+            \hfil Attributes & \hfil Methods\\
+            \cmidrule(r){1-1} \cmidrule{2-2}
+            
+            $\varnothing$&This class contains 3 methods, see \autoref{subs:2.2}:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{euler(f, x0,t)}
+                \item \py{RK2(f, x0,t)}
+                \item \py{RK4(f, x0,t)}
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{class Integration}
+    \label{tab:integr}
+\end{table}
+\newpage
+\noindent
+\subsubsection{The \py{class Data}}
+\label{subsubs:data}
+This class is used to create the initial data. Here is a table of the class:
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
+            \multicolumn{2}{c}{\py{class Data}}\\
+            \midrule
+            \hfil Attributes & \hfil Methods\\
+            \cmidrule(r){1-1} \cmidrule{2-2}
+            
+            This class contains 8 attributes, see \autoref{subs:1.1}:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{M,type:int}
+                \item\py{N,type:real}
+                \item\py{K,type:ndarray,shape:(N,N)}
+                \item\py{alpha,type:ndarray,shape:(N,N)}
+                \item\py{eta,type:ndarray,shape:(N,1000)}
+                \item\py{omega,type:ndarray,shape:(N,N)}
+                \item\py{tau,type:ndarray,shape:(N,N)}
+                \item\py{theta0,type:ndarray,shape:(N,N)}
+            \end{itemize}&
+            This class contains 5 methods:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{init_data(state)}, see \autoref{tab:init_data}
+                \item \py{chimera_states()}, see \autoref{tab:states1}
+                \item \py{inverse_states()}, see \autoref{tab:states2}
+                \item \py{random_states()}, see \autoref{tab:states1}
+                \item \py{josephson_matrice()}, see \autoref{tab:states2}
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{class Data}
+    \label{tab:data}
+\end{table}\\
+You can add a new method in this class to add new configurations. But don't forget to add a new possible value to the \py{state} variable in the \py{init_data()} function. As follows :
+\begin{minted}{python}
+        if state == "random":
+            self.random_states()
+        elif state == "chimera":
+            self.chimera_states()
+        elif state == "inverse":
+            self.inverse_states()
+        elif state == "josephson":
+            self.josephson_matrice()
+        elif state == "new method":
+            self.new_method()
+\end{minted}
+% ici mgl
 \subsection{Functional diagram of the program}
 \label{subs:2.4}
 The program is cut out in 6 modules: main, graphs, kuramoto, data, integrator, and settings. You can see how they interact with each other in the following figure:
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.6]{figures/packages_main.png}
+    \includegraphics[scale=0.6]{figures/packages_kuramotoModel.png}
     \caption{Diagram of the interactions between the modules.}
     \label{fig:diagram_module}
 \end{figure}
-\newpage
-\noindent
 In these modules data, integrator graphs and kuramoto contain a class. These classes are depending to each other like in the following diagram:
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.5]{figures/classes_main.png}
+    \includegraphics[scale=0.5]{figures/classes_kuramotoModel.png}
     \caption{Diagram of the dependences of the classes.}
     \label{fig:diagram_classes}
 \end{figure}
