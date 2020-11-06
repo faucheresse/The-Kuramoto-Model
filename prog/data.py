@@ -38,9 +38,6 @@ class Data:
         t2 = time.time()
         print("running time : ", t2 - t1, "s")
 
-    def write_on_file(self, file, wywtw):
-        np.savetxt(file, wywtw)
-
     def random_states(self):
         for i in range(self.N):
             self.omega[i] = uniform(0, 3)

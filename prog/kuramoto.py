@@ -52,8 +52,8 @@ class KuramotoModel:
         elif integrator == "Euler":
             theta = self.integr.euler(self, theta0, t)
 
-        self.data.write_on_file(FILE['t'], t)
-        self.data.write_on_file(FILE['theta'], theta % (2 * np.pi))
+        np.savetxt(FILE['t'], t)
+        np.savetxt(FILE['theta'], theta % (2 * np.pi))
         t2 = time.time()
         print("running time : ", t2 - t1, "s")
 
@@ -71,8 +71,8 @@ class KuramotoModel:
             R[_t] = np.absolute(z)
             phi[_t] = np.angle(z)
 
-        self.data.write_on_file(FILE['R'], R)
-        self.data.write_on_file(FILE['phi'], phi)
+        np.savetxt(FILE['R'], R)
+        np.savetxt(FILE['phi'], phi)
         t2 = time.time()
         print("running time : ", t2 - t1, "s")
 
@@ -110,6 +110,6 @@ class KuramotoModel:
         for i in range(self.N):
             S[:, i] = self.shannon_entropy(theta[i, :], i)
 
-        self.data.write_on_file(FILE['S'], S)
+        np.savetxt(FILE['S'], S)
         t2 = time.time()
         print("running time : ", t2 - t1, "s")

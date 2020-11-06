@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  4 NOV 2020 09:37
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  5 NOV 2020 17:14
  system commands enabled.
 **main.tex
 (./main.tex
@@ -510,11 +510,11 @@ braces):
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
 (polyglossia)            righthyphenmin	2
+(polyglossia)            patterns	hyph-fr.pat.txt
 (polyglossia)            hyphenation	
-(polyglossia)            synonyms	patois,francais
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            patterns	hyph-fr.pat.txt on input line 12
+(polyglossia)            synonyms	patois,francais
+(polyglossia)            loader	loadhyph-fr.tex on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -1892,10 +1892,10 @@ Underfull \hbox (badness 1845) in paragraph at lines 35--36
 
 (./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figure/os_table.pdf, id=80, 284.52756pt x 199.1693pt>
-File: figure/os_table.pdf Graphic file (type pdf)
-<use figure/os_table.pdf>
-Package luatex.def Info: figure/os_table.pdf  used on input line 128.
+<figures/os_table.pdf, id=100, 284.52756pt x 199.1693pt>
+File: figures/os_table.pdf Graphic file (type pdf)
+<use figures/os_table.pdf>
+Package luatex.def Info: figures/os_table.pdf  used on input line 128.
 (luatex.def)             Requested size: 227.62234pt x 159.33563pt.
 
 \openout5 = main.pyg
@@ -2061,7 +2061,7 @@ Overfull \hbox (1.34602pt too wide) in paragraph at lines 136--164
 m-ported from the [], by the ob-ject [].
  []
 
-[4<./figure/os_table.pdf>]
+[4<./figures/os_table.pdf>]
 \openout5 = main.pyg
 
 (./_minted-main/B25C93E424F3A2E80AD2E79937F79CD44FBEEAFC55D0059826E664B9BBCF372
@@ -2156,7 +2156,24 @@ Underfull \hbox (badness 1264) in paragraph at lines 198--199
 \openout5 = main.pyg
 
 (./_minted-main/D24C5A9B400A345B948B0472A42FA95F4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex) [6] (./main.bbl)
+1.pygtex) [6]
+\openout5 = main.pyg
+
+(./_minted-main/D24C5A9B400A345B948B0472A42FA95F4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+<figures/packages_main.png, id=142, 274.02374pt x 348.30125pt>
+File: figures/packages_main.png Graphic file (type png)
+<use figures/packages_main.png>
+Package luatex.def Info: figures/packages_main.png  used on input line 283.
+(luatex.def)             Requested size: 164.41551pt x 208.98236pt.
+ [7<./figures/packages_main.png>]
+<figures/classes_main.png, id=154, 711.65875pt x 789.95125pt>
+File: figures/classes_main.png Graphic file (type png)
+<use figures/classes_main.png>
+Package luatex.def Info: figures/classes_main.png  used on input line 292.
+(luatex.def)             Requested size: 355.8285pt x 394.97466pt.
+ [8<./figures/classes_main.png>]
+(./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2207,31 +2224,31 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+ [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 301.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 301.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 301.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 301.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5677FBBA8CC3CDF405C20C991C0C73D9;1553.
+(rerunfilecheck)             Checksum: 4665D850625BE60B2CC549BBCE65096D;2357.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 38922 strings out of 481365
+ 38982 strings out of 481365
  125171,1373583 words of node,token memory allocated
- 609 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 14 attribute, 6
-7 glue_spec, 14 attribute_list, 2 write nodes
-   avail lists: 1:2,2:929,3:235,4:107,5:297,6:54,7:4530,8:54,9:513,10:20,11:235
- 52994 multiletter control sequences out of 65536+600000
- 85 fonts using 23958603 bytes
+ 633 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 20 attribute, 6
+7 glue_spec, 20 attribute_list, 2 write nodes
+   avail lists: 1:1,2:917,3:235,4:107,5:297,6:54,7:4530,8:54,9:513,10:20,11:235
+ 53014 multiletter control sequences out of 65536+600000
+ 85 fonts using 23958667 bytes
  69i,21n,111p,1763b,870s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
 Serif-Italic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus
@@ -2242,10 +2259,10 @@ sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
 s-fonts/LibertinusMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype
 /public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-d
 ist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (8 pages, 76366 bytes).
+Output written on main.pdf (10 pages, 161852 bytes).
 
-PDF statistics: 180 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 131072)
- 72 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 221 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 131072)
+ 104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

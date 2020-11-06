@@ -5,4 +5,8 @@
 \contentsline {section}{\numberline {II}Internal structure of the program}{6}{section.2}%
 \contentsline {subsection}{\numberline {II.1}Description of the physical model}{6}{subsection.2.1}%
 \contentsline {subsection}{\numberline {II.2}Desciption of the used scientific computation algorithms}{6}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {II.2.1}Euler method}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {II.2.1}Euler's method}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {II.2.2}RK2 method}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {II.2.3}RK4 method}{7}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {II.3}List of the constitutive elements of the program}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {II.4}Functional diagram of the program}{7}{subsection.2.4}%

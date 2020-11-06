@@ -125,7 +125,7 @@ They are different for each state, you can see their definitions in the tables \
 For each \py{state} choosen you have to define in the settings file the parameters \py{Nr} and \py{Nc}, to define the geometry of the system. \py{Nr} define the number of rows and \py{Nc} the number of columms, so \py{N=Nr*Nc} is the number of oscillators that you have. For example if you choose \py{N=12} in the geometry \py{Nr=3, Nc=4}, you will have this configuration:\\
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.8]{figure/os_table.pdf}
+    \includegraphics[scale=0.8]{figures/os_table.pdf}
     \caption{Configuration of the oscillators for \py{Nr=3, Nc=4}}
     \label{fig:os_table}
 \end{figure}\\
@@ -230,25 +230,69 @@ As you can see this model is pretty complete. The formula is the sum of all the 
 \subsection{Desciption of the used scientific computation algorithms}
 \label{subs:2.2}
 During the computation we have used 3 algorithm for the integration of the kuramoto model \ref{subs:2.1}, the Euler, RK2 and RK4 algorithm. But you can choose the one that you want to use. It is recommended to use the RK4 method because it loses less energy over time than the others, so it is more precise but if you want less computing time it is a good thing to try the other. You can see all these integrators in the \py{class Integration} in the integrator file.\\
+We are looking to integrate $\dot{\theta} = f(\theta)$.\\
 Let $\theta\in\real^n$ and $f:\real^n  \rightarrow  \real^n$. We wil note $\theta^i$ the i-th component of $\theta$ and $\theta_n$ the vector $\theta$ at the time $t_n$, $\theta_n \equiv \theta(t_n)$. So we have $\theta^i_n$ the i-th component at a time $t_n$ of $\theta$.\\
 The Euler and Runge-Kutta methods are integrators of first-order differential equations and are based on the definition of the derivative:
 \begin{equation}
-\label{eq:2.1}
-\begin{aligned}
-    \dot{\theta}(t_n) &= \dfrac{\theta(t_n + h) - \theta(t_n)}{h}\simeq\dfrac{\theta_{n+1} - \theta{n}}{\Delta t}\\
-    \iff \theta_{n+1} &= \theta_n + \dot{\theta}(t_n)\Delta t = \theta_n + f(\theta_n)\Delta t
-\end{aligned}
+\label{eq:derivative}
+    \begin{aligned}
+        \dot{\theta}(t_n) &= \dfrac{\theta(t_n + h) - \theta(t_n)}{h}\simeq\dfrac{\theta_{n+1} - \theta{n}}{\Delta t}\\
+        \iff \theta_{n+1} &= \theta_n + \dot{\theta}(t_n)\Delta t = \theta_n + f(\theta_n)\Delta t
+    \end{aligned}
 \end{equation}
 with $\Delta t = \frac{T}{N_t}$ the step of the simulation ($N_t\in\intg$ the number of steps of the simulation and $T$ the time of the simulation). We need $\Delta t$ sufficiently small so $N_t$ enought large and $T$ sufficiently thin.
 \subsubsection{Euler's method}
 \label{subsubs:Euler}
-The Euler algorithm is directly an application of the \autoref{eq:2.1}:
+The Euler algorithm is directly an application of the \autoref{eq:derivative}:
 \begin{equation}
-\theta_{n+1} = \theta_n + f(\theta_n)\Delta t
+    \theta_{n+1} = \theta_n + f(\theta_n)\Delta t
 \end{equation}
-\subsubsection{RK2's method}
-\label{subsubs:2.2}
-The Runge-Kutta algorithm
+This method will diverge quicker than the two other but the computing time is the shortest.
+\newpage
+\subsubsection{RK2 method}
+\label{subsubs:RK2}
+The Runge-Kutta algorithm (RK2) is like the Euler's method but with a double use of the \autoref{eq:derivative}. There is a middle step to refine the estimation of $f$.
+\begin{equation}
+    \theta_{n+1} = \theta_n + f(\theta_n + f(\theta_n)\dfrac{\Delta t}{2})\Delta t
+\end{equation}
+This method will diverge quicker than the RK4 method and slower than the Euler's method. Its computing time will be longer than the one of the Euler's method but remains shorter than the one of RK4 method.
+\subsubsection{RK4 method}
+\label{subsubs:RK4}
+RK4, the fourth order Runge-kutta algorithm, is similar to the RK2 algorithm but with a refinement around the middle point.
+\begin{equation}
+    \theta_{n+1} = \theta_n + (K_{1,n} + 2K_{2,n} + 2K_{3,n} + K_{4,n}\,)\frac{\Delta t}{6}
+\end{equation}
+with
+\begin{equation}
+    \begin{aligned}
+        K_{1,n} &= f\,\left(\theta_n\right)\\
+        K_{2,n} &= f\,\left(\theta_n + K_{1,n}\,\frac{\Delta t}{2}\right)\\
+        K_{3,n} &= f\,\left(\theta_n + K_{2,n}\,\frac{\Delta t}{2}\right)\\
+        K_{4,n} &= f\,\left(\theta_n + K_{3,n}\,\Delta t\right)
+    \end{aligned}
+\end{equation}
+Even if this is the slowest method of three orders of the Runge-Kutta algorithm, it is the most accurate one.\\
+You can find all this algorithm in the integrator file in the \py{class Integration}.
+\subsection{List of the constitutive elements of the program}
+\label{subs:2.3}
+\subsection{Functional diagram of the program}
+\label{subs:2.4}
+The program is cut out in 6 modules: main, graphs, kuramoto, data, integrator, and settings. You can see how they interact with each other in the following figure:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.6]{figures/packages_main.png}
+    \caption{Diagram of the interactions between the modules.}
+    \label{fig:diagram_module}
+\end{figure}
+\newpage
+\noindent
+In these modules data, integrator graphs and kuramoto contain a class. These classes are depending to each other like in the following diagram:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{figures/classes_main.png}
+    \caption{Diagram of the dependences of the classes.}
+    \label{fig:diagram_classes}
+\end{figure}
 
 \newpage
 \bibliographystyle{plain}
