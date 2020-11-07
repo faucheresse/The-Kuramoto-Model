@@ -1,14 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
-from matplotlib.animation import ArtistAnimation
 from PIL import Image
 from settings import *
 
 
 class Graphs:
     """docstring for Graphs"""
-    def graphs(self, x, y, title, xlabel, ylabel, pol):
+    def graphs(self, x, y, title, xlabel, ylabel, pol=False):
         if not pol:
             ax = plt.subplot(111)
             ax.plot(x, y)
@@ -35,8 +34,9 @@ class Graphs:
         ylabel = r"$\theta$"
         self.graphs(t, theta, title, xlabel, ylabel, pol)
 
-    def anim_kuramoto(self, theta):
+    def anim_kuramoto(self):
         t = np.loadtxt(FILE['t'])
+        theta = np.loadtxt(FILE['theta'])
         for i in range(N):
             print(i)
             fig = plt.figure()
@@ -70,6 +70,7 @@ class Graphs:
 
         plt.contourf(t, ind, theta)
 
+        plt.title(r"$(i,t)\longmapsto \theta^i (t)$")
         plt.xlabel("t")
         plt.ylabel("i")
         plt.colorbar()
@@ -83,6 +84,7 @@ class Graphs:
 
         plt.contourf(r, c, theta)
 
+        plt.title(r"$(r,c)\longmapsto \theta^{i_{r,d}} (t)$")
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
@@ -92,9 +94,10 @@ class Graphs:
             plt.savefig("./animation/density_kuramoto{0}.png".format(t))
             plt.close()
 
-    def anim_dens_kuramoto_coord(self, t):
+    def anim_dens_kuramoto_coord(self):
         plt.figure()
         theta = np.loadtxt(FILE['theta'])
+        t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
             print(i)
@@ -117,6 +120,7 @@ class Graphs:
         plt.plot(t, R, label=r"$t \longmapsto R(t)$")
         plt.plot(t, phi, label=r"$t \longmapsto \Phi(t)$")
 
+        plt.title(r"Orders")
         plt.xlabel(r"$t$")
         plt.ylabel(r"$R, \Phi$")
         plt.legend()
@@ -139,6 +143,7 @@ class Graphs:
 
         plt.contourf(ind, t, S)
 
+        plt.title(r"$(i,t) \longmapsto S_i^{q, n}(t)$")
         plt.xlabel("i")
         plt.ylabel("t")
         plt.colorbar()
@@ -152,6 +157,7 @@ class Graphs:
 
         plt.contourf(r, c, S)
 
+        plt.title(r"$(r,c) \longmapsto S_i^{q, n}(t)$")
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
@@ -161,9 +167,10 @@ class Graphs:
             plt.savefig("./animation/density_shannon{0}.png".format(t))
             plt.close()
 
-    def anim_dens_shannon_coord(self, t):
+    def anim_dens_shannon_coord(self):
         plt.figure()
         S = np.loadtxt(FILE['S'])
+        t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
             self.graph_density_shannon_coordinates(i, False)
@@ -191,6 +198,9 @@ class Graphs:
         K = np.loadtxt(FILE['K'])
         edges = self.connectivity(K, kmin)
         plt.figure()
+        plt.title(
+            "Connectivity between the oscillators with kmin={0}"
+            .format(kmin))
         G = nx.Graph()
         G.add_edges_from(edges)
         nx.draw_networkx(G, with_labels=True)

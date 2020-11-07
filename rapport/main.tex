@@ -12,7 +12,7 @@ The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the 
 \section{Functional requirement of the program}
 \label{sec:1}
 \noindent
-All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stocked in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stocked in data files in the same directory. And finally there are the functions that display the graphs by using the module \py{matplotlib.pyplot}. In this section we will describe the functions that create data files and their datas. Firstly the initial datas are created throught the \py{class Data} wich is in the data file. Finally the computing of the other values is in the \py{class KuramotoModel} wich is in the kuramoto file.
+All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stored in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stored in data files in the same directory. And finally there are the functions that display the graphs by using the module \py{matplotlib.pyplot}. In this section we will describe the functions that create data files and their datas. Firstly the initial datas are created throught the \py{class Data} wich is in the data file. Finally the computing of the other values is in the \py{class KuramotoModel} wich is in the kuramoto file.
 \subsection{The initialisation of data}
 \label{subs:1.1}
 The initial datas are created by the function: \py{data.init_data(state)}. You can choose if you want to create new initial datas by changing the boolean value of the \py{newData=False} variable in the settings file.
@@ -24,7 +24,7 @@ The initial datas are created by the function: \py{data.init_data(state)}. You c
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function is using to create initial values, stocked in data files in the directory parameters, according to the value of the argument \py{state} set by default to \py{state="random"}. You can create data for random, chimera, inverse, or josephson states. &
+            This function is using to create initial values, stored in data files in the directory parameters, according to the value of the argument \py{state} set by default to \py{state="random"}. You can create data for random, chimera, inverse, or josephson states. &
             The argument \py{state} is a \py{string}. By default it takes the value \py{"random"} but you can give it these values:\begin{itemize}[leftmargin=15pt]
             \setlength{\itemsep}{0pt}
             \item \py{"random"}
@@ -384,6 +384,31 @@ This class has no attributes. It is used to store all the displaying functions a
     \end{center}
     \caption{class Graphs}
     \label{tab:graphs}
+\end{table}\\
+You need to have the modules \py{numpy}, \py{matplotlib.pyplot}, \py{networkx} and \py{PIL}, installed on your computer to use this class. The module \py{numpy} is used to recover data from the data files, \py{matplotlib.pyplot} is used to plot all the graphs, \py{networkx} is used to create the connectivity graph, and \py{PIL} is used to create the gifs with all the graphs.\\ \\
+\textbf{Description of methods}
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
+            \multicolumn{2}{c}{\py{graphs(x, y, title, xlabel, ylabel, pol)}}\\
+            \midrule
+            \hfil Description & \hfil Input\\
+            \cmidrule(r){1-1} \cmidrule{2-2}
+           
+            This method is used to plot and display in cartesian or in polar.&\vspace{-8pt}\begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{x} is the x-axis value. It is a list
+                \item \py{y} is the y-axis value. It is a list
+                \item \py{title} is the title of the graph. It is a string
+                \item \py{xlabel} is the label on the x-axis. It is a string
+                \item \py{ylabel} is the label on the y-axis. It is a string
+                \item \py{pol} is used to choosed if you want a polar graph or not. It is a boolean set by default to \py{False}.
+            \end{itemize}
+            \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{method graphs()}
+    \label{tab:graphs.graphs}
 \end{table}\\
 % ici mgl
 \newpage
