@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{kuramoto}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{show}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+\end{Verbatim}

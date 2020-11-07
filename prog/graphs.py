@@ -6,63 +6,53 @@ from settings import *
 
 
 class Graphs:
-    """docstring for Graphs"""
-    def graphs(self, x, y, title, xlabel, ylabel, pol=False):
-        if not pol:
-            ax = plt.subplot(111)
-            ax.plot(x, y)
-            ax.set_xlabel(xlabel)
-            ax.set_ylabel(ylabel)
-            ax.set_title(title)
-            ax.grid(True)
 
+    def kuramoto(self, t, show=True):
+        theta = np.loadtxt(FILE['theta'])
+        ind = np.arange(N)
+        title = r"$\{\theta^i(t)\}_{i=0,...,N-1}$ at a time $t=$"\
+                + "{0}".format(t)
+        ax = plt.subplot(111, projection='polar')
+        
+        ax.set_xlabel(r"$i$")
+        ax.set_ylabel(r"$\{\theta^i(t)\}_{i=0,...,N-1}$")
+        ax.set_title(title)
+        ax.grid(True)
+        if show:
+            ax.plot(theta[:, t], ind)
             plt.show()
-
         else:
-            ax = plt.subplot(111, projection='polar')
-            ax.plot(y, x)
-            ax.set_xlabel(xlabel)
-            ax.set_ylabel(ylabel)
-            ax.set_title(title)
-            ax.grid(True)
-            plt.show()
+            ax.plot(theta[:, t], ind, ls=" ", marker="+")
+            plt.savefig("./animation/kuramoto{0}.png".format(t))
+            plt.close()
 
-    def kuramoto(self, theta, pol=False, integrator="RK4"):
-        t = np.loadtxt(FILE['t'])
-        title = "Kuramoto integrate by {0}'s method".format(integrator)
-        xlabel = r"$t$"
-        ylabel = r"$\theta$"
-        self.graphs(t, theta, title, xlabel, ylabel, pol)
-
-    def anim_kuramoto(self):
+    def all_kuramoto(self):
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
         for i in range(N):
-            print(i)
-            fig = plt.figure()
-            ax = plt.subplot(111, projection='polar')
-            ax.plot(t, theta[i])
-            title = r"$\theta(t={0})$".format(i)
-            xlabel = r"$t$"
-            ylabel = r"$\theta$"
-            ax.set_xlabel(xlabel)
-            ax.set_ylabel(ylabel)
-            ax.set_title(title)
-            ax.grid(True)
-            fig.savefig("./animation/kuramoto{0}.png".format(i))
-            plt.close(fig)
+            plt.plot(t, theta[i])
+        plt.xlabel(r"$t$")
+        plt.ylabel(r"$\theta$")
+        plt.title(r"The N curves $t\longmapsto\theta^i(t)$")
+        plt.grid()
+
+        plt.show()
+
+    def anim_kuramoto(self):
+        t = np.loadtxt(FILE['t'])
+        # for _t in range(len(t)):
+        #     self.kuramoto(_t, False)
 
         im = [Image.open("./animation/kuramoto{0}.png".format(i))
-              for i in range(N)]
+              for i in range(len(t))]
 
         im[0].save('./animation/kuramoto.gif',
-                   format='GIF',
                    save_all=True,
                    append_images=im[1:],
-                   duration=N*20,
+                   duration=20,
                    loop=0)
 
-    def dens_kuramoto(self, N):
+    def dens_kuramoto(self):
         plt.figure()
         t = np.loadtxt(FILE['t'])
         theta = np.loadtxt(FILE['theta'])
@@ -100,7 +90,6 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
-            print(i)
             self.graph_density_kuramoto_coordinates(i, False)
         im = [Image.open("./animation/density_kuramoto{0}.png".format(i))
               for i in range(len(t))]
@@ -109,7 +98,7 @@ class Graphs:
                    format='GIF',
                    save_all=True,
                    append_images=im[1:],
-                   duration=len(t)//4,
+                   duration=20,
                    loop=0)
 
     def orders(self):
@@ -117,25 +106,35 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         R = np.loadtxt(FILE['R'])
         phi = np.loadtxt(FILE['phi'])
-        plt.plot(t, R, label=r"$t \longmapsto R(t)$")
-        plt.plot(t, phi, label=r"$t \longmapsto \Phi(t)$")
 
-        plt.title(r"Orders")
+        plt.plot(t, R)
+        plt.title(r"$t \longmapsto R(t)$")
         plt.xlabel(r"$t$")
-        plt.ylabel(r"$R, \Phi$")
-        plt.legend()
+        plt.ylabel(r"$R$")
+        plt.grid()
+        plt.show()
+        plt.close()
+
+        plt.plot(t, phi, c="orange")
+        plt.title(r"$t \longmapsto \Phi(t)$")
+        plt.xlabel(r"$t$")
+        plt.ylabel(r"$\Phi$")
         plt.grid()
         plt.show()
 
-    def shannon(self, pol, t):
+    def shannon(self, t):
         S = np.loadtxt(FILE['S'])
         i = np.arange(len(S[t, :]))
-        title = r"$i \longmapsto S_i^{q, n}(t)$"
-        xlabel = r"$i$"
-        ylabel = r"$S$"
-        self.graphs(i, S[t, :], title, xlabel, ylabel, pol)
+        ax = plt.subplot(111)
+        ax.plot(i, S[t, :])
+        ax.set_xlabel(r"$i$")
+        ax.set_ylabel(r"$S$")
+        ax.set_title(r"$i \longmapsto S_i^{q, n}(t)$")
+        ax.grid(True)
 
-    def dens_shannon(self, N):
+        plt.show()
+
+    def dens_shannon(self):
         plt.figure()
         t = np.loadtxt(FILE['t'])
         S = np.loadtxt(FILE['S'])
@@ -179,10 +178,9 @@ class Graphs:
               for i in range(len(t))]
 
         im[0].save('./animation/density_shannon.gif',
-                   format='GIF',
                    save_all=True,
                    append_images=im[1:],
-                   duration=40,
+                   duration=20,
                    loop=0)
 
     def connectivity(self, K, kmin):

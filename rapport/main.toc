@@ -11,5 +11,5 @@
 \contentsline {subsection}{\numberline {II.3}List of the constitutive elements of the program}{7}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {II.3.1}The \mintinline {python}{class Integration}}{7}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {II.3.2}The \mintinline {python}{class Data}}{8}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {II.3.3}The \mintinline {python}{class Graphs}}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {II.3.3}The \mintinline {python}{class Graphs}}{8}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {II.4}Functional diagram of the program}{10}{subsection.2.4}%
