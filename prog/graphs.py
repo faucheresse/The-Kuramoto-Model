@@ -74,7 +74,8 @@ class Graphs:
 
         plt.contourf(r, c, theta)
 
-        plt.title(r"$(r,c)\longmapsto \theta^{i_{r,d}} (t)$")
+        plt.title(r"$(r,c)\longmapsto \theta^{i_{r,d}} (t)$ at time $t=$"
+                  + "{0}".format(t))
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
@@ -129,7 +130,8 @@ class Graphs:
         ax.plot(i, S[t, :])
         ax.set_xlabel(r"$i$")
         ax.set_ylabel(r"$S$")
-        ax.set_title(r"$i \longmapsto S_i^{q, n}(t)$")
+        ax.set_title(r"$i \longmapsto S_i^{q, n}(t)$ at time $t=$"
+                  + "{0}".format(t))
         ax.grid(True)
 
         plt.show()
@@ -156,7 +158,8 @@ class Graphs:
 
         plt.contourf(r, c, S)
 
-        plt.title(r"$(r,c) \longmapsto S_i^{q, n}(t)$")
+        plt.title(r"$(r,c) \longmapsto S_i^{q, n}(t)$ at time $t=$"
+                  + "{0}".format(t))
         plt.xlabel("r")
         plt.ylabel("c")
         plt.colorbar()
@@ -183,7 +186,8 @@ class Graphs:
                    duration=20,
                    loop=0)
 
-    def connectivity(self, K, kmin):
+    @staticmethod
+    def connectivity(K, kmin):
         edges = []
         for i in range(K.shape[0]):
             for j in range(K.shape[1]):

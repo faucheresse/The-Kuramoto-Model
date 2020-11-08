@@ -354,26 +354,22 @@ You can add a new method in this class to add new configurations. But don't forg
 \label{subsubs:graph}
 This class has no attributes. It is used to store all the displaying functions and the function to create gifs. This class contains 13 methods:
 \begin{itemize}[itemsep=0pt]
-    \item \py{kuramoto(t, show=True)}
-    \item \py{all_kuramoto()}
-    \item \py{anim_kuramoto()}
-    \item \py{dens_kuramoto()}
-    \item \py{dens_kuramoto_coord(t, show)}
-    \item \py{anim_dens_kuramoto_coord()}
-    \item \py{orders()}
-    \item \py{shannon(t, pol=False)}
-    \item \py{dens_shannon()}
-    \item \py{dens_shannon_coord(t, show=True)}
-    \item \py{anim_dens_shannon_coord(t)}
-    \item \py{connectivity(K, kmin)}
-    \item \py{graph_connectivity(kmin=0)}
+    \item \py{kuramoto(t, show=True)} : plot $i\longmapsto\{\theta^i(t)\}_{i=0,...,N-1}$ at a time $t$. The argument \py{show} is used by the animation function, it allows to not display the graph but save it in the animation directory (if \py{show==False}).
+    \item \py{all_kuramoto()} : plot the N curves $t\longmapsto\theta^i(t)$
+    \item \py{anim_kuramoto()} : using \py{kuramoto(t, show=False)} it take all the \py{"kuramoto*.png"} in the animation directory and create a gif with them.
+    \item \py{dens_kuramoto()} : plot $(i,t)\longmapsto \theta^i (t)$ using the \py{numpy.contourf()} method. 
+    \item \py{dens_kuramoto_coord(t, show=True)} : plot $(r,c)\longmapsto \theta^{i_{r,d}} (t)$ at time $t$ using the \py{numpy.contourf()} method.
+    \item \py{anim_dens_kuramoto_coord()} : using \py{dens_kuramoto_coord(t, show=False)} it create a gif.
+    \item \py{orders()} : plot $t \longmapsto R(t)$ and $t \longmapsto \Phi(t)$.
+    \item \py{shannon(t)} : plot $i \longmapsto S_i^{q, n}(t)$ at a time $t$.
+    \item \py{dens_shannon()} : plot $(i,t) \longmapsto S_i^{q, n}(t)$ using the \py{numpy.contourf()} method.
+    \item \py{dens_shannon_coord(t, show=True)} : plot $(r,c) \longmapsto S_i^{q, n}(t)$ at time $t$ using the \py{numpy.contourf()} method.
+    \item \py{anim_dens_shannon_coord()} : using \py{dens_shannon_coord(t, show=False)} it create a gif.
+    \item \py{connectivity(K, kmin)} : it is a static method that return a list with all the edges connected in the coupling matrix \py{K} using a criterion \py{kmin}.
+    \item \py{graph_connectivity(kmin=0)} : using the static method \py{connectivity(K, kmin)} it creates a graph of the connectivity of the oscillators with the criterion \py{kmin}.
 \end{itemize}
 \noindent
 You need to have the modules \py{numpy}, \py{matplotlib.pyplot}, \py{networkx} and \py{PIL}, installed on your computer to use this class. The module \py{numpy} is used to recover data from the data files, \py{matplotlib.pyplot} is used to plot all the graphs, \py{networkx} is used to create the connectivity graph, and \py{PIL} is used to create the gifs with all the graphs.\\
-\smallbreak
-\noindent
-\textbf{Description of the methods}\\
-
 % ici mgl
 \newpage
 \subsection{Functional diagram of the program}
