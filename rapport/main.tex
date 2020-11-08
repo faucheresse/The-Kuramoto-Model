@@ -7,15 +7,16 @@
 \maketitlepage
 \tableofcontents
 \newpage
+\section{Introduction}
 \noindent
-The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the syncronization of coupled oscillators. This program, written by myself, Paradis Enzo, is based on this model to describe a set of 2D-coupled oscillators in various cases. In particular to reproduce data obtain in the case of the coupled arrays of Josephson junctions \cite{josephson}. This program was edited for the last time the 10/23/2020. It was written in the language python 3 under ubuntu, so you just have to use \mintinline{shell}{python3} to execute it. There are 6 files. The first one is the main file, \mintinline{shell}{main.py}, it is the only one you have to execute, you could have to comment or uncomment some lines. Instead of that you just have to edit one file, the settings file, \mintinline{shell}{settings.py} were you can find all the settings. Then you have the kuramoto file, \mintinline{shell}{kuramoto.py}, where you can find the \py{class KuramotoModel} which contains all the functions related with the model or the verifications. The data file, \mintinline{shell}{data.py}, contains the \py{class Data}, which is used to manage data. The graphs file, \mintinline{shell}{graphs.py}, with the \py{class Graphs} manages the displaying of the results. And the integrator file, \mintinline{shell}{integrator.py}, where you can find the \py{class Integration}, which contains the three integrators : Euler, RK2, RK4. There is also the parameters directory which is important to save data.You can find all this files on \href{https://github.com/faucheresse/swimming_pool/tree/main/prog}{github}.
+The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the syncronization of coupled oscillators. This program is based on this model to describe a set of 2D-coupled oscillators in various cases. In particular to reproduce data obtained in the case of the coupled arrays of Josephson junctions \cite{josephson}. This program was edited for the last time the 10/23/2020. It was written in python 3 under ubuntu. There are 6 files. The first one is the main file, \mintinline{shell}{main.py}, it is the only one you have to execute, you could have to comment or uncomment some lines. Instead of that you just have to edit one file, the settings file, \mintinline{shell}{settings.py} where you can find all the settings. Then you have the kuramoto file, \mintinline{shell}{kuramoto.py}, where you can find the \py{class KuramotoModel} which contains all the functions related to the model or the verifications. The data file, \mintinline{shell}{data.py}, contains the \py{class Data}, which is used to manage data. The graphs file, \mintinline{shell}{graphs.py}, with the \py{class Graphs} manages the display of the results. And the integrator file, \mintinline{shell}{integrator.py}, where you can find the \py{class Integration}, which contains the three integrators : Euler, RK2, RK4. There is also the parameters directory which is important to save data. You can find all these files on \href{https://github.com/faucheresse/swimming_pool/tree/main/prog}{github}.
 \section{Functional requirement of the program}
 \label{sec:1}
 \noindent
-All the functions which are used for the computing or the displaying of the results are called in the main file. At first there are the functions wich create the initial values in respect of the parameters set in the settings file, then this values are stored in data (.dat) files in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stored in data files in the same directory. And finally there are the functions that display the graphs by using the module \py{matplotlib.pyplot}. In this section we will describe the functions that create data files and their datas. Firstly the initial datas are created throught the \py{class Data} wich is in the data file. Finally the computing of the other values is in the \py{class KuramotoModel} wich is in the kuramoto file.
+All the functions used for the computing or to display of the results are called in the main file. At first there are the functions which create the initial values in respect of the parameters, then these values are stored in data files (.dat) in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stored in data files in the same directory. And finally there are the functions that display the graphs using the module \py{matplotlib.pyplot}. In this section we will describe the functions that create the data files and their data. Firstly, initial data are created throught the \py{class Data} wich is in the data file. Finally the computing of the other values is in the \py{class KuramotoModel} wich is in the kuramoto file.
 \subsection{The initialisation of data}
 \label{subs:1.1}
-The initial datas are created by the function: \py{data.init_data(state)}. You can choose if you want to create new initial datas by changing the boolean value of the \py{newData=False} variable in the settings file.
+The initial data are created by the function: \py{data.init_data(state)}. You can choose if you want to create new initial data by changing the value of \py{newData} to \py{True}.
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}} \toprule
@@ -24,7 +25,7 @@ The initial datas are created by the function: \py{data.init_data(state)}. You c
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function is using to create initial values, stored in data files in the directory parameters, according to the value of the argument \py{state} set by default to \py{state="random"}. You can create data for random, chimera, inverse, or josephson states. &
+            This function is used to create the initial values, stored in data files, according to the value of the argument \py{state} set by default to \py{state="random"}. You can create data for random, chimera, inverse, or josephson states. &
             The argument \py{state} is a \py{string}. By default it takes the value \py{"random"} but you can give it these values:\begin{itemize}[leftmargin=15pt]
             \setlength{\itemsep}{0pt}
             \item \py{"random"}
@@ -32,7 +33,7 @@ The initial datas are created by the function: \py{data.init_data(state)}. You c
             \item \py{"inverse"}
             \item \py{"josephson"}
             \end{itemize}
-            & This function will retrieve six data file in the parameters directory, computing in according to the \py{state} argument.
+            & This function will retrieve six data files in the parameters directory, computing in according to the \py{state} argument.
             The data files are: \begin{itemize}[leftmargin=15pt, itemsep=0pt]
             \item \py{"omega.dat"}
             \item \py{"theta0.dat"}
@@ -47,22 +48,22 @@ The initial datas are created by the function: \py{data.init_data(state)}. You c
     \caption{function data.init\_data()}
     \label{tab:init_data}
 \end{table}\\
-Each \py{state} create six variables, wich are defined as follows:
+Each \py{state} creates six variables, which are defined as follows:
 \begin{itemize}
-        \item $\omega$ is a list of real of size N. It contains the natural oscillations of each oscillators.
-        \item $\theta_0$ is a list of real of size N. It contains the intial phase of each oscillators. So at the $\theta^i(t=t_0)$.
-        \item $K$ is a matrix of real of size N$\times$N. It contains the coupling coefficients between each oscillators depending on the nearest neighbour. The nearest neighbour of an oscillator are defined by M in the settings file. It is set as $30\%$ of the totality of the oscillators, you can change it. 
-        \item $\alpha$ is a matrix of real of size N$\times$N. It is the dephasing matrix of the coupling.
-        \item $\tau$ is a matrix of real of size N$\times$N. It is the delay matrix.
-        \item $\eta$ is a matrix of real of size N$\times$T. It is the representations of external noises for each oscillators at each time $t\in ]0, T[$.
+        \item $\omega$ is a list of real of size N. It contains the natural oscillations of each oscillators
+        \item $\theta_0$ is a list of real of size N. It contains the intial phase of each oscillators. So at the time $t=0$
+        \item $K$ is a matrix of real of size N$\times$N. It contains the coupling coefficients between each oscillators depending on the nearest neighbours. The nearest neighbour of an oscillator are defined by M in the settings file. It is set as $30\%$ of the total number of oscillators, you can change it
+        \item $\alpha$ is a matrix of real of size N$\times$N. It is the dephasing matrix of the coupling
+        \item $\tau$ is a matrix of real of size N$\times$N. It is the delay matrix
+        \item $\eta$ is a matrix of real of size N$\times$T. It is the representations of external noises for each oscillators at each time $t\in ]0, T[$
 \end{itemize}
-They are different for each state, you can see their definitions in the tables \ref{tab:states1} and \ref{tab:states2}. The function \py{uniform()} is from the module \py{random}, and provide random real numbers with uniform distribution, in the range given. The function \py{randint()} do the same things but for integers.
+They are different for each state, you can see their definitions in the tables \ref{tab:states1} and \ref{tab:states2}. The function \py{uniform()} is from the module \py{random}, and provide random real numbers with uniform distribution, in the range given. The function \py{randint()} do the same things with integers.
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.40\linewidth} p{0.40\linewidth}} \toprule
             \hfil \py{"random"} & \hfil \py{"chimera"}\\
             \cmidrule(r){1-1} \cmidrule(l){2-2}
-            This \py{state} represent the case with random values defined by:
+            This \py{state} represents the case with random values defined by:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt]
                 \item $\omega^i=uniform(0, 3)$
                 \item $\theta_0^i=uniform(0, \dfrac{2}{\pi})$
@@ -71,7 +72,7 @@ They are different for each state, you can see their definitions in the tables \
                 \item $\alpha^i_j=uniform(0, \dfrac{2}{\pi})$
                 \item $\tau^i_j=randint(0, N//2)$
             \end{itemize}
-            &This \py{state} represent the case of a quantum chimera state\cite{chimera} defined by:
+            &This \py{state} represents the case of a quantum chimera state\cite{chimera} defined by:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt]
                \item $\omega^i=0.2 + i * 0.4 * sin(\dfrac{i^2 * \pi}{(2 * N^2)})$
                \item $\theta_0^i=uniform(0, \dfrac{2}{\pi})$
@@ -91,7 +92,7 @@ They are different for each state, you can see their definitions in the tables \
         \begin{tabular}{p{0.40\linewidth} p{0.40\linewidth}} \toprule
             \hfil \py{"inverse"} & \hfil \py{"josephson"}\\
             \cmidrule(r){1-1} \cmidrule(l){2-2}
-            This \py{state} represent the case with the coupling matrix defined by the inverse of the distance between two oscillators, and the delay matrix is proportionnal to this distance. 
+            This \py{state} represents the case with the coupling matrix defined by the inverse of the distance between two oscillators, and the delay matrix is proportionnal to this distance. 
             \begin{itemize}[leftmargin=15pt, itemsep=0pt]
                 \item $\omega^i=uniform(0, 3)$
                 \item $\theta_0^i=uniform(0, \dfrac{2}{\pi})$
@@ -105,7 +106,7 @@ They are different for each state, you can see their definitions in the tables \
                 \item $\alpha^i_j=1.46$
                 \item $\tau^i_j=\abs{i-j}$
             \end{itemize}
-            &This \py{state} represent the case of the array of Josephson, data were drawn from this article \cite{josephson}. Their datas are defined by:
+            &This \py{state} represents the case of the array of Josephson, data were drawn from this article \cite{josephson}. Their data are defined by:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt]
                \item $\omega^i=0.2 + 0.4i\times sin(\dfrac{i^2\pi}{(2N^2)})$
                \item $\theta_0^i=uniform(0, \dfrac{2}{\pi})$
@@ -122,7 +123,7 @@ They are different for each state, you can see their definitions in the tables \
 \end{table}
 \newpage
 \noindent
-For each \py{state} choosen you have to define in the settings file the parameters \py{Nr} and \py{Nc}, to define the geometry of the system. \py{Nr} define the number of rows and \py{Nc} the number of columms, so \py{N=Nr*Nc} is the number of oscillators that you have. For example if you choose \py{N=12} in the geometry \py{Nr=3, Nc=4}, you will have this configuration:\\
+For each \py{state} choosen you have to define in the settings file the parameters \py{Nr} and \py{Nc}, to define the geometry of the system. \py{Nr} define the number of rows and \py{Nc} the number of columms, so \py{N=Nr*Nc} is the number of oscillators. For example if you choose \py{N=12} in the geometry \py{Nr=3, Nc=4}, you will have this configuration:\\
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.8]{figures/os_table.pdf}
@@ -130,11 +131,11 @@ For each \py{state} choosen you have to define in the settings file the paramete
     \label{fig:os_table}
 \end{figure}\\
 \noindent
-The labels in the Figure are the labels of the oscillators. If you put a non-positive number you will have some issues, the program will not work. So be careful to respect the physics of the system.
+The labels in the Figure are the labels of the oscillators. If you put a non-positive number the program will not work. So be careful to respect the physics of the system.
 \subsection{The computing functions}
 \label{subs:1.2}
 \noindent
-There are three computing functions that are imported from the \py{class KuramotoModel}, by the object \py{kuramoto}. You can choose if you want to compute new datas by changing the boolean value of the \py{newComputing=False} variable in the settings file.
+There are three computing functions imported from the \py{class KuramotoModel}, by the object \py{kuramoto}. You can choose if you want to compute new data by changing the value of \py{newData} to \py{True}.
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.3\linewidth} p{0.3\linewidth} p{0.3\linewidth}} \toprule
@@ -143,17 +144,17 @@ There are three computing functions that are imported from the \py{class Kuramot
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function compute integrates the function \py{f}, with the initial vector \py{theta0} during a time \py{tf}, set by default to \py{tf=100} with 1000 values(T), using the integrator, set by default to \py{integrator="RK4"}&\vspace*{-8pt}
+            This function integrates the function \py{f}, with the initial vector \py{theta0} during a time \py{tf}, set by default to \py{tf=100} with 1000 values(T), using the integrator, set by default to \py{integrator="RK4"}&\vspace*{-8pt}
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
-            \item \py{f} is the function to be integrated, such that $f:\real^n  \rightarrow  \real^n$
-                \item \py{theta0} is the initial vector, such that $\theta_0 \in    \real^n$. So it has to be a list of real of size N
+                \item \py{f} is the function to integrate such that $f:\real^n  \rightarrow  \real^n$
+                \item \py{theta0} is the initial vector, such that $\theta_0 \in    \real^n$. It is a list of real of size N
                 \item \py{tf} is the duration of the integration. Set to 100 by default. It is an integer
-                \item \py{integrator} is the integrator that you want to choose. It can take only this string values: \py{"Euler"}, \py{"RK2"}, \py{"RK4"}. Among the three integrators, RK4 is the one losing the least energy the longer the integration lasts, therefore it is the default value.
+                \item \py{integrator} is the integrator that you want to choose. It can take only these values: \py{"Euler"}, \py{"RK2"}, \py{"RK4"}. Among the three integrators, RK4 is the one losing the least energy the longer the integration lasts, therefore it is the default value.
             \end{itemize}
-            & This function will retrieve two data files in the parameters directory.
+            & This function will retrieve two data files.
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
                 \item \py{"theta.dat"} : contains a matrix of real of size N$\times$T. It is used like a list of vectors. Each vector contains the phase of each oscillators at one time, labeled in the same way as the \autoref{fig:os_table}. So the matrix represent the evolution over time of this vector.
-                \item \py{"t.dat"} : contains a list of real of size T, defined by \py{linspace(0, tf, T)}. \py{linspace()} is a function added by \py{numpy}.
+                \item \py{"t.dat"} : contains a list of real of size T, defined by \py{linspace(0, tf, T)}. \py{linspace()} is a method from \py{numpy}.
             \end{itemize}\\
             \bottomrule
         \end{tabular}
@@ -170,13 +171,13 @@ There are three computing functions that are imported from the \py{class Kuramot
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function computes the orders parameters $R$ and $\Phi$, of the $\theta^i$ over the time, by the relation : $R\e^{\i\Phi} = \frac{1}{N}\sum^N_{i=1}\e^{\i\theta^i}$, for one time.&
+            This function computes the orders parameters $R$ and $\Phi$, of the $\theta^i$ over time, by the relation : $R\e^{\i\Phi} = \frac{1}{N}\sum^N_{i=1}\e^{\i\theta^i}$, for one time.&
             There are no arguments to this function because it takes only data files. It takes the theta file and the t file, see \autoref{tab:integrate}.
             &
             This function will retrieve two data files in the parameters directory.
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
-                \item \py{"R.dat"} : It contains a list of real of size T. \py{R} represents the complex mean of magnitudes of the $\theta^i$ over the time.
-                \item \py{"phi.dat"} : It contains a list of real of size T. \py{phi} represents the complex mean of angles of the $\theta^i$ over the time.
+                \item \py{"R.dat"} : It contains a list of real of size T. \py{R} represents the complex mean of magnitudes of the $\theta^i$ over time.
+                \item \py{"phi.dat"} : It contains a list of real of size T. \py{phi} represents the complex mean of angles of the $\theta^i$ over time.
             \end{itemize}\\
             \bottomrule
         \end{tabular}
@@ -192,12 +193,12 @@ There are three computing functions that are imported from the \py{class Kuramot
             \hfil Description & \hfil Input & \hfil Output\\
             \cmidrule(r){1-1} \cmidrule{2-2} \cmidrule(l){3-3}
            
-            This function computes the Shannon entropy over the time of $\theta$. So for each vector of the list of vectors \py{theta}&
+            This function computes the Shannon entropy over time of $\theta$. So for each vector of the list of vectors \py{theta}&
             There are no arguments to this function because it takes only data files. It takes the theta file and the t file, see \autoref{tab:integrate}.
             &
             This function will retrieve two data files in the parameters directory.
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
-                \item \py{"S.dat"} : It contains a list of real of size T. \py{S} represents the Shannon entropy over the time of each vector of \py{theta}
+                \item \py{"S.dat"} : It contains a list of real of size T. \py{S} represents the Shannon entropy over time of each vector of \py{theta}
             \end{itemize}\\
             \bottomrule
         \end{tabular}
@@ -206,18 +207,21 @@ There are three computing functions that are imported from the \py{class Kuramot
     \label{tab:shannon}
 \end{table}
 \noindent
-To summarize in the main file there are 4 functions that are called for the computing. The first one is for initializing data according to the state choosed by the user. The following three are here to compute the main datas by using the Kuramoto model. You can choose if you want to initialized new datas (\ref{tab:init_data}) or do a new computing (\ref{tab:integrate}, \ref{tab:orders} \& \ref{tab:shannon}) by modifying the logical variables (\py{newData}, \py{newComputing}) in the settings file. In this file you can modify the \py{state} variable (\ref{tab:states1} \& \ref{tab:states2}). You can also modify the geometry of the system by changing \py{Nr} and \py{Nc}, don't forget to redo the initial datas and the computing after that. Be careful not to set the number of rows or columns to a negative or zero number, it wouldn't make any sense. If you want to save or use other files than the predifined one you can modify it in the dictionnary \py{FILE}. You don't have to modify anything else that is not in the settings file. If you do it be careful, because you can break the program. For the rest of the main file there are 12 functions that are here to display the results. The last three are here to create gifs, they are the begining of the gold version. These displaying functions will be explained later.
+To summarize in the main file there are 4 functions that are called for the computing. The first one is for initializing data according to the state choosed by the user. The following three are here to compute the main data by using the Kuramoto model. You can choose if you want to initialize new data (\ref{tab:init_data}) or do a new computing (\ref{tab:integrate}, \ref{tab:orders} \& \ref{tab:shannon}) by modifying the logical variables (\py{newData}, \py{newComputing}) in the settings file. In this file you can modify the \py{state} variable (\ref{tab:states1} \& \ref{tab:states2}). You can also modify the geometry of the system by changing \py{Nr} and \py{Nc}, don't forget to redo the initial data and the computing after that. Be careful not to set the number of rows or columns to a negative or zero number, it would not make any sense. If you want to save or use other files than the predifined ones you can modify it in the dictionnary \py{FILE}. You don't have to modify anything else that is not in the settings file. Be careful if you want to modify it, because you can break the program. For the rest of the main file there are 12 functions that are here to display the results. The last three are here to create gifs, they are the begining of the gold version. These displaying functions will be explained later.
 \newpage
 \noindent
 \section{Internal structure of the program}
 \label{sec:2}
 \subsection{Description of the physical model}
 \label{subs:2.1}
-In this program we had to describe 2D-coupled oscillators and tried to reproduce the results obtain in the article \textit{Frequency locking in Josephson arrays: Connection with the Kuramoto model} \cite{josephson}. So we will use the Kuramoto Model. Proposed by Yoshiki kuramoto this model is used to describe the syncronization of a large set of coupled oscillators. It is a mathematical model and the form that we have used is : 
-\[\dot{\theta}^i(t)=\omega_ i + \dfrac{1}{N}\sum^{N-1}_{j=0}K_{ij}\,sin(\theta^j(t-\tau_{ij})-\theta^i(t)+\alpha_{ij}) + \eta_i(t)\]
+In this program we had to describe 2D-coupled oscillators and tried to reproduce the results obtain in the article \textit{Frequency locking in Josephson arrays: Connection with the Kuramoto model} \cite{josephson}. So we will use the Kuramoto Model. Proposed by Yoshiki kuramoto this model is used to describe the syncronization of a large set of coupled oscillators. It is a mathematical model and the form that we have used is :
+\begin{equation}
+    \label{eq:kuramoto}
+    \dot{\theta}^i(t)=\omega_ i + \dfrac{1}{N}\sum^{N-1}_{j=0}K_{ij}\,sin(\theta^j(t-\tau_{ij})-\theta^i(t)+\alpha_{ij}) + \eta_i(t)
+\end{equation}
 where :
 \begin{itemize}[itemsep=0pt]
-\item $\dot{\theta^i}(t)$ represent the varation of the phase of the i-th oscillator over the time.
+\item $\dot{\theta^i}(t)$ represent the varation of the phase of the i-th oscillator over time.
 \item $\omega_i$ represent the natural frequency of the i-th oscillator.
 \item $N$ is the total number of oscillators in the system.
 \item $K_{ij}$ is the coupling matrix. It represent the coupling between each oscillators depending on the inverse of the physical distance between them. Sometimes you can consider only the nearest neighbour.
@@ -315,10 +319,10 @@ This class is used to create the initial data. Here is a table of the class:
             This class contains 8 attributes, see \autoref{subs:1.1}:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
                 \item \py{M,type:int}
-                \item\py{N,type:real}
+                \item\py{N,type:int}
                 \item\py{K,type:ndarray,shape:(N,N)}
                 \item\py{alpha,type:ndarray,shape:(N,N)}
-                \item\py{eta,type:ndarray,shape:(N,1000)}
+                \item\py{eta,type:ndarray,shape:(N,T)}
                 \item\py{omega,type:ndarray,shape:(N,N)}
                 \item\py{tau,type:ndarray,shape:(N,N)}
                 \item\py{theta0,type:ndarray,shape:(N,N)}
@@ -370,21 +374,59 @@ This class has no attributes. It is used to store all the displaying functions a
 \end{itemize}
 \noindent
 You need to have the modules \py{numpy}, \py{matplotlib.pyplot}, \py{networkx} and \py{PIL}, installed on your computer to use this class. The module \py{numpy} is used to recover data from the data files, \py{matplotlib.pyplot} is used to plot all the graphs, \py{networkx} is used to create the connectivity graph, and \py{PIL} is used to create the gifs with all the graphs.\\
-% ici mgl
+\subsubsection{The \py{class KuramotoModel}}
+\label{subsubs:kuramoto}
+This class is the main class of the program. Here is a table of the class:
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
+            \multicolumn{2}{c}{\py{class KuramotoModel}}\\
+            \midrule
+            \hfil Attributes & \hfil Methods\\
+            \cmidrule(r){1-1} \cmidrule{2-2}
+            
+            This class contains 9 attributes, see \autoref{subs:1.1}:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item\py{N,type:int}
+                \item\py{omega,type:ndarray,shape:(N,N)}
+                \item\py{eta,type:ndarray,shape:(N,T)}
+                \item\py{K,type:ndarray,shape:(N,N)}
+                \item\py{alpha,type:ndarray,shape:(N,N)}
+                \item\py{tau,type:ndarray,shape:(N,N)}
+                \item\py{integr,type:Integration}, see \autoref{tab:integr}
+                \item\py{n,type:int}, number of nearest neighbour
+                \item\py{d_theta,type:ndarray,shape:(N,T)}, the left-side of the \autoref{eq:kuramoto}
+            \end{itemize}&
+            This class contains 7 methods:
+            \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
+                \item \py{__call__(theta, t)} : return \py{d_theta} using the kuramoto model, \autoref{subs:2.1}.
+                \item \py{coordinates_to_label(r,c)} : return the label of an oscillator using its coordinates in the array.
+                \item \py{label_to_coordinates(i)} : return coordinates of an oscillators in the array using its label.
+                \item \py{integrate(f, theta0, tf, integrator)}, see \autoref{tab:integrate}.
+                \item \py{orders()}, see \autoref{tab:orders}.
+                \item \py{shannon_entropy(theta, i)} : return the computation of the Shannon entropy for an oscillator.
+                \item \py{shannon_entropies()} : see \autoref{tab:shannon}
+            \end{itemize}\\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \caption{class KuramotoModel}
+    \label{tab:kuramoto}
+\end{table}
 \newpage
 \subsection{Functional diagram of the program}
 \label{subs:2.4}
 The program is cut out in 6 modules: main, graphs, kuramoto, data, integrator, and settings. You can see how they interact with each other in the following figure:
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.6]{figures/packages_kuramotoModel.png}
+    \includegraphics[scale=0.45]{figures/packages_kuramotoModel.png}
     \caption{Diagram of the interactions between the modules.}
     \label{fig:diagram_module}
-\end{figure}
+\end{figure}\\
 In these modules data, integrator graphs and kuramoto contain a class. These classes are depending to each other like in the following diagram:
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.5]{figures/classes_kuramotoModel.png}
+    \includegraphics[scale=0.4]{figures/classes_kuramotoModel.png}
     \caption{Diagram of the dependences of the classes.}
     \label{fig:diagram_classes}
 \end{figure}
