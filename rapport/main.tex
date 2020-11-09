@@ -8,14 +8,15 @@
 \tableofcontents
 \newpage
 \section{Introduction}
+\label{sec:1}
 \noindent
 The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the syncronization of coupled oscillators. This program is based on this model to describe a set of 2D-coupled oscillators in various cases. In particular to reproduce data obtained in the case of the coupled arrays of Josephson junctions \cite{josephson}. This program was edited for the last time the 10/23/2020. It was written in python 3 under ubuntu. There are 6 files. The first one is the main file, \mintinline{shell}{main.py}, it is the only one you have to execute, you could have to comment or uncomment some lines. Instead of that you just have to edit one file, the settings file, \mintinline{shell}{settings.py} where you can find all the settings. Then you have the kuramoto file, \mintinline{shell}{kuramoto.py}, where you can find the \py{class KuramotoModel} which contains all the functions related to the model or the verifications. The data file, \mintinline{shell}{data.py}, contains the \py{class Data}, which is used to manage data. The graphs file, \mintinline{shell}{graphs.py}, with the \py{class Graphs} manages the display of the results. And the integrator file, \mintinline{shell}{integrator.py}, where you can find the \py{class Integration}, which contains the three integrators : Euler, RK2, RK4. There is also the parameters directory which is important to save data. You can find all these files on \href{https://github.com/faucheresse/swimming_pool/tree/main/prog}{github}.
 \section{Functional requirement of the program}
-\label{sec:1}
+\label{sec:2}
 \noindent
 All the functions used for the computing or to display of the results are called in the main file. At first there are the functions which create the initial values in respect of the parameters, then these values are stored in data files (.dat) in a directory named "parameters". With these data files, we don't have to repeat the calculations every time we want to test something. Then you have the functions that compute the results (the phase of the oscillators, the complex mean average, and the Shannon entropy), wich are stored in data files in the same directory. And finally there are the functions that display the graphs using the module \py{matplotlib.pyplot}. In this section we will describe the functions that create the data files and their data. Firstly, initial data are created throught the \py{class Data} wich is in the data file. Finally the computing of the other values is in the \py{class KuramotoModel} wich is in the kuramoto file.
 \subsection{The initialisation of data}
-\label{subs:1.1}
+\label{subs:2.1}
 The initial data are created by the function: \py{data.init_data(state)}. You can choose if you want to create new initial data by changing the value of \py{newData} to \py{True}.
 \begin{table}[htbp]
     \begin{center}
@@ -133,7 +134,7 @@ For each \py{state} choosen you have to define in the settings file the paramete
 \noindent
 The labels in the Figure are the labels of the oscillators. If you put a non-positive number the program will not work. So be careful to respect the physics of the system.
 \subsection{The computing functions}
-\label{subs:1.2}
+\label{subs:2.2}
 \noindent
 There are three computing functions imported from the \py{class KuramotoModel}, by the object \py{kuramoto}. You can choose if you want to compute new data by changing the value of \py{newData} to \py{True}.
 \begin{table}[htbp]
@@ -211,31 +212,31 @@ To summarize in the main file there are 4 functions that are called for the comp
 \newpage
 \noindent
 \section{Internal structure of the program}
-\label{sec:2}
+\label{sec:3}
 \subsection{Description of the physical model}
-\label{subs:2.1}
-In this program we had to describe 2D-coupled oscillators and tried to reproduce the results obtain in the article \textit{Frequency locking in Josephson arrays: Connection with the Kuramoto model} \cite{josephson}. So we will use the Kuramoto Model. Proposed by Yoshiki kuramoto this model is used to describe the syncronization of a large set of coupled oscillators. It is a mathematical model and the form that we have used is :
+\label{subs:3.1}
+In this program we had to describe 2D-coupled oscillators and tried to reproduce known results \cite{josephson}. So we will use the Kuramoto Model. Proposed by Yoshiki Kuramoto this model is used to describe the syncronization of a large set of coupled oscillators. It is a mathematical model and we are going to use it in this form :
 \begin{equation}
     \label{eq:kuramoto}
     \dot{\theta}^i(t)=\omega_ i + \dfrac{1}{N}\sum^{N-1}_{j=0}K_{ij}\,sin(\theta^j(t-\tau_{ij})-\theta^i(t)+\alpha_{ij}) + \eta_i(t)
 \end{equation}
 where :
 \begin{itemize}[itemsep=0pt]
-\item $\dot{\theta^i}(t)$ represent the varation of the phase of the i-th oscillator over time.
-\item $\omega_i$ represent the natural frequency of the i-th oscillator.
+\item $\dot{\theta^i}(t)$ represents the varation of the phase of the i-th oscillator over time.
+\item $\omega_i$ represents the natural frequency of the i-th oscillator.
 \item $N$ is the total number of oscillators in the system.
-\item $K_{ij}$ is the coupling matrix. It represent the coupling between each oscillators depending on the inverse of the physical distance between them. Sometimes you can consider only the nearest neighbour.
+\item $K_{ij}$ is the coupling matrix. It represents the coupling between each oscillators depending on the inverse of the physical distance between them. Sometimes you can consider only the nearest neighbour.
 \item $\theta^i$ is the phase of the i-th oscillator.
 \item $\tau_{ij}$ is the delay matrix. It is to take into account the phase propagation of the oscillators which have an influence on the i-th oscillator.
-\item $\alpha_{ij}$ is the dephasing matrix. It represent the dephasing due of the coupled oscillators.
-\item $\eta_i(t)$ represent the influence of the environement, the possible external noises.
+\item $\alpha_{ij}$ is the dephasing matrix. It represents the dephasing due of the coupled oscillators.
+\item $\eta_i(t)$ represents the influence of the environement, the possible external noises.
 \end{itemize}
-As you can see this model is pretty complete. The formula is the sum of all the influences due to the environment and the coupled oscillators occuring on each oscillators at a given given time. That why it was chosen to build $\theta$ like a list of vectors.
+As you can see this model is pretty complete. The formula is the sum of all the influences due to the environment and the nearest coupled oscillators at a given time. That why it was chosen to build $\theta$ like a list of vectors.
 \subsection{Desciption of the used scientific computation algorithms}
-\label{subs:2.2}
-During the computation we have used 3 algorithm for the integration of the kuramoto model \ref{subs:2.1}, the Euler, RK2 and RK4 algorithm. But you can choose the one that you want to use. It is recommended to use the RK4 method because it loses less energy over time than the others, so it is more precise but if you want less computing time it is a good thing to try the other. You can see all these integrators in the \py{class Integration} in the integrator file.\\
+\label{subs:3.2}
+During the computation we used 3 algorithm for integration of the kuramoto model \ref{subs:3.1}, the Euler, RK2 and RK4 algorithm. But you can choose the one that you want to use. It is recommended to use the RK4 method because it loses less energy over time than the others, so it is more accurate. Otherwise if you want less computing time it is a good thing to try other. You can find all these integrators in the \py{class Integration}.\\
 We are looking to integrate $\dot{\theta} = f(\theta)$.\\
-Let $\theta\in\real^n$ and $f:\real^n  \rightarrow  \real^n$. We wil note $\theta^i$ the i-th component of $\theta$ and $\theta_n$ the vector $\theta$ at the time $t_n$, $\theta_n \equiv \theta(t_n)$. So we have $\theta^i_n$ the i-th component at a time $t_n$ of $\theta$.\\
+Let $\theta\in\real^n$ and $f:\real^n  \rightarrow  \real^n$. We will note $\theta^i$ the i-th component of $\theta$ and $\theta_n$ the vector $\theta$ at the time $t_n$, $\theta_n \equiv \theta(t_n)$. So we have $\theta^i_n$ the i-th component at a time $t_n$ of $\theta$.\\
 The Euler and Runge-Kutta methods are integrators of first-order differential equations and are based on the definition of the derivative:
 \begin{equation}
 \label{eq:derivative}
@@ -255,14 +256,14 @@ This method will diverge quicker than the two other but the computing time is th
 \newpage
 \subsubsection{RK2 method}
 \label{subsubs:RK2}
-The Runge-Kutta algorithm (RK2) is like the Euler's method but with a double use of the \autoref{eq:derivative}. There is a middle step to refine the estimation of $f$.
+The Runge-Kutta algorithm (RK2) is like the Euler's method but with a double use of the \autoref{eq:derivative}. There is a middle step to tweak the estimation of $f$.
 \begin{equation}
     \theta_{n+1} = \theta_n + f(\theta_n + f(\theta_n)\dfrac{\Delta t}{2})\Delta t
 \end{equation}
 This method will diverge quicker than the RK4 method and slower than the Euler's method. Its computing time will be longer than the one of the Euler's method but remains shorter than the one of RK4 method.
 \subsubsection{RK4 method}
 \label{subsubs:RK4}
-RK4, the fourth order Runge-kutta algorithm, is similar to the RK2 algorithm but with a refinement around the middle point.
+RK4, the fourth order Runge-kutta algorithm, is similar to the RK2 algorithm but with a tweak around the middle point.
 \begin{equation}
     \theta_{n+1} = \theta_n + (K_{1,n} + 2K_{2,n} + 2K_{3,n} + K_{4,n}\,)\frac{\Delta t}{6}
 \end{equation}
@@ -276,13 +277,13 @@ with
     \end{aligned}
 \end{equation}
 Even if this is the slowest method of three orders of the Runge-Kutta algorithm, it is the most accurate one.\\
-You can find all this algorithm in the integrator file in the \py{class Integration}.
+You can find all this algorithm in the \py{class Integration}.
 \subsection{List of the constitutive elements of the program}
-\label{subs:2.3}
+\label{subs:3.3}
 The Program includes 4 classes. There are 3 that are used in the main file and 1 in the \py{class KuramotoModel}, see \autoref{fig:diagram_classes}. 
 \subsubsection{The \py{class Integration}}
 \label{subsubs:integr}
-This class doesn't have any attributes. It is just used to store the integrators. It can be used in an other program just by writting \py{import integrator} at the begining of you code, and create an object with the class. This class is using the module \py{numpy}. Here is a table of the class:
+This class doesn't have any attributes. It is just used to store the integrators. It can be used in an other program just by writting \py{import integrator} at the begining of you code, and create an object with the class. This class uses the module \py{numpy}. Here is a table of the class:
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
@@ -291,7 +292,7 @@ This class doesn't have any attributes. It is just used to store the integrators
             \hfil Attributes & \hfil Methods\\
             \cmidrule(r){1-1} \cmidrule{2-2}
             
-            $\varnothing$&This class contains 3 methods, see \autoref{subs:2.2}:
+            $\varnothing$&This class contains 3 methods, see \autoref{subs:3.2}:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
                 \item \py{euler(f, x0,t)}
                 \item \py{RK2(f, x0,t)}
@@ -307,7 +308,7 @@ This class doesn't have any attributes. It is just used to store the integrators
 \noindent
 \subsubsection{The \py{class Data}}
 \label{subsubs:data}
-This class is used to create the initial data. Here is a table of the class:
+This class is used to create the initial data using the value of the \py{state} variable. To work this class need the modules \py{numpy}, \py{random} and \py{time}. Here is a table of the class:
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
@@ -316,7 +317,7 @@ This class is used to create the initial data. Here is a table of the class:
             \hfil Attributes & \hfil Methods\\
             \cmidrule(r){1-1} \cmidrule{2-2}
             
-            This class contains 8 attributes, see \autoref{subs:1.1}:
+            This class contains 8 attributes, see \autoref{subs:2.1}:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
                 \item \py{M,type:int}
                 \item\py{N,type:int}
@@ -341,7 +342,7 @@ This class is used to create the initial data. Here is a table of the class:
     \caption{class Data}
     \label{tab:data}
 \end{table}\\
-You can add a new method in this class to add new configurations. But don't forget to add a new possible value to the \py{state} variable in the \py{init_data()} function. As follows :
+You can add a new method in this class to add new configurations. But don't forget to add a new possible value to the \py{state} variable in \py{init_data()}. As follows :
 \begin{minted}{python}
         if state == "random":
             self.random_states()
@@ -356,18 +357,18 @@ You can add a new method in this class to add new configurations. But don't forg
 \end{minted}
 \subsubsection{The \py{class Graphs}}
 \label{subsubs:graph}
-This class has no attributes. It is used to store all the displaying functions and the function to create gifs. This class contains 13 methods:
+This class is used to store the display functions and sfunctions to create gifs. It has no attributes and contains 13 methods:
 \begin{itemize}[itemsep=0pt]
-    \item \py{kuramoto(t, show=True)} : plot $i\longmapsto\{\theta^i(t)\}_{i=0,...,N-1}$ at a time $t$. The argument \py{show} is used by the animation function, it allows to not display the graph but save it in the animation directory (if \py{show==False}).
+    \item \py{kuramoto(t, show=True)} : plot $i\longmapsto\{\theta^i(t)\}_{i=0,...,N-1}$ at time $t$. The argument \py{show} is used by the animation function, it allows to not display the graph but save it in the directory "animation" (if \py{show==False}).
     \item \py{all_kuramoto()} : plot the N curves $t\longmapsto\theta^i(t)$
-    \item \py{anim_kuramoto()} : using \py{kuramoto(t, show=False)} it take all the \py{"kuramoto*.png"} in the animation directory and create a gif with them.
+    \item \py{anim_kuramoto()} : using \py{kuramoto(t, show=False)} it takes all the \py{"kuramoto*.png"} in the directory "animation" and create a gif with them.
     \item \py{dens_kuramoto()} : plot $(i,t)\longmapsto \theta^i (t)$ using the \py{numpy.contourf()} method. 
-    \item \py{dens_kuramoto_coord(t, show=True)} : plot $(r,c)\longmapsto \theta^{i_{r,d}} (t)$ at time $t$ using the \py{numpy.contourf()} method.
+    \item \py{dens_kuramoto_coord(t, show=True)} : plot $(r,c)\longmapsto \theta^{i_{r,c}} (t)$ at time $t$ using the \py{numpy.contourf()} method.
     \item \py{anim_dens_kuramoto_coord()} : using \py{dens_kuramoto_coord(t, show=False)} it create a gif.
     \item \py{orders()} : plot $t \longmapsto R(t)$ and $t \longmapsto \Phi(t)$.
-    \item \py{shannon(t)} : plot $i \longmapsto S_i^{q, n}(t)$ at a time $t$.
+    \item \py{shannon(t)} : plot $i \longmapsto S_i^{q, n}(t)$ at time $t$.
     \item \py{dens_shannon()} : plot $(i,t) \longmapsto S_i^{q, n}(t)$ using the \py{numpy.contourf()} method.
-    \item \py{dens_shannon_coord(t, show=True)} : plot $(r,c) \longmapsto S_i^{q, n}(t)$ at time $t$ using the \py{numpy.contourf()} method.
+    \item \py{dens_shannon_coord(t, show=True)} : plot $(r,c) \longmapsto S_{i_{r,c}}^{q, n}(t)$ at time $t$ using the \py{numpy.contourf()} method.
     \item \py{anim_dens_shannon_coord()} : using \py{dens_shannon_coord(t, show=False)} it create a gif.
     \item \py{connectivity(K, kmin)} : it is a static method that return a list with all the edges connected in the coupling matrix \py{K} using a criterion \py{kmin}.
     \item \py{graph_connectivity(kmin=0)} : using the static method \py{connectivity(K, kmin)} it creates a graph of the connectivity of the oscillators with the criterion \py{kmin}.
@@ -376,7 +377,7 @@ This class has no attributes. It is used to store all the displaying functions a
 You need to have the modules \py{numpy}, \py{matplotlib.pyplot}, \py{networkx} and \py{PIL}, installed on your computer to use this class. The module \py{numpy} is used to recover data from the data files, \py{matplotlib.pyplot} is used to plot all the graphs, \py{networkx} is used to create the connectivity graph, and \py{PIL} is used to create the gifs with all the graphs.\\
 \subsubsection{The \py{class KuramotoModel}}
 \label{subsubs:kuramoto}
-This class is the main class of the program. Here is a table of the class:
+This class is the main class of the program. To work this class need the modules \py{numpy} and \py{time}. Here is a table of the class:
 \begin{table}[htbp]
     \begin{center}
         \begin{tabular}{p{0.4\linewidth} p{0.4\linewidth}} \toprule
@@ -385,7 +386,7 @@ This class is the main class of the program. Here is a table of the class:
             \hfil Attributes & \hfil Methods\\
             \cmidrule(r){1-1} \cmidrule{2-2}
             
-            This class contains 9 attributes, see \autoref{subs:1.1}:
+            This class contains 9 attributes, see \autoref{subs:2.1}:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
                 \item\py{N,type:int}
                 \item\py{omega,type:ndarray,shape:(N,N)}
@@ -399,12 +400,12 @@ This class is the main class of the program. Here is a table of the class:
             \end{itemize}&
             This class contains 7 methods:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt, topsep=0pt]
-                \item \py{__call__(theta, t)} : return \py{d_theta} using the kuramoto model, \autoref{subs:2.1}.
+                \item \py{__call__(theta, t)} : return \py{d_theta} using the kuramoto model, \autoref{subs:3.1}.
                 \item \py{coordinates_to_label(r,c)} : return the label of an oscillator using its coordinates in the array.
                 \item \py{label_to_coordinates(i)} : return coordinates of an oscillators in the array using its label.
                 \item \py{integrate(f, theta0, tf, integrator)}, see \autoref{tab:integrate}.
                 \item \py{orders()}, see \autoref{tab:orders}.
-                \item \py{shannon_entropy(theta, i)} : return the computation of the Shannon entropy for an oscillator.
+                \item \py{shannon_entropy(theta, i)} : return the computation of the Shannon entropy for the i-th oscillator.
                 \item \py{shannon_entropies()} : see \autoref{tab:shannon}
             \end{itemize}\\
             \bottomrule
@@ -415,7 +416,7 @@ This class is the main class of the program. Here is a table of the class:
 \end{table}
 \newpage
 \subsection{Functional diagram of the program}
-\label{subs:2.4}
+\label{subs:3.4}
 The program is cut out in 6 modules: main, graphs, kuramoto, data, integrator, and settings. You can see how they interact with each other in the following figure:
 \begin{figure}[htbp]
     \centering
@@ -429,7 +430,11 @@ In these modules data, integrator graphs and kuramoto contain a class. These cla
     \includegraphics[scale=0.4]{figures/classes_kuramotoModel.png}
     \caption{Diagram of the dependences of the classes.}
     \label{fig:diagram_classes}
-\end{figure}
+\end{figure}\\
+The previous diagrams has been created using \mintinline{shell}{pyreverse} in the directory with the programmation files. The full command used is : \mintinline{shell}{pyreverse -o png main *.py}. That create two pngs, one for the connections between the classes and one for the inetractions between the modules.
+\newpage
+\noindent
+\section{Quality approach, reliability of the program}
 
 \newpage
 \bibliographystyle{plain}

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  8 NOV 2020 19:16
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  9 NOV 2020 17:32
  system commands enabled.
 **main.tex
 (./main.tex
@@ -509,12 +509,12 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	
-(polyglossia)            righthyphenmin	2
 (polyglossia)            synonyms	patois,francais
+(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-fr.pat.txt
-(polyglossia)            loader	loadhyph-fr.tex on input line 12
+(polyglossia)            loader	loadhyph-fr.tex
+(polyglossia)            righthyphenmin	2
+(polyglossia)            lefthyphenmin	2 on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -2218,6 +2218,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 \openout5 = main.pyg
 
+(./_minted-main/6C2C4FB96E7C5805B4CDB0590292EDFC4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/93D7964EC38E9A2894A602B6C93F8CB74FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/61ECBC41CDAE3E6B32712A06C73606FA4FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/4821726C1947CDF3EEBACADE981739394FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
 (./_minted-main/A05CEECB8B337DAE6520AB0BD7FFA7374FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 \openout5 = main.pyg
@@ -2368,7 +2384,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout5 = main.pyg
 
 (./_minted-main/8CB0AFEF4C7D9B356F052625921386024FBEEAFC55D0059826E664B9BBCF372
-1.pygtex)
+1.pygtex) [8]
 \openout5 = main.pyg
 
 (./_minted-main/87BD7EB3680DE3EB17EF647A0047B6604FBEEAFC55D0059826E664B9BBCF372
@@ -2376,7 +2392,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \openout5 = main.pyg
 
 (./_minted-main/84F2DB19912CF9863A7C15F80E115F874FBEEAFC55D0059826E664B9BBCF372
-1.pygtex) [8]
+1.pygtex)
 \openout5 = main.pyg
 
 (./_minted-main/C003320C480DDEC7CBCF9BD18A3C95094FBEEAFC55D0059826E664B9BBCF372
@@ -2447,6 +2463,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mintinline' on input line 377.
 
 
+\openout5 = main.pyg
+
+(./_minted-main/93D7964EC38E9A2894A602B6C93F8CB74FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/4821726C1947CDF3EEBACADE981739394FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
 \openout5 = main.pyg
 
 (./_minted-main/D81BFE868D3161C6064EE3995A6823754FBEEAFC55D0059826E664B9BBCF372
@@ -2544,19 +2568,28 @@ Overfull \hbox (24.10513pt too wide) in paragraph at lines 1--406
 
 (./_minted-main/49A654F9CA10204363C336E4525251864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [9]
-<figures/packages_kuramotoModel.png, id=210, 274.02374pt x 348.30125pt>
+<figures/packages_kuramotoModel.png, id=209, 274.02374pt x 348.30125pt>
 File: figures/packages_kuramotoModel.png Graphic file (type png)
 <use figures/packages_kuramotoModel.png>
 Package luatex.def Info: figures/packages_kuramotoModel.png  used on input line 
 422.
 (luatex.def)             Requested size: 123.30954pt x 156.73412pt.
-<figures/classes_kuramotoModel.png, id=211, 670.505pt x 769.87625pt>
+<figures/classes_kuramotoModel.png, id=210, 670.505pt x 769.87625pt>
 File: figures/classes_kuramotoModel.png Graphic file (type png)
 <use figures/classes_kuramotoModel.png>
 Package luatex.def Info: figures/classes_kuramotoModel.png  used on input line 4
 29.
 (luatex.def)             Requested size: 268.19725pt x 307.94504pt.
- [10<./figures/packages_kuramotoModel.png><./figures/classes_kuramotoModel.png>] (./main.bbl)
+
+\openout5 = main.pyg
+
+(./_minted-main/BF144A6F6470FA6B4CA08BBCA0AF3051A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/4D51D2615DA45241085AB0D30F7A5E8EA00B3CB6151DE675178D03E4C68EDF9
+A.pygtex) [10<./figures/packages_kuramotoModel.png><./figures/classes_kuramotoMo
+del.png>] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2608,45 +2641,44 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
  [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 439.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5A0650491AA417E79DBA4249D3969D02;3247.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 40570 strings out of 481365
+ 40708 strings out of 481365
  125171,1373583 words of node,token memory allocated
  682 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 25 attribute, 6
 8 glue_spec, 25 attribute_list, 2 write, 4 pdf_action nodes
-   avail lists: 1:1,2:1603,3:235,4:192,5:302,6:50,7:4329,8:61,9:513,10:20,11:232
+   avail lists: 1:1,2:1581,3:235,4:186,5:302,6:50,7:4329,8:61,9:513,10:20,11:221
 
- 53129 multiletter control sequences out of 65536+600000
- 85 fonts using 23958603 bytes
+ 53134 multiletter control sequences out of 65536+600000
+ 84 fonts using 23575995 bytes
  69i,21n,111p,1609b,880s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
-Serif-Italic.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus
--fonts/LibertinusMath-Regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmm
-ono10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf
+Math-Regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf
+></usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/texl
+ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
 ></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinu
 sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
-s-fonts/LibertinusMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype
-/public/libertinus-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-d
-ist/fonts/opentype/public/libertinus-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (12 pages, 161819 bytes).
+s-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentyp
+e/public/libertinus-fonts/LibertinusSerif-Bold.otf>
+Output written on main.pdf (12 pages, 157059 bytes).
 
-PDF statistics: 282 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
+PDF statistics: 275 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
  50 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 
