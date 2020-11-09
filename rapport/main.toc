@@ -15,3 +15,4 @@
 \contentsline {subsubsection}{\numberline {III.3.3}The \mintinline {python}{class Graphs}}{8}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {III.3.4}The \mintinline {python}{class KuramotoModel}}{9}{subsubsection.3.3.4}%
 \contentsline {subsection}{\numberline {III.4}Functional diagram of the program}{10}{subsection.3.4}%
+\contentsline {section}{\numberline {IV}Quality approach, reliability of the program}{11}{section.4}%
