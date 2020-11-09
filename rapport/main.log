@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  9 NOV 2020 17:50
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  9 NOV 2020 22:33
  system commands enabled.
 **main.tex
 (./main.tex
@@ -510,11 +510,11 @@ braces):
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
 (polyglossia)            hyphenation	
-(polyglossia)            synonyms	patois,francais
-(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            lefthyphenmin	2
 (polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            lefthyphenmin	2 on input line 12
+(polyglossia)            synonyms	patois,francais
+(polyglossia)            righthyphenmin	2 on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -1908,7 +1908,7 @@ Underfull \hbox (badness 1845) in paragraph at lines 37--38
 
 (./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/os_table.pdf, id=130, 284.52756pt x 199.1693pt>
+<figures/os_table.pdf, id=140, 284.52756pt x 199.1693pt>
 File: figures/os_table.pdf Graphic file (type pdf)
 <use figures/os_table.pdf>
 Package luatex.def Info: figures/os_table.pdf  used on input line 130.
@@ -2568,13 +2568,13 @@ Overfull \hbox (24.10513pt too wide) in paragraph at lines 1--407
 
 (./_minted-main/49A654F9CA10204363C336E4525251864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [9]
-<figures/packages_kuramotoModel.png, id=214, 274.02374pt x 348.30125pt>
+<figures/packages_kuramotoModel.png, id=224, 274.02374pt x 348.30125pt>
 File: figures/packages_kuramotoModel.png Graphic file (type png)
 <use figures/packages_kuramotoModel.png>
 Package luatex.def Info: figures/packages_kuramotoModel.png  used on input line 
 423.
 (luatex.def)             Requested size: 123.30954pt x 156.73412pt.
-<figures/classes_kuramotoModel.png, id=215, 670.505pt x 769.87625pt>
+<figures/classes_kuramotoModel.png, id=225, 670.505pt x 769.87625pt>
 File: figures/classes_kuramotoModel.png Graphic file (type png)
 <use figures/classes_kuramotoModel.png>
 Package luatex.def Info: figures/classes_kuramotoModel.png  used on input line 4
@@ -2589,7 +2589,15 @@ A.pygtex)
 
 (./_minted-main/4D51D2615DA45241085AB0D30F7A5E8EA00B3CB6151DE675178D03E4C68EDF9
 A.pygtex) [10<./figures/packages_kuramotoModel.png><./figures/classes_kuramotoMo
-del.png>] [11] (./main.bbl)
+del.png>]
+\openout5 = main.pyg
+
+(./_minted-main/CF24533D45CC0FB484ABC14729245B104FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout4 = main.pyg
+
+(./_minted-main/095DDA8F9AE3FE807AAC2BC0D4F639C3A00B3CB6151DE675178D03E4C68EDF9
+A.pygtex) [11] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2641,31 +2649,31 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
  [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5F7893C2914716CA5DB102331590D34B;3526.
+(rerunfilecheck)             Checksum: 9017FCD57706E9A780CA65A7ECD4E87A;3864.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 40713 strings out of 481365
+ 40757 strings out of 481365
  125171,1373583 words of node,token memory allocated
  682 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 25 attribute, 6
 8 glue_spec, 25 attribute_list, 2 write, 4 pdf_action nodes
-   avail lists: 1:2,2:1581,3:235,4:186,5:302,6:50,7:4329,8:61,9:513,10:20,11:221
+   avail lists: 1:1,2:1581,3:235,4:186,5:302,6:50,7:4329,8:61,9:513,10:20,11:221
 
- 53137 multiletter control sequences out of 65536+600000
- 84 fonts using 23575995 bytes
+ 53145 multiletter control sequences out of 65536+600000
+ 84 fonts using 23575867 bytes
  69i,21n,111p,1609b,880s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinus
 Math-Regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf
@@ -2675,10 +2683,10 @@ ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
 sMath-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinu
 s-fonts/LibertinusSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentyp
 e/public/libertinus-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (13 pages, 158074 bytes).
+Output written on main.pdf (13 pages, 160329 bytes).
 
-PDF statistics: 284 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 131072)
- 152 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 297 PDF objects out of 1000 (max. 8388607)
+ 251 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 131072)
+ 168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

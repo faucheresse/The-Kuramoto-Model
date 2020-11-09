@@ -1,9 +1,9 @@
-newData = False
-newComputing = False
+newData = True
+newComputing = True
 
-# state = "chimera"
+state = "chimera"
 # state = "random"
-state = "inverse"
+# state = "inverse"
 # state = "josephson"
 
 # integrator = "Euler"

@@ -53,7 +53,7 @@ class KuramotoModel:
         np.savetxt(FILE['t'], t)
         np.savetxt(FILE['theta'], theta % (2 * np.pi))
         t2 = time.time()
-        print("running time : ", t2 - t1, "s")
+        print("running time : {:.4f}s".format(t2 - t1))
 
     def orders(self):
         t1 = time.time()
@@ -72,7 +72,7 @@ class KuramotoModel:
         np.savetxt(FILE['R'], R)
         np.savetxt(FILE['phi'], phi)
         t2 = time.time()
-        print("running time : ", t2 - t1, "s")
+        print("running time : {:.4f}s".format(t2 - t1))
 
     def shannon_entropy(self, theta, i):
         t = np.loadtxt(FILE['t'])
@@ -110,4 +110,4 @@ class KuramotoModel:
 
         np.savetxt(FILE['S'], S)
         t2 = time.time()
-        print("running time : ", t2 - t1, "s")
+        print("running time : {:.4f}s".format(t2 - t1))

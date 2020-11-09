@@ -16,3 +16,5 @@
 \contentsline {subsubsection}{\numberline {III.3.4}The \mintinline {python}{class KuramotoModel}}{9}{subsubsection.3.3.4}%
 \contentsline {subsection}{\numberline {III.4}Functional diagram of the program}{10}{subsection.3.4}%
 \contentsline {section}{\numberline {IV}Quality approach, reliability of the program}{11}{section.4}%
+\contentsline {subsection}{\numberline {IV.1}Optimization of the code}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {IV.2}Code verifications}{11}{subsection.4.2}%

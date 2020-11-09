@@ -36,7 +36,7 @@ class Data:
         np.savetxt(FILE['alpha'], self.alpha)
         np.savetxt(FILE['tau'], self.tau)
         t2 = time.time()
-        print("running time : ", t2 - t1, "s")
+        print("running time : {:.4f}s".format(t2 - t1))
 
     def random_states(self):
         for i in range(self.N):

@@ -436,6 +436,22 @@ The previous diagrams has been created using \mintinline{shell}{pyreverse} in th
 \noindent
 \section{Quality approach, reliability of the program}
 \label{sec:4}
+\subsection{Optimization of the code}
+\label{subs:4.1}
+In a process to limit the memory usage by heavy arrays and reduce computing time, it has been decided to store these arrays in data files (for example \autoref{tab:init_data}) while waiting for their use. So arrays doesn't takes up memory space between their use. In a quality and time approach, 3 integrators have been used and you can choose the one that you want depending on the quality and the time you want, see \autoref{subs:3.2}. During the execution of the program you can see the running time of the computing functions, see the following example (\py{N=3*4, state="chimera"}) :
+\begin{minted}{shell}
+----- init data -----
+running time : 0.0090s
+----- integrate RK4 -----
+running time : 8.7955s
+----- orders -----
+running time : 0.0463s
+----- Shannon entropy -----
+running time : 0.9747s
+\end{minted}
+\subsection{Code verifications}
+\label{subs:4.2}
+
 
 \newpage
 \bibliographystyle{plain}
