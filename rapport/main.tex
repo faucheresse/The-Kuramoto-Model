@@ -451,7 +451,52 @@ running time : 0.9747s
 \end{minted}
 \subsection{Code verifications}
 \label{subs:4.2}
-
+Code verifications has been made for the three computing fuctions, \autoref{subs:2.2}. We have plot graphs corresponding and compare them with the expected results in the choosen configuration. The \py{function dens_kuramoto()}, the \py{function orders()} and the \py{function shannon_entropies()} were also used to verify the resullts. We have tested the case of N independant identical harmonic oscillators (abbreviate in Niiho), i.e. $\omega^i = 1$, $\theta_0^i = 1$, $\eta = 0$ and $K^i_j = 0$. We have also used the \py{function graph_connectivity()} to see connections between oscillators.\\
+So after computing we have these graphs : 
+\begin{figure}[htbp]
+\hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[scale=0.40]{figures/Niiho_kuramoto.png}
+        \caption{\py{function dens_kuramoto()}}
+        \label{subfig:kuramoto}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[scale=0.40]{figures/mag_Niiho.png}
+        \caption{Complex mean of magnitude}
+        \label{subfig:mag}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[scale=0.40]{figures/phase_Niiho.png}
+        \caption{Complex mean of phase}
+        \label{subfig:phase}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[scale=0.40]{figures/shannon_Niiho.png}
+        \caption{Shannon entropy}
+        \label{subfig:shannon}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[scale=0.40]{figures/connectivity_Niiho.png}
+        \caption{Connectivity}
+        \label{subfig:connect}
+    \end{subfigure}
+\caption{Niiho case}
+\label{Niiho}
+\end{figure}
+\newpage
+\noindent
+We can see in the \autoref{subfig:kuramoto} phases are totaly independent, identical and act periodically. The \autoref{subfig:mag} and \autoref{subfig:phase} show us that oscillators are identical and harmonic. And the \autoref{subfig:shannon} and \autoref{subfig:connect} prove the oscillators are independant. With the simple case of Niiho we can see the program retrives results corresponding to the expected results so the program works correctly.
+\section{Outcome examples}
+\label{sec:5} 
 
 \newpage
 \bibliographystyle{plain}
