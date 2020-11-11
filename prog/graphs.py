@@ -13,16 +13,15 @@ class Graphs:
         title = r"$\{\theta^i(t)\}_{i=0,...,N-1}$ at a time $t=$"\
                 + "{0}".format(t)
         ax = plt.subplot(111, projection='polar')
+        ax.plot(theta[:, t], ind, ls=" ", marker="+")
         
         ax.set_xlabel(r"$i$")
         ax.set_ylabel(r"$\{\theta^i(t)\}_{i=0,...,N-1}$")
         ax.set_title(title)
         ax.grid(True)
         if show:
-            ax.plot(theta[:, t], ind)
             plt.show()
         else:
-            ax.plot(theta[:, t], ind, ls=" ", marker="+")
             plt.savefig("./animation/kuramoto{0}.png".format(t))
             plt.close()
 
@@ -40,8 +39,8 @@ class Graphs:
 
     def anim_kuramoto(self):
         t = np.loadtxt(FILE['t'])
-        # for _t in range(len(t)):
-        #     self.kuramoto(_t, False)
+        for _t in range(len(t)):
+            self.kuramoto(_t, False)
 
         im = [Image.open("./animation/kuramoto{0}.png".format(i))
               for i in range(len(t))]
@@ -91,7 +90,7 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
-            self.graph_density_kuramoto_coordinates(i, False)
+            self.dens_kuramoto_coord(i, False)
         im = [Image.open("./animation/density_kuramoto{0}.png".format(i))
               for i in range(len(t))]
 
@@ -175,8 +174,7 @@ class Graphs:
         t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
         for i in range(len(t)):
-            self.graph_density_shannon_coordinates(i, False)
-            print(i)
+            self.dens_shannon_coord(i, False)
         im = [Image.open("./animation/density_shannon{0}.png".format(i))
               for i in range(len(t))]
 

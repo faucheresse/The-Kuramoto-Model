@@ -1,5 +1,5 @@
-newData = True
-newComputing = True
+newData = False
+newComputing = False
 
 state = "chimera"
 # state = "random"

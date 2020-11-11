@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {IV.1}Optimization of the code}{11}{subsection.4.1}%
 \contentsline {subsection}{\numberline {IV.2}Code verifications}{11}{subsection.4.2}%
 \contentsline {section}{\numberline {V}Outcome examples}{12}{section.5}%
+\contentsline {subsection}{\numberline {V.1}Chimera}{12}{subsection.5.1}%

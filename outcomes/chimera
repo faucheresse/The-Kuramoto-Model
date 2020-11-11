@@ -1,0 +1,4 @@
+N = 200, M = 60, alpha = 1.46, omega = 0
+N = 15, M = 5, omega = 0, alpha = 1.46
+N = 12, M = 3, , omega = 0.2 + i * 0.4 / N
+N = 12, M = 3, , omega = 0.2 + i * 0.4 * sin(i**2 * pi / (2 * N**2))
