@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  12 NOV 2020 00:26
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  12 NOV 2020 00:45
  system commands enabled.
 **main.tex
 (./main.tex
@@ -510,11 +510,11 @@ braces):
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
 (polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            synonyms	patois,francais
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            hyphenation	
-(polyglossia)            loader	loadhyph-fr.tex
 (polyglossia)            righthyphenmin	2
-(polyglossia)            synonyms	patois,francais on input line 12
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-fr.tex on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
 Lua-only attribute polyglossia_punct = 6
@@ -2783,8 +2783,8 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:2,2:1581,3:210,4:186,5:269,6:49,7:4329,8:61,9:449,10:20,11:221
 
  53237 multiletter control sequences out of 65536+600000
- 86 fonts using 24122843 bytes
- 69i,21n,111p,1609b,880s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 86 fonts using 24122779 bytes
+ 69i,21n,111p,1598b,880s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmono9-regular.otf></usr/share/texli
 ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf>
 </usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texm
@@ -2794,7 +2794,7 @@ ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
 ></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinu
 sSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertin
 us-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (16 pages, 819757 bytes).
+Output written on main.pdf (16 pages, 819743 bytes).
 
 PDF statistics: 374 PDF objects out of 1000 (max. 8388607)
  303 compressed objects within 4 object streams
