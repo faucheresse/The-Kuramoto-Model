@@ -5,6 +5,9 @@ from PIL import Image
 from settings import *
 
 
+plt.rcParams.update({'font.size': 22})
+
+
 class Graphs:
 
     def kuramoto(self, t, show=True):
@@ -14,7 +17,7 @@ class Graphs:
                 + "{0}".format(t)
         ax = plt.subplot(111, projection='polar')
         ax.plot(theta[:, t], ind, ls=" ", marker="+")
-        
+
         ax.set_xlabel(r"$i$")
         ax.set_ylabel(r"$\{\theta^i(t)\}_{i=0,...,N-1}$")
         ax.set_title(title)
@@ -40,6 +43,7 @@ class Graphs:
     def anim_kuramoto(self):
         t = np.loadtxt(FILE['t'])
         for _t in range(len(t)):
+            print(_t)
             self.kuramoto(_t, False)
 
         im = [Image.open("./animation/kuramoto{0}.png".format(i))
@@ -89,8 +93,9 @@ class Graphs:
         theta = np.loadtxt(FILE['theta'])
         t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
-        for i in range(len(t)):
-            self.dens_kuramoto_coord(i, False)
+        for _t in range(len(t)):
+            print(_t)
+            self.dens_kuramoto_coord(_t, False)
         im = [Image.open("./animation/density_kuramoto{0}.png".format(i))
               for i in range(len(t))]
 
@@ -130,7 +135,7 @@ class Graphs:
         ax.set_xlabel(r"$i$")
         ax.set_ylabel(r"$S$")
         ax.set_title(r"$i \longmapsto S_i^{q, n}(t)$ at time $t=$"
-                  + "{0}".format(t))
+                     + "{0}".format(t))
         ax.grid(True)
 
         plt.show()
@@ -173,8 +178,9 @@ class Graphs:
         S = np.loadtxt(FILE['S'])
         t = np.loadtxt(FILE['t'])
         r, c = np.arange(Nr), np.arange(Nc)
-        for i in range(len(t)):
-            self.dens_shannon_coord(i, False)
+        for _t in range(len(t)):
+            print(_t)
+            self.dens_shannon_coord(_t, False)
         im = [Image.open("./animation/density_shannon{0}.png".format(i))
               for i in range(len(t))]
 

@@ -10,7 +10,7 @@
 \section{Introduction}
 \label{sec:1}
 \noindent
-The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the syncronization of coupled oscillators. This program is based on this model to describe a set of 2D-coupled oscillators in various cases. In particular to reproduce data obtained in the case of the coupled arrays of Josephson junctions \cite{josephson}. This program was edited for the last time the 10/23/2020. It was written in python 3 under ubuntu. There are 6 files. The first one is the main file, \mintinline{shell}{main.py}, it is the only one you have to execute, you could have to comment or uncomment some lines. Instead of that you just have to edit one file, the settings file, \mintinline{shell}{settings.py} where you can find all the settings. Then you have the kuramoto file, \mintinline{shell}{kuramoto.py}, where you can find the \py{class KuramotoModel} which contains all the functions related to the model or the verifications. The data file, \mintinline{shell}{data.py}, contains the \py{class Data}, which is used to manage data. The graphs file, \mintinline{shell}{graphs.py}, with the \py{class Graphs} manages the display of the results. And the integrator file, \mintinline{shell}{integrator.py}, where you can find the \py{class Integration}, which contains the three integrators : Euler, RK2, RK4. There is also the parameters directory which is important to save data. You can find all these files on \href{https://github.com/faucheresse/swimming_pool/tree/main/prog}{github}.
+The Kuramoto Model (Yoshki Kuramoto) is a mathematical model that describes the syncronization of coupled oscillators. This program is based on this model to describe a set of 2D-coupled oscillators in various cases. In particular to reproduce data obtained in the case of the coupled arrays of Josephson junctions \cite{josephson}. This program was edited for the last time the 10/29/2020. It was written in python 3 under ubuntu. There are 6 files. The first one is the main file, \mintinline{shell}{main.py}, it is the only one you have to execute, you could have to comment or uncomment some lines. Instead of that you just have to edit one file, the settings file, \mintinline{shell}{settings.py} where you can find all the settings. Then you have the kuramoto file, \mintinline{shell}{kuramoto.py}, where you can find the \py{class KuramotoModel} which contains all the functions related to the model or the verifications. The data file, \mintinline{shell}{data.py}, contains the \py{class Data}, which is used to manage data. The graphs file, \mintinline{shell}{graphs.py}, with the \py{class Graphs} manages the display of the results. And the integrator file, \mintinline{shell}{integrator.py}, where you can find the \py{class Integration}, which contains the three integrators : Euler, RK2, RK4. There is also the parameters directory which is important to save data. You can find all these files on \href{https://github.com/faucheresse/swimming_pool/tree/main/prog}{github}.
 \section{Functional requirement of the program}
 \label{sec:2}
 \noindent
@@ -109,11 +109,10 @@ They are different for each state, you can see their definitions in the tables \
             \end{itemize}
             &This \py{state} represents the case of the array of Josephson, data were drawn from this article \cite{josephson}. Their data are defined by:
             \begin{itemize}[leftmargin=15pt, itemsep=0pt]
-               \item $\omega^i=0.2 + 0.4i\times sin(\dfrac{i^2\pi}{(2N^2)})$
+               \item $\omega^i=uniform(0, 3)$
                \item $\theta_0^i=uniform(0, \dfrac{2}{\pi})$
-               \item $K^i_j=\dfrac{Nr\omega^{i^2}2\e/(\hbar rI_b)-\omega^i}{\sqrt{(L\omega^{i^2} - 1/C)^2 + \omega^{i^2}(R+rN)^2 }}$
-               \item $\eta^i_j=uniform(0, 0.5)$
-               \item $cos(\alpha^i_j)=\dfrac{L\omega^{i^2} - 1/C}{\sqrt{(L\omega^{i^2} - 1/C)^2 + \omega^{i^2}(R+rN)^2 }}$
+               \item $K^i_j=0.0601$
+               \item $cos(\alpha^i_j)=0.3878$
                \item $\tau^i_j=randint(0, N//2)$
             \end{itemize}\\
             \bottomrule
@@ -454,7 +453,7 @@ running time : 0.9747s
 Code verifications has been made for the three computing fuctions, \autoref{subs:2.2}. We have plot graphs corresponding and compare them with the expected results in the choosen configuration. The \py{function dens_kuramoto()}, the \py{function orders()} and the \py{function shannon_entropies()} were also used to verify the resullts. We have tested the case of N independant identical harmonic oscillators (abbreviate in Niiho), i.e. $\omega^i = 1$, $\theta_0^i = 1$, $\eta = 0$ and $K^i_j = 0$. We have also used the \py{function graph_connectivity()} to see connections between oscillators.\\
 So after computing we have these graphs : 
 \begin{figure}[htbp]
-\hfill
+    \hfill
     \begin{subfigure}{0.30\textwidth}
         \centering
         \includegraphics[scale=0.40]{figures/Niiho_kuramoto.png}
@@ -497,13 +496,48 @@ So after computing we have these graphs :
 We can see in the \autoref{subfig:kuramoto} phases are totaly independent, identical and act periodically. The \autoref{subfig:mag} and \autoref{subfig:phase} show us that oscillators are identical and harmonic. And the \autoref{subfig:shannon} and \autoref{subfig:connect} prove the oscillators are independant. With the simple case of Niiho we can see the program retrives results corresponding to the expected results, so the program works correctly.
 \section{Outcome examples}
 \label{sec:5} 
-In this section we will see two outcome examples with \py{state="chimera"} and \py{state="josephson"}. The graphs of the two other will be adding in the appendix of this document. The graphs, the gifs and their data could be find in the corresponding directory in the "outcomes" directory.
-\subsection{Chimera}
+In this section we will see two outcome examples with \py{state="chimera"} and \py{state="josephson"}. The graphs, the gifs and their data could be find in the corresponding directory in the "outcomes" directory.
+\subsection{Chimera state}
 \label{subs:chimera}
-
+The chimera state is defined according to the document \cite{chimera}. I have choosen the case of the quantum chimera state. A chimera is a (meta)stable state of a system of coupled oscillators in which an ordered coherent phase and a disordered incoherent phase coexist, without the disorder contaminating the whole in a short period of time or becoming completely ordered. We can verify this definition using the densities graph of the phase and the Shannon entropy with $N=3\time4$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.99\linewidth]{../outcomes/chimera_2D/dens_kuramoto.png}
+    \caption{\py{Density of phase of quantum chimera state}}
+    \label{fig:dens_phase}
+\end{figure}
+\newpage
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.99\linewidth]{../outcomes/chimera_2D/dens_shannon.png}
+    \caption{density of Shannon entropy of quantum chimera state}
+    \label{fig:dens_shannon}
+\end{figure}
+\noindent
+Using \autoref{fig:dens_phase} and \autoref{fig:dens_shannon} we can see groups of oscillators coexisting in ordered coherent phase and disordered incoherent phase, without the disorder contaminating the whole in a short period of time or becoming completely ordered.
+\subsection{Josephson arrays}
+\label{subs:josephson}
+In the case of Josephson arrays we want to compare our results to an article \cite{josephson}. So we are using the same initial data that they used, see \autoref{tab:states2} with $N=10\times10$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\linewidth]{../outcomes/josephson/mag.png}
+    \caption{\py{Complex mean of magnitude in josephson arrays}}
+    \label{fig:mag_j}
+\end{figure}
+\newpage
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\linewidth]{../outcomes/josephson/phase.png}
+    \caption{Complex mean of phase josephson arrays}
+    \label{fig:phase_j}
+\end{figure}
+\noindent
+We can see that in the two last figures the curves are well shaped, there is no noises or few. That mean the oscillators are locking between them, according to the article. The oscillators seems to work together therefore the fact that the oscillators don't have the same natural frequency and the same initial conditions. So the magnitude describe a quasi incoherence state. They seems to work together but with a wave-shape mouvement.
+\section{Conclusion}
+\label{sec:conclusion}
+In conclusion, this program describes a set of 2D-coupled oscillators using the model of the mathematician Yoshiki Kuramoto. It will return several graphs to study in detail each case, gifs and data file, you can find them all in the outcomes directory. You can also add new initial set of data tu study other case. For example you can try to represent the case of self-synchronization and verify your predictions. 
 
 \newpage
 \bibliographystyle{plain}
 \bibliography{biblio}
-
 \end{document}

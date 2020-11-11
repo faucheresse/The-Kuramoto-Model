@@ -6,16 +6,16 @@ Database file #1: biblio.bib
 Warning--empty journal in josephson
 You've used 2 entries,
             2118 wiz_defined-function locations,
-            507 strings with 4267 characters,
-and the built_in function-call counts, 447 in all, are:
-= -- 41
+            506 strings with 4201 characters,
+and the built_in function-call counts, 436 in all, are:
+= -- 38
 > -- 14
 < -- 0
 + -- 6
 - -- 4
 * -- 21
-:= -- 84
-add.period$ -- 7
+:= -- 81
+add.period$ -- 6
 call.type$ -- 2
 change.case$ -- 8
 chr.to.int$ -- 0
@@ -23,17 +23,17 @@ cite$ -- 3
 duplicate$ -- 17
 empty$ -- 41
 format.name$ -- 4
-if$ -- 90
+if$ -- 87
 int.to.chr$ -- 0
 int.to.str$ -- 2
 missing$ -- 1
-newline$ -- 14
+newline$ -- 13
 num.names$ -- 4
-pop$ -- 14
+pop$ -- 15
 preamble$ -- 1
 purify$ -- 6
 quote$ -- 0
-skip$ -- 13
+skip$ -- 14
 stack$ -- 0
 substring$ -- 10
 swap$ -- 1
@@ -44,5 +44,5 @@ type$ -- 8
 warning$ -- 1
 while$ -- 4
 width$ -- 3
-write$ -- 23
+write$ -- 21
 (There was 1 warning)

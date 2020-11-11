@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  11 NOV 2020 14:10
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.7.19)  12 NOV 2020 00:26
  system commands enabled.
 **main.tex
 (./main.tex
@@ -509,11 +509,11 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for french
-(polyglossia)            loader	loadhyph-fr.tex
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            righthyphenmin	2
-(polyglossia)            hyphenation	
 (polyglossia)            patterns	hyph-fr.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-fr.tex
+(polyglossia)            righthyphenmin	2
 (polyglossia)            synonyms	patois,francais on input line 12
 Module polyglossia Info: Language french was not yet loaded; created with id 2 o
 n input line 12
@@ -1908,10 +1908,10 @@ Underfull \hbox (badness 1845) in paragraph at lines 37--38
 
 (./_minted-main/B06B1AB0A85844B64B602F868C12BE864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/os_table.pdf, id=150, 284.52756pt x 199.1693pt>
+<figures/os_table.pdf, id=159, 284.52756pt x 199.1693pt>
 File: figures/os_table.pdf Graphic file (type pdf)
 <use figures/os_table.pdf>
-Package luatex.def Info: figures/os_table.pdf  used on input line 130.
+Package luatex.def Info: figures/os_table.pdf  used on input line 129.
 (luatex.def)             Requested size: 227.62234pt x 159.33563pt.
 
 \openout5 = main.pyg
@@ -1962,7 +1962,7 @@ Package luatex.def Info: figures/os_table.pdf  used on input line 130.
 
 (./_minted-main/9DB413A462FD1D9F5D5A03927FECA6EC4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 2426) in paragraph at lines 148--148
+Underfull \hbox (badness 2426) in paragraph at lines 147--147
 \TU/LibertinusSerif(0)/m/n/10 tion [], with the ini-tial vec-tor
  []
 
@@ -1995,17 +1995,17 @@ Underfull \hbox (badness 2426) in paragraph at lines 148--148
 
 (./_minted-main/8DE576DF96E11FDD486B6E049AF00EF34FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 1635) in paragraph at lines 1--154
+Underfull \hbox (badness 1635) in paragraph at lines 1--153
 [][] \TU/LibertinusSerif(0)/m/n/10 is the in-te-gra-
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 1--154
+Underfull \hbox (badness 1728) in paragraph at lines 1--153
 \TU/LibertinusSerif(0)/m/n/10 It can take only these val-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 155--156
+Underfull \hbox (badness 1264) in paragraph at lines 154--155
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -2014,23 +2014,23 @@ Underfull \hbox (badness 1264) in paragraph at lines 155--156
 
 (./_minted-main/872EAC4BF2A7464164430E9A5C924B924FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 2221) in paragraph at lines 1--158
+Underfull \hbox (badness 2221) in paragraph at lines 1--157
 [][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 1--158
+Underfull \hbox (badness 1540) in paragraph at lines 1--157
 \TU/LibertinusSerif(0)/m/n/10 ma-trix of real of size N$\TU/LibertinusMath(1)/m
 /n/10 ×$\TU/LibertinusSerif(0)/m/n/10 T.
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 1--158
+Underfull \hbox (badness 1460) in paragraph at lines 1--157
 \TU/LibertinusSerif(0)/m/n/10 tors. Each vec-tor con-tains
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 1--158
+Underfull \hbox (badness 1442) in paragraph at lines 1--157
 \TU/LibertinusSerif(0)/m/n/10 at one time, la-beled in the
  []
 
@@ -2051,22 +2051,22 @@ Underfull \hbox (badness 1442) in paragraph at lines 1--158
 
 (./_minted-main/93D7964EC38E9A2894A602B6C93F8CB74FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 3343) in paragraph at lines 1--159
+Underfull \hbox (badness 3343) in paragraph at lines 1--158
 [][] \TU/LibertinusSerif(0)/m/n/10 : con-tains a list
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 1--159
+Underfull \hbox (badness 5985) in paragraph at lines 1--158
 \TU/LibertinusSerif(0)/m/n/10 of real of size T, de-fined
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--159
+Underfull \hbox (badness 10000) in paragraph at lines 1--158
 \TU/LibertinusSerif(0)/m/n/10 by [].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--159
+Underfull \hbox (badness 10000) in paragraph at lines 1--158
 [] \TU/LibertinusSerif(0)/m/n/10 is a method
  []
 
@@ -2076,18 +2076,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--159
 (./_minted-main/B25C93E424F3A2E80AD2E79937F79CD44FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
 
-LaTeX Warning: Command \i invalid in math mode on input line 175.
+LaTeX Warning: Command \i invalid in math mode on input line 174.
 
 
-LaTeX Warning: Command \i invalid in math mode on input line 175.
+LaTeX Warning: Command \i invalid in math mode on input line 174.
 
 
-Underfull \hbox (badness 2529) in paragraph at lines 176--177
+Underfull \hbox (badness 2529) in paragraph at lines 175--176
 \TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 178--179
+Underfull \hbox (badness 1264) in paragraph at lines 177--178
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -2116,12 +2116,12 @@ Underfull \hbox (badness 1264) in paragraph at lines 178--179
 
 (./_minted-main/9485EDF7B8EC0FDF0BC3BDB9D5FC6C284FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 2529) in paragraph at lines 198--199
+Underfull \hbox (badness 2529) in paragraph at lines 197--198
 \TU/LibertinusSerif(0)/m/n/10 func-tion be-cause it takes only
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 200--201
+Underfull \hbox (badness 1264) in paragraph at lines 199--200
 []|\TU/LibertinusSerif(0)/m/n/10 This func-tion will re-trieve two
  []
 
@@ -2180,7 +2180,7 @@ Underfull \hbox (badness 1264) in paragraph at lines 200--201
 1.pygtex)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mintinline' on input line 284.
+(hyperref)                removing `\mintinline' on input line 283.
 
 
 \openout5 = main.pyg
@@ -2213,7 +2213,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 1.pygtex)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mintinline' on input line 309.
+(hyperref)                removing `\mintinline' on input line 308.
 
 
 \openout5 = main.pyg
@@ -2306,7 +2306,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 1.pygtex)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mintinline' on input line 358.
+(hyperref)                removing `\mintinline' on input line 357.
 
 
 \openout5 = main.pyg
@@ -2449,7 +2449,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 (./_minted-main/D851573B415FAC5C5EC32F71507279324FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 376--378
+Underfull \hbox (badness 10000) in paragraph at lines 375--377
 
  []
 
@@ -2460,7 +2460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--378
 1.pygtex)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mintinline' on input line 378.
+(hyperref)                removing `\mintinline' on input line 377.
 
 
 \openout5 = main.pyg
@@ -2503,7 +2503,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 (./_minted-main/661D62B763155912836EBE688F56FC5A4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--398
+Underfull \hbox (badness 10000) in paragraph at lines 1--397
 [][]\TU/LibertinusSerif(0)/m/n/10 , see
  []
 
@@ -2516,7 +2516,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--398
 
 (./_minted-main/97FDF79C94DC64B79A9EDD1B94B08BE14FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Overfull \hbox (3.10513pt too wide) in paragraph at lines 1--400
+Overfull \hbox (3.10513pt too wide) in paragraph at lines 1--399
 [][]\TU/LibertinusSerif(0)/m/n/10 ,
  []
 
@@ -2529,7 +2529,7 @@ Overfull \hbox (3.10513pt too wide) in paragraph at lines 1--400
 
 (./_minted-main/D18F21E6176CB895D264C719BA4F96E44FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--404
+Underfull \hbox (badness 10000) in paragraph at lines 1--403
 \TU/LibertinusSerif(0)/m/n/10 us-ing the ku-ramoto model, [][]sub-sec-
  []
 
@@ -2542,7 +2542,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--404
 
 (./_minted-main/43008512D69D7F0BE322959A2F4B56584FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Underfull \hbox (badness 3635) in paragraph at lines 1--406
+Underfull \hbox (badness 3635) in paragraph at lines 1--405
 [][] \TU/LibertinusSerif(0)/m/n/10 : re-turn
  []
 
@@ -2551,7 +2551,7 @@ Underfull \hbox (badness 3635) in paragraph at lines 1--406
 
 (./_minted-main/FAF2FCE4CD14203B556ACBDC05C743F74FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-Overfull \hbox (24.10513pt too wide) in paragraph at lines 1--407
+Overfull \hbox (24.10513pt too wide) in paragraph at lines 1--406
 [][]\TU/LibertinusSerif(0)/m/n/10 ,
  []
 
@@ -2568,17 +2568,17 @@ Overfull \hbox (24.10513pt too wide) in paragraph at lines 1--407
 
 (./_minted-main/49A654F9CA10204363C336E4525251864FBEEAFC55D0059826E664B9BBCF372
 1.pygtex) [9]
-<figures/packages_kuramotoModel.png, id=234, 274.02374pt x 348.30125pt>
+<figures/packages_kuramotoModel.png, id=244, 274.02374pt x 348.30125pt>
 File: figures/packages_kuramotoModel.png Graphic file (type png)
 <use figures/packages_kuramotoModel.png>
 Package luatex.def Info: figures/packages_kuramotoModel.png  used on input line 
-423.
+422.
 (luatex.def)             Requested size: 123.30954pt x 156.73412pt.
-<figures/classes_kuramotoModel.png, id=235, 670.505pt x 769.87625pt>
+<figures/classes_kuramotoModel.png, id=245, 670.505pt x 769.87625pt>
 File: figures/classes_kuramotoModel.png Graphic file (type png)
 <use figures/classes_kuramotoModel.png>
 Package luatex.def Info: figures/classes_kuramotoModel.png  used on input line 4
-30.
+29.
 (luatex.def)             Requested size: 268.19725pt x 307.94504pt.
 
 \openout5 = main.pyg
@@ -2614,10 +2614,10 @@ A.pygtex)
 
 (./_minted-main/6426E9AF26DD75F94F84058F50A6F7454FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/Niiho_kuramoto.png, id=247, 341.1144pt x 352.6776pt>
+<figures/Niiho_kuramoto.png, id=257, 341.1144pt x 352.6776pt>
 File: figures/Niiho_kuramoto.png Graphic file (type png)
 <use figures/Niiho_kuramoto.png>
-Package luatex.def Info: figures/Niiho_kuramoto.png  used on input line 460.
+Package luatex.def Info: figures/Niiho_kuramoto.png  used on input line 459.
 (luatex.def)             Requested size: 136.44333pt x 141.06853pt.
 
 \openout5 = main.pyg
@@ -2628,29 +2628,29 @@ Package luatex.def Info: figures/Niiho_kuramoto.png  used on input line 460.
 
 (./_minted-main/7E37021BA6905419DACBA8DCE4038C5B4FBEEAFC55D0059826E664B9BBCF372
 1.pygtex)
-<figures/mag_Niiho.png, id=248, 341.1144pt x 352.6776pt>
+<figures/mag_Niiho.png, id=258, 341.1144pt x 352.6776pt>
 File: figures/mag_Niiho.png Graphic file (type png)
 <use figures/mag_Niiho.png>
-Package luatex.def Info: figures/mag_Niiho.png  used on input line 467.
+Package luatex.def Info: figures/mag_Niiho.png  used on input line 466.
 (luatex.def)             Requested size: 136.44333pt x 141.06853pt.
-<figures/phase_Niiho.png, id=249, 341.1144pt x 352.6776pt>
+<figures/phase_Niiho.png, id=259, 341.1144pt x 352.6776pt>
 File: figures/phase_Niiho.png Graphic file (type png)
 <use figures/phase_Niiho.png>
-Package luatex.def Info: figures/phase_Niiho.png  used on input line 474.
+Package luatex.def Info: figures/phase_Niiho.png  used on input line 473.
 (luatex.def)             Requested size: 136.44333pt x 141.06853pt.
-<figures/shannon_Niiho.png, id=250, 341.1144pt x 352.6776pt>
+<figures/shannon_Niiho.png, id=260, 341.1144pt x 352.6776pt>
 File: figures/shannon_Niiho.png Graphic file (type png)
 <use figures/shannon_Niiho.png>
-Package luatex.def Info: figures/shannon_Niiho.png  used on input line 481.
+Package luatex.def Info: figures/shannon_Niiho.png  used on input line 480.
 (luatex.def)             Requested size: 136.44333pt x 141.06853pt.
-<figures/connectivity_Niiho.png, id=251, 341.1144pt x 352.6776pt>
+<figures/connectivity_Niiho.png, id=261, 341.1144pt x 352.6776pt>
 File: figures/connectivity_Niiho.png Graphic file (type png)
 <use figures/connectivity_Niiho.png>
-Package luatex.def Info: figures/connectivity_Niiho.png  used on input line 488.
+Package luatex.def Info: figures/connectivity_Niiho.png  used on input line 487.
 
 (luatex.def)             Requested size: 136.44333pt x 141.06853pt.
 
-Overfull \hbox (27.79155pt too wide) in paragraph at lines 454--495
+Overfull \hbox (27.79155pt too wide) in paragraph at lines 453--494
 \TU/LibertinusSerif(0)/m/n/10 spond-ing and com-pare them with the ex-pected re
 -sults in the choosen con-fig-u-ra-tion. The [],
  []
@@ -2664,7 +2664,50 @@ Overfull \hbox (27.79155pt too wide) in paragraph at lines 454--495
 \openout5 = main.pyg
 
 (./_minted-main/83C67BEB929ADB56981AC6D2D4CCEC1B4FBEEAFC55D0059826E664B9BBCF372
-1.pygtex) [12] (./main.bbl)
+1.pygtex)
+<../outcomes/chimera_2D/dens_kuramoto.png, id=280, 1387.584pt x 752.3307pt>
+File: ../outcomes/chimera_2D/dens_kuramoto.png Graphic file (type png)
+<use ../outcomes/chimera_2D/dens_kuramoto.png>
+Package luatex.def Info: ../outcomes/chimera_2D/dens_kuramoto.png  used on input
+ line 505.
+(luatex.def)             Requested size: 450.69417pt x 244.35535pt.
+
+\openout5 = main.pyg
+
+(./_minted-main/A718119D1E6C170866F75DFFD21DD4824FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/A718119D1E6C170866F75DFFD21DD4824FBEEAFC55D0059826E664B9BBCF372
+1.pygtex) [12<../outcomes/chimera_2D/dens_kuramoto.png>]
+<../outcomes/chimera_2D/dens_shannon.png, id=289, 1387.584pt x 752.3307pt>
+File: ../outcomes/chimera_2D/dens_shannon.png Graphic file (type png)
+<use ../outcomes/chimera_2D/dens_shannon.png>
+Package luatex.def Info: ../outcomes/chimera_2D/dens_shannon.png  used on input 
+line 512.
+(luatex.def)             Requested size: 450.69417pt x 244.35535pt.
+<../outcomes/josephson/mag.png, id=294, 1387.584pt x 752.3307pt>
+File: ../outcomes/josephson/mag.png Graphic file (type png)
+<use ../outcomes/josephson/mag.png>
+Package luatex.def Info: ../outcomes/josephson/mag.png  used on input line 523.
+(luatex.def)             Requested size: 432.48051pt x 234.48286pt.
+
+\openout5 = main.pyg
+
+(./_minted-main/79436B0370BC782F1AF3ABFEA5EA06974FBEEAFC55D0059826E664B9BBCF372
+1.pygtex)
+\openout5 = main.pyg
+
+(./_minted-main/79436B0370BC782F1AF3ABFEA5EA06974FBEEAFC55D0059826E664B9BBCF372
+1.pygtex) [13<../outcomes/chimera_2D/dens_shannon.png><../outcomes/josephson/mag
+.png>]
+<../outcomes/josephson/phase.png, id=304, 1387.584pt x 752.3307pt>
+File: ../outcomes/josephson/phase.png Graphic file (type png)
+<use ../outcomes/josephson/phase.png>
+Package luatex.def Info: ../outcomes/josephson/phase.png  used on input line 530
+.
+(luatex.def)             Requested size: 432.48051pt x 234.48286pt.
+ [14<../outcomes/josephson/phase.png>] (./main.bbl)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2715,32 +2758,32 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 509.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 509.
+ [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 543.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 543.
  (./main.aux
 LaTeX Info: Redefining \rmfamily on input line 19.
 LaTeX Info: Redefining \sffamily on input line 19.
 LaTeX Info: Redefining \ttfamily on input line 19.
 luaotfload | aux : font no 37 (nil) defines no feature for script latn with lang
 uage eng)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 509.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 509.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 543.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 543.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F27F92D7E6401ADEE9A52C0C91D3F087;4084.
+(rerunfilecheck)             Checksum: 4634359C05F35728C0335B30BEF593A8;4352.
 runsystem(rm main.pyg)...executed
 )
 
 Here is how much of LuaTeX's memory you used:
- 40989 strings out of 481365
+ 41121 strings out of 481365
  125171,1373583 words of node,token memory allocated
  682 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 3 glue, 5 kern, 1 penalty, 1 glyph, 25 attribute, 6
 8 glue_spec, 25 attribute_list, 2 write, 4 pdf_action nodes
-   avail lists: 1:2,2:1581,3:235,4:186,5:302,6:50,7:4329,8:61,9:513,10:20,11:221
+   avail lists: 1:2,2:1581,3:210,4:186,5:269,6:49,7:4329,8:61,9:449,10:20,11:221
 
- 53205 multiletter control sequences out of 65536+600000
- 86 fonts using 24122779 bytes
+ 53237 multiletter control sequences out of 65536+600000
+ 86 fonts using 24122843 bytes
  69i,21n,111p,1609b,880s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmono9-regular.otf></usr/share/texli
 ve/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf>
@@ -2751,10 +2794,10 @@ ive/texmf-dist/fonts/opentype/public/libertinus-fonts/LibertinusMath-Regular.otf
 ></usr/share/texlive/texmf-dist/fonts/opentype/public/libertinus-fonts/Libertinu
 sSerif-Regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/libertin
 us-fonts/LibertinusSerif-Bold.otf>
-Output written on main.pdf (14 pages, 262747 bytes).
+Output written on main.pdf (16 pages, 819757 bytes).
 
-PDF statistics: 336 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 131072)
- 184 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 374 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 66 named destinations out of 1000 (max. 131072)
+ 200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

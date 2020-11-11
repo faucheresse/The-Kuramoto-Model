@@ -81,18 +81,8 @@ class Data:
             self.theta0[i] = uniform(0, 2 * np.pi)
             for j in range(N):
                 if abs(i - j) <= self.M:
-                    self.K[i, j] = N * r * self.omega[i] *\
-                                   (2 * np.exp(1) / hbar * r * Ib -
-                                    self.omega[i] /
-                                    np.sqrt((L * self.omega[i]**2
-                                             - 1 / C)**2 + self.omega[i]**2 *
-                                    (R + N * r)**2))
-                self.alpha[i, j] = np.arccos((L * self.omega[i]**2
-                                             - 1 / C) /
-                                             np.sqrt((L * self.omega[i]**2
-                                                     - 1 / C)**2
-                                                     + self.omega[i]**2 *
-                                             (R + N * r)**2))
+                    self.K[i, j] = 0.00601
+                self.alpha[i, j] = np.arccos(0.3878)
                 self.tau[i, j] = randint(0, self.N // 2)
             for _t in range(tf):
                 self.eta[i, _t] = uniform(0, 0.5)
