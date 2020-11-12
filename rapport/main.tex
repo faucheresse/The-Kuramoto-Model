@@ -231,7 +231,7 @@ where :
 \item $\eta_i(t)$ represents the influence of the environement, the possible external noises.
 \end{itemize}
 As you can see this model is pretty complete. The formula is the sum of all the influences due to the environment and the nearest coupled oscillators at a given time. That why it was chosen to build $\theta$ like a list of vectors.
-\subsection{Desciption of the used scientific computation algorithms}
+\subsection{Description of the used scientific computation algorithms}
 \label{subs:3.2}
 During the computation we used 3 algorithm for integration of the kuramoto model \ref{subs:3.1}, the Euler, RK2 and RK4 algorithm. But you can choose the one that you want to use. It is recommended to use the RK4 method because it loses less energy over time than the others, so it is more accurate. Otherwise if you want less computing time it is a good thing to try other. You can find all these integrators in the \py{class Integration}.\\
 We are looking to integrate $\dot{\theta} = f(\theta)$.\\
