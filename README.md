@@ -1,1 +1,1 @@
-# swimming_pool
+# The kuramoto Model
